@@ -1,0 +1,74 @@
+.mwg_effect024 .pin-height {
+  height: auto;
+}
+
+.mwg_effect024 .container {
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mwg_effect024 .sentences {
+  position: relative;
+  font: 500 normal 10vw/1.2 'Inter', sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.mwg_effect024 .sentence {
+  overflow: hidden;
+}
+
+.mwg_effect024 .sentence p {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  will-change: transform;
+}
+
+.mwg_effect024 .sentence2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mwg_effect024 .sentence2 p {
+  transform: translate(0, 100%);
+}
+
+.mwg_effect024 .glyph {
+  width: 5.5vw;
+  height: 5.5vw;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.mwg_effect024 .texts {
+  display: flex;
+  justify-content: space-between;
+  margin: 1vw 0 0;
+  padding: 2vw 2vw 0;
+  border-top: 1px dashed rgb(72, 72, 72);
+  font: 500 normal 0.9vw / normal 'IBM Plex Mono';
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .mwg_effect024 .texts {
+    font-size: 1.2vw;
+    padding: 3vw 2vw 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .mwg_effect024 .texts {
+    font-size: 1.5vw;
+    flex-direction: column;
+    gap: 1vw;
+    align-items: center;
+  }
+}
+

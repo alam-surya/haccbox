@@ -1,0 +1,381 @@
+.portfolio-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Carousel Section */
+.mwg_effect028 {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  overflow: clip;
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+.mwg_effect028 .header {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.mwg_effect028 .header .top {
+  width: 100%;
+  border-bottom: 1px solid rgba(74, 74, 74, 0.5);
+  padding: 25px;
+}
+
+.mwg_effect028 .header .top p {
+  width: 60%;
+  font: 500 normal 2.1vw / 0.9 'Satoshi', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.mwg_effect028 .header .drag {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 25px;
+  color: #ffffff;
+}
+
+.mwg_effect028 .header .drag svg {
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+}
+
+.mwg_effect028 .header .drag p {
+  text-transform: uppercase;
+  font: 500 normal 13px / normal 'Satoshi', system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.mwg_effect028 .container {
+  width: max-content;
+  white-space: nowrap;
+  display: flex;
+  gap: 15px;
+  padding: 0 1vw 0 0;
+  user-select: none;
+  cursor: grab;
+}
+
+.mwg_effect028 .container:active {
+  cursor: grabbing;
+}
+
+.mwg_effect028 .card {
+  width: 20vw;
+  aspect-ratio: 0.9;
+  transform-origin: 50% 100%;
+  flex-shrink: 0;
+}
+
+.mwg_effect028 .card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 0.03em;
+  pointer-events: none;
+}
+
+.mwg_effect030 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  font: 400 normal 15px / normal 'Satoshi', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.03em;
+  padding: 7.5rem 0 4rem 0;
+}
+
+.mwg_effect030 ul {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mwg_effect030 ul li {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 18px 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mwg_effect030 ul li:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mwg_effect030 ul li span:nth-child(1) {
+  width: 25%;
+  font-weight: 400;
+}
+
+.mwg_effect030 ul li span:nth-child(2) {
+  flex: 1;
+  opacity: 0.7;
+}
+
+.mwg_effect030 ul li span:nth-child(3) {
+  text-align: right;
+  flex: 1;
+  visibility: hidden;
+  opacity: 0.8;
+}
+
+.mwg_effect030 ul li:hover span:nth-child(3) {
+  visibility: visible;
+}
+
+.mwg_effect030 .media-container {
+  position: fixed;
+  width: 24vw;
+  height: 24vw;
+  right: 16%;
+  top: 0;
+  border-radius: 2%;
+  pointer-events: none;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.mwg_effect030 .media-container.on {
+  visibility: visible;
+}
+
+.mwg_effect030 .media-container div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: translate(0, -100%);
+}
+
+.mwg_effect030 .media-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0, 90%);
+}
+
+.mwg_effect030 .medias {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mwg_effect030 .medias img {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Carousel Responsive Design */
+@media (max-width: 1024px) {
+  .mwg_effect028 {
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+  }
+
+  .mwg_effect028 .header {
+    top: 7rem;
+  }
+
+  .mwg_effect028 .header .top p {
+    width: 70%;
+    font-size: 1.8vw;
+  }
+
+  .mwg_effect028 .card {
+    width: 25vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .mwg_effect028 {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    min-height: 80vh;
+  }
+
+  .mwg_effect028 .header {
+    top: 6rem;
+  }
+
+  .mwg_effect028 .header .top {
+    padding: 20px;
+  }
+
+  .mwg_effect028 .header .top p {
+    width: 85%;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .mwg_effect028 .header .drag {
+    margin: 20px;
+    gap: 10px;
+  }
+
+  .mwg_effect028 .header .drag p {
+    font-size: 11px;
+  }
+
+  .mwg_effect028 .card {
+    width: 35vw;
+  }
+
+  .mwg_effect028 .container {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mwg_effect028 {
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+    min-height: 70vh;
+  }
+
+  .mwg_effect028 .header {
+    top: 5.5rem;
+  }
+
+  .mwg_effect028 .header .top {
+    padding: 15px;
+  }
+
+  .mwg_effect028 .header .top p {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .mwg_effect028 .header .drag {
+    margin: 15px;
+    gap: 8px;
+  }
+
+  .mwg_effect028 .header .drag svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .mwg_effect028 .header .drag p {
+    font-size: 10px;
+  }
+
+  .mwg_effect028 .card {
+    width: 45vw;
+  }
+
+  .mwg_effect028 .container {
+    gap: 10px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .mwg_effect030 {
+    padding: 6.5rem 0 4rem 0;
+  }
+
+  .mwg_effect030 .media-container {
+    width: 30vw;
+    height: 30vw;
+    right: 10%;
+  }
+
+  .mwg_effect030 ul li {
+    padding: 16px 20px;
+    gap: 12px;
+  }
+
+  .mwg_effect030 ul li span:nth-child(1) {
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mwg_effect030 {
+    padding: 5.5rem 0 4rem 0;
+    font-size: 14px;
+  }
+
+  .mwg_effect030 .media-container {
+    width: 40vw;
+    height: 40vw;
+    right: 5%;
+  }
+
+  .mwg_effect030 ul li {
+    padding: 14px 15px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .mwg_effect030 ul li span:nth-child(1) {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .mwg_effect030 ul li span:nth-child(2) {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .mwg_effect030 ul li span:nth-child(3) {
+    width: 100%;
+    text-align: left;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mwg_effect030 {
+    padding: 5rem 0 3rem 0;
+    font-size: 13px;
+  }
+
+  .mwg_effect030 .media-container {
+    width: 50vw;
+    height: 50vw;
+    right: 2%;
+  }
+
+  .mwg_effect030 ul li {
+    padding: 12px 10px;
+    gap: 8px;
+  }
+
+  .mwg_effect030 ul li span:nth-child(2) {
+    font-size: 11px;
+  }
+}
+

@@ -1,0 +1,13 @@
+.landing-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
