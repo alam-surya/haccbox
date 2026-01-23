@@ -1,18 +1,20 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import heroVideo from '../../assets/videos/retro-hero.mp4'
 import satuImage from '../../assets/images/satu.png'
 import './Portfolio.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function Portfolio() {
+  const heroRef = useRef(null)
+  const videoRef = useRef(null)
+  const scrollIndicatorRef = useRef(null)
   const rootRef = useRef(null)
   const listElementRef = useRef(null)
   const mediaContainerRef = useRef(null)
   const rowsRef = useRef([])
-  const carouselContainerRef = useRef(null)
-  const carouselCardsRef = useRef([])
 
   const clients = [
     { name: 'Pacomeubelun', category: 'Furniture, Packaging', image: satuImage },
@@ -35,57 +37,43 @@ function Portfolio() {
   // Store image URLs
   const mediasUrl = clients.map(client => client.image)
 
-  // Carousel images - 7 cards using satu.png
-  const carouselImages = Array(7).fill(satuImage)
-
-  // Carousel Observer setup
+  // Scroll indicator setup
   useEffect(() => {
-    const container = carouselContainerRef.current
-    if (!container) return
+    const scrollIndicator = scrollIndicatorRef.current
 
-    // Wait for cards to be rendered
-    const cards = container.querySelectorAll('.card')
-    if (cards.length === 0) return
+    if (scrollIndicator) {
+      // Animate scroll indicator
+      gsap.set(scrollIndicator, { opacity: 0, y: -10 })
+      
+      const indicatorTl = gsap.timeline({ delay: 1 })
+      indicatorTl.to(scrollIndicator, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out'
+      })
+      .to(scrollIndicator, {
+        y: 10,
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut'
+      })
 
-    const half = container.clientWidth / 2
-    const wrap = gsap.utils.wrap(-half, 0)
-    
-    const xTo = gsap.quickTo(container, 'x', {
-      duration: 0.5,
-      ease: 'power3',
-      modifiers: {
-        x: gsap.utils.unitize(wrap)
+      // Smooth scroll on click
+      const handleScrollClick = () => {
+        const clientListSection = rootRef.current
+        if (clientListSection) {
+          clientListSection.scrollIntoView({ behavior: 'smooth' })
+        }
       }
-    })
 
-    const rotateTo = gsap.quickTo(cards, 'rotation', {
-      duration: 1,
-      ease: 'power3'
-    })
+      scrollIndicator.addEventListener('click', handleScrollClick)
 
-    let total = 0
-
-    const observer = gsap.Observer.create({
-      target: container,
-      type: 'touch,pointer',
-      onDrag: (self) => {
-        total += self.deltaX
-        xTo(total)
-
-        const screenWidth = window.innerWidth
-        const normalizedDelta = (self.deltaX / screenWidth) * 100
-        rotateTo(-normalizedDelta)
-      },
-      onRelease: () => {
-        rotateTo(0)
-      },
-      onStop: () => {
-        rotateTo(0)
+      return () => {
+        indicatorTl.kill()
+        scrollIndicator.removeEventListener('click', handleScrollClick)
       }
-    })
-
-    return () => {
-      observer.kill()
     }
   }, [])
 
@@ -164,41 +152,50 @@ function Portfolio() {
     }
   }, [])
 
-  // Drag icon SVG
-  const DragIcon = () => (
-    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M8 6h8M8 12h8M8 18h8" strokeLinecap="round"/>
-    </svg>
-  )
-
   return (
     <div className="portfolio-page">
-      {/* Carousel Section */}
-      <section className="mwg_effect028">
-        <div className="header">
-          <div className="top">
-            <p>
-              At Haccbox we believe that quality packaging has the power to protect and elevate your products, 
-              which is why we are dedicated to providing custom packaging solutions that meet export and laboratory standards.
-            </p>
-          </div>
-          <div className="drag">
-            <DragIcon />
-            <p>Drag the carousel to explore</p>
-          </div>
+      {/* Hero Section */}
+      <section ref={heroRef} className="about-hero">
+        <div className="hero-video-container">
+          <video
+            ref={videoRef}
+            className="hero-video"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+          >
+            <source 
+              src={heroVideo} 
+              type="video/mp4" 
+            />
+            {/* Fallback if video doesn't load */}
+            Your browser does not support the video tag.
+          </video>
+          <div className="hero-overlay"></div>
         </div>
-        <div className="container" ref={carouselContainerRef}>
-          {carouselImages.map((image, index) => (
-            <div key={`card-${index}`} className="card" ref={(el) => (carouselCardsRef.current[index] = el)}>
-              <img src={image} alt={`Portfolio ${index + 1}`} />
-            </div>
-          ))}
-          {/* Duplicate for infinite loop */}
-          {carouselImages.map((image, index) => (
-            <div key={`card-dup-${index}`} className="card" ref={(el) => (carouselCardsRef.current[index + 7] = el)}>
-              <img src={image} alt={`Portfolio ${index + 1}`} />
-            </div>
-          ))}
+        <div className="about-hero-content">
+          <h1 className="about-hero-title">Portfolio</h1>
+          <p className="about-hero-subtitle">
+            showcasing our trusted partners and successful packaging solutions
+          </p>
+        </div>
+        <div 
+          ref={scrollIndicatorRef}
+          className="scroll-indicator"
+          aria-label="Scroll down"
+        >
+          <svg 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
         </div>
       </section>
 

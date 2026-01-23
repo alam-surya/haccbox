@@ -217,19 +217,19 @@ function AboutUs() {
               </div>
             </div>
 
-            {/* Development */}
+            {/* Growing */}
             <div className="about-value-card">
               <div className="about-value-video-container">
                 <img
                   className="about-value-video"
                   src={developmentImage}
-                  alt="Development"
+                  alt="Growing"
                   loading="lazy"
                 />
                 <div className="about-value-overlay"></div>
               </div>
               <div className="about-value-content">
-                <h3 className="about-value-title">Development</h3>
+                <h3 className="about-value-title">Growing</h3>
                 <p className="about-value-text">
                   As the industry evolves, we continuously innovate in technology, materials, and business strategies 
                   to deliver better packaging solutions.

@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import './MenuOverlay.css'
 
 function MenuOverlay({ isOpen, onClose }) {
+  const navigate = useNavigate()
   const overlayRef = useRef(null)
   const menuRef = useRef(null)
   const menuItemsRef = useRef([])
@@ -87,8 +89,15 @@ function MenuOverlay({ isOpen, onClose }) {
 
   const handleItemClick = (item) => {
     onClose()
-    // Handle navigation here if needed
-    // You can add specific navigation logic for each item later
+    // Handle navigation
+    if (item === 'Location') {
+      navigate('/location')
+    } else if (item === 'QnA') {
+      navigate('/qna')
+    } else if (item === 'Social Media') {
+      navigate('/social-media')
+    }
+    // Handle other items here if needed
   }
 
   const handleClose = () => {

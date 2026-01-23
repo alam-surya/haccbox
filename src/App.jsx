@@ -7,6 +7,10 @@ import RunningText from './components/RunningText/RunningText'
 import LandingPage from './pages/LandingPage/LandingPage'
 import AboutUs from './pages/AboutUs/AboutUs'
 import Portfolio from './pages/Portfolio/Portfolio'
+import OurProducts from './pages/OurProducts/OurProducts'
+import Location from './pages/Location/Location'
+import QnA from './pages/QnA/QnA'
+import SocialMedia from './pages/SocialMedia/SocialMedia'
 import './App.css'
 
 function AppRoutes() {
@@ -36,6 +40,10 @@ function AppRoutes() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/products" element={<OurProducts />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/qna" element={<QnA />} />
+            <Route path="/social-media" element={<SocialMedia />} />
           </Routes>
         </motion.div>
       </AnimatePresence>
