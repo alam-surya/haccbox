@@ -1,7 +1,7 @@
 import CategoryCard from '../CategoryCard/CategoryCard'
-import sampleVideo from '../../assets/videos/sample-retro.mp4'
-import sample2Video from '../../assets/videos/sample2-retro.mp4'
-import sample3Video from '../../assets/videos/sample3-retro.mp4'
+import sampleVideo from '../../assets/videos/sample.mp4'
+import sample2Video from '../../assets/videos/sample2.mp4'
+import sample3Video from '../../assets/videos/sample3.mp4'
 import './CategorySection.css'
 
 function CategorySection() {

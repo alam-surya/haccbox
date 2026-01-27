@@ -30,7 +30,7 @@
 
 .contact-heading {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -51,7 +51,7 @@
   transition: opacity 0.3s ease;
   display: block;
   opacity: 1;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .contact-link:hover {
@@ -125,7 +125,7 @@
 .running-text {
   white-space: nowrap;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.02em;
   color: white;
   padding: 0;

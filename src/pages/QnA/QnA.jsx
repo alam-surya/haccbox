@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../assets/videos/retro-hero.mp4'
+import heroVideo from '../../assets/videos/hero-video.mp4'
 import './QnA.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -261,4 +261,6 @@ function QnA() {
 }
 
 export default QnA
+
+
 

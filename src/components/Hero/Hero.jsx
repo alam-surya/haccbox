@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../assets/videos/retro-hero.mp4'
-import LogoLoop from '../LogoLoop/LogoLoop'
-import hbLogo from '../../assets/images/hb-logo.webp'
+import videoPrimary from '../../assets/videos/video-primary.mp4'
 import './Hero.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -12,34 +10,37 @@ function Hero() {
   const heroRef = useRef(null)
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-
-  // Create logo array - repeat hb-logo multiple times for seamless loop
-  const logoLogos = Array.from({ length: 10 }, (_, index) => ({
-    src: hbLogo,
-    alt: `Haccbox Logo ${index + 1}`,
-    title: 'Haccbox'
-  }))
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  const textRef = useRef(null)
 
   useEffect(() => {
     const hero = heroRef.current
     const scrollIndicator = scrollIndicatorRef.current
+    const text = textRef.current
 
     if (!hero || !scrollIndicator) return
+
+    // Animate text on mount
+    if (text) {
+      gsap.fromTo(
+        text,
+        {
+          opacity: 0,
+          y: 30
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: 'power2.out',
+          delay: 0.5
+        }
+      )
+    }
 
     // Animate scroll indicator
     gsap.set(scrollIndicator, { opacity: 0, y: -10 })
     
-    const indicatorTl = gsap.timeline({ delay: 1 })
+    const indicatorTl = gsap.timeline({ delay: 2 })
     indicatorTl.to(scrollIndicator, {
       opacity: 1,
       y: 0,
@@ -56,7 +57,7 @@ function Hero() {
 
     // Smooth scroll on click
     const handleScrollClick = () => {
-      const nextSection = document.querySelector('.category-section') || document.querySelector('#contact')
+      const nextSection = document.querySelector('.hero-content-section') || document.querySelector('.category-section')
       if (nextSection) {
         nextSection.scrollIntoView({ behavior: 'smooth' })
       }
@@ -72,10 +73,11 @@ function Hero() {
 
   return (
     <section ref={heroRef} className="hero">
-      <div className="hero-video-container">
+      {/* Video Background */}
+      <div className="hero-video-background">
         <video
           ref={videoRef}
-          className="hero-video"
+          className="hero-video-bg"
           autoPlay
           loop
           muted
@@ -83,30 +85,23 @@ function Hero() {
           preload="auto"
         >
           <source 
-            src={heroVideo} 
+            src={videoPrimary} 
             type="video/mp4" 
           />
           {/* Fallback if video doesn't load */}
           Your browser does not support the video tag.
         </video>
-        <div className="hero-overlay"></div>
+        <div className="hero-video-overlay"></div>
       </div>
-      
-      {/* Logo Loop positioned below video */}
-      {/* <div className="hero-logo-loop">
-        <LogoLoop
-          logos={logoLogos}
-          speed={80}
-          direction="left"
-          logoHeight={isMobile ? 80 : 120}
-          gap={isMobile ? 60 : 80}
-          hoverSpeed={0}
-          fadeOut={true}
-          fadeOutColor="#000000"
-          scaleOnHover={false}
-          ariaLabel="Haccbox logos"
-        />
-      </div> */}
+
+      {/* Text Content - Bottom Left */}
+      <div ref={textRef} className="hero-text-content">
+        <h1 className="hero-main-text">
+          Building<br />
+          next-generation<br />
+          packaging solutions
+        </h1>
+      </div>
       
       <div 
         ref={scrollIndicatorRef}
@@ -129,4 +124,3 @@ function Hero() {
 }
 
 export default Hero
-

@@ -78,7 +78,7 @@
 
 .about-hero-title {
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -89,7 +89,7 @@
 
 .about-hero-subtitle {
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   letter-spacing: 0.1em;
   line-height: 1.6;
@@ -129,7 +129,7 @@
 
 .mwg_effect030 ul li span:nth-child(1) {
   width: 25%;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .mwg_effect030 ul li span:nth-child(2) {
