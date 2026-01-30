@@ -65,7 +65,7 @@ function OwnerProfile() {
           <div className="hero-content-right">
             <p className="hero-description">
               The people who guide our vision and daily operations. Get to know the faces behind
-              Haccbox—their experience, values, and commitment to delivering quality packaging
+              Haccbox: their experience, values, and commitment to delivering quality packaging
               solutions and lasting partnerships.
             </p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
@@ -113,13 +113,13 @@ function OwnerProfile() {
           <img src={logoImage} alt="Haccbox" className="owner-profile-card-logo" />
           <h2 className="owner-profile-title">Owner Profile</h2>
           <p className="owner-profile-intro">
-            We build a strong organisational culture on three pillars: <strong>Professionalism</strong>, <strong>Discipline</strong>, and <strong>Growing</strong>—ensuring sustainable, valuable business for our customers, especially in the furniture industry.
+            We build a strong organisational culture on three pillars: <strong>Professionalism</strong>, <strong>Discipline</strong>, and <strong>Growing</strong>, ensuring sustainable, valuable business for our customers, especially in the furniture industry.
           </p>
           <p className="owner-profile-text">
             We run every aspect of our business to the highest standards, with transparency and strong collaboration, so our products meet industry expectations. Through a culture of discipline, we keep to timelines, production precision, and compliance with export and laboratory testing standards.
           </p>
           <p className="owner-profile-text">
-            As the industry evolves, we keep innovating in technology, materials, and strategy to deliver better packaging solutions. Through these three pillars, Cahaya Abadi is committed to being an adaptive, progressive partner—delivering high-quality, sustainable packaging.
+            As the industry evolves, we keep innovating in technology, materials, and strategy to deliver better packaging solutions. Through these three pillars, Cahaya Abadi is committed to being an adaptive, progressive partner, delivering high-quality, sustainable packaging.
           </p>
           <p className="owner-profile-attribution">
             <strong>Moh Akhim Bayu Habsoro, S.E. MBA</strong><br />

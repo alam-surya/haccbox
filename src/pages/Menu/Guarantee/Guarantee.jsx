@@ -90,7 +90,7 @@ function Guarantee() {
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
             <h1 className="hero-heading">
-              Quality You Can Trust—Our Commitment, Guaranteed
+              Quality You Can Trust: Our Commitment, Guaranteed
             </h1>
           </div>
           <div className="hero-content-right">
@@ -140,7 +140,7 @@ function Guarantee() {
               <span className="guarantee-point-number">01</span>
               <h3 className="guarantee-point-title">No Minimal Order</h3>
               <p className="guarantee-point-text">
-                Order the quantity you need—no minimum. Whether you need a small batch for a trial or a large run for export, we accommodate your volume without forcing you to over-order.
+                Order the quantity you need: no minimum. Whether you need a small batch for a trial or a large run for export, we accommodate your volume without forcing you to over-order.
               </p>
             </article>
             <article className="guarantee-point">

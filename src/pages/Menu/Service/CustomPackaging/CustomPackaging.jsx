@@ -59,7 +59,7 @@ function CustomPackaging() {
           </div>
           <div className="hero-content-right">
             <p className="hero-description">
-              We customize packaging to your specifications—shape, size, structure, and finish. From L-shape and box styles to die-cut and empty box, we deliver solutions that fit your product and brand.
+              We customize packaging to your specifications: shape, size, structure, and finish. From L-shape and box styles to die-cut and empty box, we deliver solutions that fit your product and brand.
             </p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
@@ -92,7 +92,7 @@ function CustomPackaging() {
         <div className="custom-packaging-glass-card">
           <h2 className="custom-packaging-title">Your Product, Your Packaging.</h2>
           <p className="custom-packaging-intro">
-            We tailor packaging to your needs. Our capability covers a range of box and empty types—from <strong>L-shape</strong> and <strong>Box A1</strong> to <strong>slanted-top</strong>, <strong>die-cut</strong>, <strong>empty box</strong>, <strong>bottom</strong>, and <strong>top-bottom</strong>—so you get the right structure, size, and finish for your product and industry.
+            We tailor packaging to your needs. Our capability covers a range of box and empty types, from <strong>L-shape</strong> and <strong>Box A1</strong> to <strong>slanted-top</strong>, <strong>die-cut</strong>, <strong>empty box</strong>, <strong>bottom</strong>, and <strong>top-bottom</strong>, so you get the right structure, size, and finish for your product and industry.
           </p>
           <p className="custom-packaging-text">
             Custom dimensions, materials, and printing can be combined with these formats. We work to export and lab standards so your packaging is reliable for shipping and display.

@@ -95,7 +95,7 @@ function DeliveryService() {
             We offer delivery coverage at different scales: <strong>in-city</strong> for local runs, <strong>out-of-town</strong> for nearby regions, <strong>inter-island</strong> for domestic island-to-island, and <strong>international</strong> for export and overseas shipments. Each tier is set up to match your volume, timeline, and destination.
           </p>
           <p className="delivery-service-text">
-            Our fleet includes trucks and vehicles suited to carton and packaging loads—from small vans for in-city and out-of-town to larger trucks for inter-island and port-bound international cargo. We work with trusted partners where needed so your goods reach the end customer safely and on time.
+            Our fleet includes trucks and vehicles suited to carton and packaging loads, from small vans for in-city and out-of-town to larger trucks for inter-island and port-bound international cargo. We work with trusted partners where needed so your goods reach the end customer safely and on time.
           </p>
         </div>
       </section>

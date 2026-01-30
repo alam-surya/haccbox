@@ -85,7 +85,7 @@ function ProductAccessories() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Every Detail Counts—Accessories That Complete the Box</h1>
+            <h1 className="hero-heading">Every Detail Counts: Accessories That Complete the Box</h1>
           </div>
           <div className="hero-content-right">
             <p className="hero-description">

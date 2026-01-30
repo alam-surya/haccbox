@@ -100,7 +100,7 @@ function Product() {
           <div className="hero-overlay"></div>
         </div>
         <div className="about-hero-content">
-          <h1 className="about-hero-title">From Box to Solution—Explore What We Make</h1>
+          <h1 className="about-hero-title">From Box to Solution: Explore What We Make</h1>
           <p className="about-hero-subtitle">
             explore our comprehensive product range
           </p>

@@ -125,7 +125,7 @@ function Gallery() {
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
             <h1 className="hero-heading">
-              Where Every Box Tells a Story—See Our Work in Action
+              Where Every Box Tells a Story: See Our Work in Action
             </h1>
           </div>
           <div className="hero-content-right">

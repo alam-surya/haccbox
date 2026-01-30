@@ -55,7 +55,7 @@ function FinishingOption() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Glue, Staples, or Stitching—Finish It Your Way.</h1>
+            <h1 className="hero-heading">Glue, Staples, or Stitching: Finish It Your Way.</h1>
           </div>
           <div className="hero-content-right">
             <p className="hero-description">

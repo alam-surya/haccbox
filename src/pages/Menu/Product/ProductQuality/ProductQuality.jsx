@@ -55,11 +55,11 @@ function ProductQuality() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Built to Last—Quality You Can Measure</h1>
+            <h1 className="hero-heading">Built to Last: Quality You Can Measure</h1>
           </div>
           <div className="hero-content-right">
             <p className="hero-description">
-              Our commitment to quality in every material and specification. From carton grade to foam, edge protectors, and honeycomb board—we ensure consistent standards for your packaging.
+              Our commitment to quality in every material and specification. From carton grade to foam, edge protectors, and honeycomb board, we ensure consistent standards for your packaging.
             </p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>

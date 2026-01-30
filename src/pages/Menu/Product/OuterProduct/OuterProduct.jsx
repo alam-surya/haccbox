@@ -106,7 +106,7 @@ function OuterProduct() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Shapes That Protect—Outer Packaging Built for Export</h1>
+            <h1 className="hero-heading">Shapes That Protect: Outer Packaging Built for Export</h1>
           </div>
           <div className="hero-content-right">
             <p className="hero-description">

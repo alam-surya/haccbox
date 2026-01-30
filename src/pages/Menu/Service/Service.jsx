@@ -100,7 +100,7 @@ function Service() {
           <div className="hero-overlay"></div>
         </div>
         <div className="about-hero-content">
-          <h1 className="about-hero-title">From Concept to Delivery—We've Got You Covered</h1>
+          <h1 className="about-hero-title">From Concept to Delivery: We've Got You Covered</h1>
           <p className="about-hero-subtitle">
             comprehensive packaging services tailored to your needs
           </p>

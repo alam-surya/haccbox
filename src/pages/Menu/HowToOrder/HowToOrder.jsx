@@ -90,7 +90,7 @@ function HowToOrder() {
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
             <h1 className="hero-heading">
-              From Inquiry to Delivery—Simple Steps to Your Custom Packaging
+              From Inquiry to Delivery: Simple Steps to Your Custom Packaging
             </h1>
           </div>
           <div className="hero-content-right">
@@ -150,7 +150,7 @@ function HowToOrder() {
               <div className="how-to-order-step-content">
                 <h3 className="how-to-order-step-title">Tell us the model or material you need</h3>
                 <p className="how-to-order-step-text">
-                  Share the type of packaging you need—box model, dimensions, or material (e.g. carton, foam, honeycomb). The more detail you provide, the better we can match your requirements.
+                  Share the type of packaging you need: box model, dimensions, or material (e.g. carton, foam, honeycomb). The more detail you provide, the better we can match your requirements.
                 </p>
               </div>
             </li>
@@ -175,7 +175,7 @@ function HowToOrder() {
             <li className="how-to-order-step">
               <span className="how-to-order-step-number">05</span>
               <div className="how-to-order-step-content">
-                <h3 className="how-to-order-step-title">Stay in touch—email, phone, or in person</h3>
+                <h3 className="how-to-order-step-title">Stay in touch: email, phone, or in person</h3>
                 <p className="how-to-order-step-text">
                   We communicate via email or our company number so you can reach us easily. We are also happy to arrange face-to-face meetings when that works better for you.
                 </p>

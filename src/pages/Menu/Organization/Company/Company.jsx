@@ -113,7 +113,7 @@ function Company() {
           <img src={logoImage} alt="Haccbox" className="company-card-logo" />
           <h2 className="company-title">Our Journey</h2>
           <p className="company-intro">
-            <strong>Haccbox</strong> is the brand identity of <strong>CV. Cahaya Abadi Habsoro</strong>—a trusted name in quality packaging and distribution, serving producers and customers with custom solutions.
+            <strong>Haccbox</strong> is the brand identity of <strong>CV. Cahaya Abadi Habsoro</strong>, a trusted name in quality packaging and distribution, serving producers and customers with custom solutions.
           </p>
           <p className="company-text">
             <strong>Cahaya Abadi</strong> markets and distributes high-quality carton box packaging for the furniture industry. We are part of the <strong>Mitra Persada Carton Box</strong> group, in the industry since 2012.

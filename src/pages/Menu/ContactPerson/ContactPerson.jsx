@@ -136,7 +136,7 @@ function ContactPerson() {
         <div ref={contentRef} className="contact-hero-content">
           <div className="contact-hero-left">
             <h1 className="contact-hero-heading">
-              Talk to our team—fast, clear, and reliable support.
+              Talk to our team: fast, clear, and reliable support.
             </h1>
           </div>
           <div className="contact-hero-right">

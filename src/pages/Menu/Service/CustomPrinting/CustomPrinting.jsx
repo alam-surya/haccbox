@@ -59,7 +59,7 @@ function CustomPrinting() {
           </div>
           <div className="hero-content-right">
             <p className="hero-description">
-              We accept box printing to your design—with a focus on color quality. From logo and graphics to full-color print, we deliver sharp, consistent results on your packaging.
+              We accept box printing to your design, with a focus on color quality. From logo and graphics to full-color print, we deliver sharp, consistent results on your packaging.
             </p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
@@ -95,7 +95,7 @@ function CustomPrinting() {
             We take on box printing with an emphasis on <strong>color quality</strong>. Whether it’s spot color, full-color process, or brand-matched Pantone, we aim for accurate, vivid, and consistent print so your packaging looks professional and on-brand.
           </p>
           <p className="custom-printing-text">
-            Our capability covers printing on carton and corrugated box—logos, graphics, text, and barcodes. We work to your artwork and specifications so the final result meets retail and export expectations.
+            Our capability covers printing on carton and corrugated box: logos, graphics, text, and barcodes. We work to your artwork and specifications so the final result meets retail and export expectations.
           </p>
         </div>
       </section>

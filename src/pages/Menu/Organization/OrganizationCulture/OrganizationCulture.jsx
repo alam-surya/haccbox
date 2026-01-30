@@ -95,7 +95,7 @@ function OrganizationCulture() {
           <div className="hero-content-right">
             <p className="hero-description">
               The principles that guide our team every day. We believe in quality, transparency,
-              and long-term partnerships. Here is how we turn those values into action—in the way
+              and long-term partnerships. Here is how we turn those values into action: in the way
               we collaborate, serve customers, and grow together.
             </p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>

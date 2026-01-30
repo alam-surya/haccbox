@@ -17,7 +17,7 @@ const certifications = [
     label: 'CERTIFICATION',
     title: 'FSC',
     description:
-      'FSC certification ensures that the raw materials we use—such as wood or paper—come from forests managed sustainably and do not harm the environment, local communities, or local economies. FSC-certified products support forest conservation and the long-term sustainability of natural resources.',
+      'FSC certification ensures that the raw materials we use, such as wood or paper, come from forests managed sustainably and do not harm the environment, local communities, or local economies. FSC-certified products support forest conservation and the long-term sustainability of natural resources.',
     image: fscImage,
   },
 ]
