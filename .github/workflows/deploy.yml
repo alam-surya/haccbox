@@ -1,0 +1,45 @@
+# Deploy React/Vite build ke DomaiNesia via FTP
+# Setelah push ke main, GitHub akan build dan upload isi dist/ ke server.
+#
+# WAJIB: Tambahkan secret di repo GitHub:
+#   Settings → Secrets and variables → Actions → New repository secret
+#
+#   FTP_SERVER     = host FTP dari DomaiNesia (mis. ftp.haccbox.com atau hostname dari cPanel)
+#   FTP_USERNAME  = username FTP dari cPanel DomaiNesia
+#   FTP_PASSWORD  = password FTP
+#   FTP_REMOTE_DIR = folder di server, isi "public_html" untuk root domain haccbox.com
+
+name: Deploy to DomaiNesia
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to FTP (DomaiNesia)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
