@@ -1,16 +1,24 @@
 import { useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navigation from './components/Navigation/Navigation'
 import ContactSection from './components/ContactSection/ContactSection'
 import RunningText from './components/RunningText/RunningText'
 import LandingPage from './pages/LandingPage/LandingPage'
-import AboutUs from './pages/AboutUs/AboutUs'
-import Portfolio from './pages/Portfolio/Portfolio'
-import OurProducts from './pages/OurProducts/OurProducts'
-import Location from './pages/Location/Location'
-import QnA from './pages/QnA/QnA'
-import SocialMedia from './pages/SocialMedia/SocialMedia'
+import ContactPerson from './pages/Menu/ContactPerson/ContactPerson'
+import Company from './pages/Menu/Organization/Company/Company'
+import OwnerProfile from './pages/Menu/Organization/OwnerProfile/OwnerProfile'
+import OrganizationCulture from './pages/Menu/Organization/OrganizationCulture/OrganizationCulture'
+import OuterProduct from './pages/Menu/Product/OuterProduct/OuterProduct'
+import ProductAccessories from './pages/Menu/Product/ProductAccessories/ProductAccessories'
+import ProductQuality from './pages/Menu/Product/ProductQuality/ProductQuality'
+import CustomPackaging from './pages/Menu/Service/CustomPackaging/CustomPackaging'
+import CustomPrinting from './pages/Menu/Service/CustomPrinting/CustomPrinting'
+import FinishingOption from './pages/Menu/Service/FinishingOption/FinishingOption'
+import DeliveryService from './pages/Menu/Service/DeliveryService/DeliveryService'
+import Guarantee from './pages/Menu/Guarantee/Guarantee'
+import HowToOrder from './pages/Menu/HowToOrder/HowToOrder'
+import Gallery from './pages/Menu/Gallery/Gallery'
 import './App.css'
 
 function AppRoutes() {
@@ -38,12 +46,23 @@ function AppRoutes() {
         >
           <Routes location={location}>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/products" element={<OurProducts />} />
-            <Route path="/location" element={<Location />} />
-            <Route path="/qna" element={<QnA />} />
-            <Route path="/social-media" element={<SocialMedia />} />
+            <Route path="/contact-person" element={<ContactPerson />} />
+            <Route path="/organization" element={<Navigate to="/organization/company" replace />} />
+            <Route path="/organization/company" element={<Company />} />
+            <Route path="/organization/owner-profile" element={<OwnerProfile />} />
+            <Route path="/organization/organization-culture" element={<OrganizationCulture />} />
+            <Route path="/product" element={<Navigate to="/product/outer-product" replace />} />
+            <Route path="/product/outer-product" element={<OuterProduct />} />
+            <Route path="/product/product-accessories" element={<ProductAccessories />} />
+            <Route path="/product/product-quality" element={<ProductQuality />} />
+            <Route path="/service" element={<Navigate to="/service/custom-packaging" replace />} />
+            <Route path="/service/custom-packaging" element={<CustomPackaging />} />
+            <Route path="/service/custom-printing" element={<CustomPrinting />} />
+            <Route path="/service/finishing-option" element={<FinishingOption />} />
+            <Route path="/service/delivery-service" element={<DeliveryService />} />
+            <Route path="/guarantee" element={<Guarantee />} />
+            <Route path="/how-to-order" element={<HowToOrder />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </motion.div>
       </AnimatePresence>

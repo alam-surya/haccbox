@@ -7,22 +7,22 @@ import './CategorySection.css'
 function CategorySection() {
   const categories = [
     {
-      name: 'About Us',
+      name: 'Guarantee',
       image: sampleVideo,
       video: sampleVideo,
-      link: '/about-us'
+      link: '/guarantee'
     },
     {
-      name: 'Portfolio',
-      image: sample3Video,
-      video: sample3Video,
-      link: '/portfolio'
-    },
-    {
-      name: 'Our Products',
+      name: 'How To Order',
       image: sample2Video,
       video: sample2Video,
-      link: '/products'
+      link: '/how-to-order'
+    },
+    {
+      name: 'Gallery',
+      image: sample3Video,
+      video: sample3Video,
+      link: '/gallery'
     }
   ]
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import MenuOverlay from '../MenuOverlay/MenuOverlay'
+import NavDropdown from '../NavDropdown/NavDropdown'
 import logo from '../../assets/images/logo.webp'
 import './Navigation.css'
 
@@ -45,7 +45,7 @@ function Navigation() {
         </a>
       </nav>
       
-      <MenuOverlay isOpen={isMenuOpen} onClose={closeMenu} />
+      <NavDropdown isOpen={isMenuOpen} onClose={closeMenu} />
     </>
   )
 }

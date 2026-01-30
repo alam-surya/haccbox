@@ -1,0 +1,74 @@
+.product-reject-returned-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.product-reject-returned-page .scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: white;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.product-reject-returned-page .scroll-indicator:hover {
+  opacity: 0.7;
+}
+
+.product-reject-returned-page button.hero-learn-more {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.product-reject-returned-section {
+  width: 100%;
+  padding: 8rem 4rem;
+  background: #000000;
+}
+
+.product-reject-returned-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-reject-returned-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.product-reject-returned-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .product-reject-returned-section {
+    padding: 4rem 2rem;
+  }
+  .product-reject-returned-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-reject-returned-section {
+    padding: 3rem 1.5rem;
+  }
+  .product-reject-returned-title {
+    font-size: 1.75rem;
+  }
+}

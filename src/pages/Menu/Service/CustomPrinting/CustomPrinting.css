@@ -1,0 +1,182 @@
+.custom-printing-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.custom-printing-page .scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.custom-printing-page .scroll-indicator:hover {
+  opacity: 0.7;
+}
+
+.custom-printing-page .scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+}
+
+.custom-printing-page button.hero-learn-more {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.custom-printing-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  padding-top: 5.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.custom-printing-section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.custom-printing-section-bg-image {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.custom-printing-glass-card {
+  position: relative;
+  z-index: 1;
+  width: 38%;
+  max-width: 520px;
+  min-height: calc(100vh - 5.5rem);
+  padding: 4rem 3rem 3rem;
+  background: rgba(26, 26, 26, 0.52);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.custom-printing-glass-card .custom-printing-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.custom-printing-intro {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #ffffff;
+  opacity: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+.custom-printing-text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #ffffff;
+  opacity: 0.95;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .custom-printing-section {
+    min-height: 100vh;
+    height: 100vh;
+  }
+
+  .custom-printing-glass-card {
+    width: 48%;
+    max-width: 480px;
+    padding: 3.5rem 2.5rem 2.5rem;
+    min-height: calc(100vh - 5.5rem);
+  }
+
+  .custom-printing-glass-card .custom-printing-title {
+    font-size: 2rem;
+  }
+
+  .custom-printing-intro,
+  .custom-printing-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-printing-page .scroll-indicator {
+    bottom: 1.5rem;
+  }
+
+  .custom-printing-section {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .custom-printing-glass-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 4rem 2rem 2.5rem;
+  }
+
+  .custom-printing-section-bg-image {
+    min-height: 100%;
+  }
+
+  .custom-printing-glass-card .custom-printing-title {
+    font-size: 1.75rem;
+  }
+
+  .custom-printing-intro,
+  .custom-printing-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-printing-page .scroll-indicator {
+    bottom: 1rem;
+  }
+
+  .custom-printing-glass-card {
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .custom-printing-glass-card .custom-printing-title {
+    font-size: 1.5rem;
+  }
+
+  .custom-printing-intro,
+  .custom-printing-text {
+    font-size: 0.9rem;
+  }
+}

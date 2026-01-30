@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Link } from 'react-router-dom'
-import heroVideo from '../../assets/videos/hero-video.mp4'
+import heroVideo from '../../assets/videos/hero-update.mp4'
 import './HeroContent.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -17,26 +17,7 @@ function HeroContent() {
     const content = contentRef.current
 
     if (!section || !content) return
-
-    // Animate content on scroll
-    // gsap.fromTo(
-    //   content,
-    //   {
-    //     opacity: 0,
-    //     y: 50
-    //   },
-    //   {
-    //     opacity: 1,
-    //     y: 0,
-    //     duration: 1,
-    //     ease: 'power2.out',
-    //     scrollTrigger: {
-    //       trigger: section,
-    //       start: 'top 80%',
-    //       toggleActions: 'play none none reverse'
-    //     }
-    //   }
-    // )
+ 
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
@@ -58,7 +39,7 @@ function HeroContent() {
             We specialize in carton box packaging for the furniture industry, meeting export 
             and laboratory standards with safe, durable, and environmentally friendly materials.
           </p>
-          <Link to="/products" className="hero-learn-more">
+          <Link to="#work" className="hero-learn-more">
             <span className="material-symbols-outlined">chevron_right</span>
             Learn more
           </Link>

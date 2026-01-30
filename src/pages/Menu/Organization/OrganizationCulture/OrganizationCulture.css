@@ -1,0 +1,341 @@
+.organization-culture-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.organization-culture-page .scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.organization-culture-page .scroll-indicator:hover {
+  opacity: 0.7;
+}
+
+.organization-culture-page .scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+}
+
+.organization-culture-page button.hero-learn-more {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.organization-culture-section {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  padding-top: 9rem;
+  padding-bottom: 14rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.organization-culture-section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #000000;
+}
+
+.organization-culture-header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.organization-culture-card-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1.25rem;
+  filter: brightness(0) invert(1);
+}
+
+.organization-culture-header .organization-culture-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.organization-culture-header .organization-culture-intro {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.organization-culture-carousel-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.organization-culture-carousel-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.organization-culture-carousel-video-col {
+  flex: 0 0 280px;
+  width: 280px;
+  height: 280px;
+  min-width: 0;
+  position: relative;
+}
+
+.organization-culture-carousel-video {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.organization-culture-carousel-content-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.75rem 2rem 1.5rem;
+  color: #ffffff;
+}
+
+.organization-culture-carousel-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.organization-culture-carousel-description {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  flex: 1;
+}
+
+.organization-culture-carousel-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.organization-culture-carousel-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.organization-culture-carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: #ffffff;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.organization-culture-carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.organization-culture-carousel-btn svg {
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .organization-culture-section {
+    min-height: auto;
+  }
+
+  .organization-culture-header {
+    margin-bottom: 3rem;
+    padding: 0 1.5rem;
+  }
+
+  .organization-culture-header .organization-culture-title {
+    font-size: 2rem;
+  }
+
+  .organization-culture-header .organization-culture-intro {
+    font-size: 0.95rem;
+  }
+
+  .organization-culture-carousel-card {
+    min-height: 240px;
+  }
+
+  .organization-culture-carousel-video-col {
+    flex: 0 0 240px;
+    width: 240px;
+    height: 240px;
+  }
+
+  .organization-culture-carousel-content-col {
+    min-height: 240px;
+    padding: 1.5rem 2rem 1.25rem;
+  }
+
+  .organization-culture-carousel-title {
+    font-size: 1.625rem;
+  }
+
+  .organization-culture-carousel-description {
+    font-size: 1.0625rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .organization-culture-page .scroll-indicator {
+    bottom: 1.5rem;
+  }
+
+  .organization-culture-section {
+    padding-bottom: 5rem;
+  }
+
+  .organization-culture-carousel-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .organization-culture-carousel-card {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .organization-culture-carousel-video-col {
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .organization-culture-carousel-video {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .organization-culture-carousel-content-col {
+    min-height: 0;
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .organization-culture-carousel-title {
+    font-size: 1.5rem;
+  }
+
+  .organization-culture-carousel-description {
+    font-size: 1rem;
+  }
+
+  .organization-culture-header .organization-culture-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .organization-culture-page .scroll-indicator {
+    bottom: 1rem;
+  }
+
+  .organization-culture-section {
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+  }
+
+  .organization-culture-header {
+    padding: 0 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .organization-culture-header .organization-culture-title {
+    font-size: 1.5rem;
+  }
+
+  .organization-culture-header .organization-culture-intro {
+    font-size: 0.9rem;
+  }
+
+  .organization-culture-carousel-wrapper {
+    padding: 0 1.25rem;
+  }
+
+  .organization-culture-carousel-content-col {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+
+  .organization-culture-carousel-title {
+    font-size: 1.35rem;
+  }
+
+  .organization-culture-carousel-description {
+    font-size: 0.95rem;
+  }
+
+  .organization-culture-carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .organization-culture-carousel-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
