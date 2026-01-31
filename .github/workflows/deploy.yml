@@ -7,7 +7,7 @@
 #   FTP_SERVER     = host FTP dari DomaiNesia (mis. ftp.haccbox.com atau hostname dari cPanel)
 #   FTP_USERNAME  = username FTP dari cPanel DomaiNesia
 #   FTP_PASSWORD  = password FTP
-#   FTP_REMOTE_DIR = folder di server, isi "public_html" untuk root domain haccbox.com
+#   FTP_REMOTE_DIR = folder di server, isi "public_html" (tanpa slash di belakang; workflow menambah /)
 
 name: Deploy to DomaiNesia
 
@@ -42,4 +42,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}/
