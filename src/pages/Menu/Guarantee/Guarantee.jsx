@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../assets/videos/hero-update.mp4'
+import { useLanguage } from '../../../context/LanguageContext'
 import '../../../components/HeroContent/HeroContent.css'
 import './Guarantee.css'
 
@@ -13,6 +14,8 @@ function Guarantee() {
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.guarantee || {}
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -89,17 +92,13 @@ function Guarantee() {
       <section ref={sectionRef} className="hero-content-section">
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">
-              Quality You Can Trust: Our Commitment, Guaranteed
-            </h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              We stand behind every box we make. From materials to delivery, our guarantee covers quality, consistency, and your peace of mind.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
@@ -114,7 +113,7 @@ function Guarantee() {
             preload="auto"
           >
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -131,31 +130,23 @@ function Guarantee() {
 
       <section ref={contentSectionRef} className="guarantee-section">
         <div className="guarantee-container">
-          <h2 className="guarantee-title">Our Guarantee</h2>
-          <p className="guarantee-intro">
-            We back every order with clear commitments. Below are the three pillars of our guarantee: flexible ordering, fair returns, and consistent quality.
-          </p>
+          <h2 className="guarantee-title">{p.title}</h2>
+          <p className="guarantee-intro">{p.intro}</p>
           <div className="guarantee-points">
             <article className="guarantee-point">
               <span className="guarantee-point-number">01</span>
-              <h3 className="guarantee-point-title">No Minimal Order</h3>
-              <p className="guarantee-point-text">
-                Order the quantity you need: no minimum. Whether you need a small batch for a trial or a large run for export, we accommodate your volume without forcing you to over-order.
-              </p>
+              <h3 className="guarantee-point-title">{p.noMinimalOrder}</h3>
+              <p className="guarantee-point-text">{p.noMinimalOrderText}</p>
             </article>
             <article className="guarantee-point">
               <span className="guarantee-point-number">02</span>
-              <h3 className="guarantee-point-title">Product Reject Returned</h3>
-              <p className="guarantee-point-text">
-                If products do not meet agreed specifications or are defective, we take them back. We handle reject returns fairly and work with you to correct the issue or replace the order.
-              </p>
+              <h3 className="guarantee-point-title">{p.productRejectReturned}</h3>
+              <p className="guarantee-point-text">{p.productRejectReturnedText}</p>
             </article>
             <article className="guarantee-point">
               <span className="guarantee-point-number">03</span>
-              <h3 className="guarantee-point-title">Product Quality</h3>
-              <p className="guarantee-point-text">
-                We commit to materials and workmanship that meet export and laboratory standards. Carton, foam, edge protector, and honeycomb specifications are controlled so you receive consistent, reliable packaging.
-              </p>
+              <h3 className="guarantee-point-title">{p.productQuality}</h3>
+              <p className="guarantee-point-text">{p.productQualityText}</p>
             </article>
           </div>
         </div>

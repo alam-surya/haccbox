@@ -1,12 +1,14 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import hbLogo from '../../assets/images/hb-logo.webp'
+import { useLanguage } from '../../context/LanguageContext'
 import './ContactSection.css'
 
 function ContactSection() {
   const sectionRef = useRef(null)
   const contactInfoRef = useRef(null)
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 })
+  const { t } = useLanguage()
 
   const contactInfo = {
     email: 'cahabsoro@gmail.com',
@@ -50,7 +52,7 @@ function ContactSection() {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.h2 className="contact-heading" variants={itemVariants}>
-            NEW BUSINESS INQUIRIES
+            {t.contact.heading}
           </motion.h2>
           
           <div className="contact-details">
@@ -79,7 +81,7 @@ function ContactSection() {
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
         >
-          <img src={hbLogo} alt="Haccbox Logo" className="hb-logo" />
+          <img src={hbLogo} alt={t.contact.logoAlt} className="hb-logo" />
         </motion.div>
       </div>
     </section>

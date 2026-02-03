@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../assets/videos/hero-update.mp4'
+import { useLanguage } from '../../../context/LanguageContext'
 import '../../../components/HeroContent/HeroContent.css'
 import './Gallery.css'
 
@@ -14,6 +15,8 @@ function Gallery() {
   const scrollIndicatorRef = useRef(null)
   const gallerySectionRef = useRef(null)
   const galleryItemsRef = useRef([])
+  const { t } = useLanguage()
+  const p = t.pages?.gallery || {}
 
   const scrollToContent = () => {
     gallerySectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -124,17 +127,13 @@ function Gallery() {
       <section ref={sectionRef} className="hero-content-section">
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">
-              Where Every Box Tells a Story: See Our Work in Action
-            </h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              Visual showcase of our packaging solutions. From boxes and finishes to real projects and deliveries.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
@@ -149,7 +148,7 @@ function Gallery() {
             preload="auto"
           >
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -175,7 +174,7 @@ function Gallery() {
               >
                 <img
                   src={image.src}
-                  alt={image.alt}
+                  alt={`${p.imageAlt} ${index + 1}`}
                   className="gallery-image"
                   loading="lazy"
                 />

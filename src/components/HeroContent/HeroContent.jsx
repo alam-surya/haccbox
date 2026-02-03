@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Link } from 'react-router-dom'
 import heroVideo from '../../assets/videos/hero-update.mp4'
+import { useLanguage } from '../../context/LanguageContext'
 import './HeroContent.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -11,6 +12,7 @@ function HeroContent() {
   const sectionRef = useRef(null)
   const videoRef = useRef(null)
   const contentRef = useRef(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const section = sectionRef.current
@@ -30,18 +32,16 @@ function HeroContent() {
       <div ref={contentRef} className="hero-content">
         <div className="hero-content-left">
           <h1 className="hero-heading">
-            Haccbox: Custom Packaging Solutions for Export & Laboratory Standards
+            {t.hero.heading}
           </h1>
         </div>
         <div className="hero-content-right">
           <p className="hero-description">
-            Connecting producers and customers with high-quality custom packaging solutions. 
-            We specialize in carton box packaging for the furniture industry, meeting export 
-            and laboratory standards with safe, durable, and environmentally friendly materials.
+            {t.hero.description}
           </p>
           <Link to="#work" className="hero-learn-more">
             <span className="material-symbols-outlined">chevron_right</span>
-            Learn more
+            {t.hero.learnMore}
           </Link>
         </div>
       </div>
@@ -61,8 +61,7 @@ function HeroContent() {
             src={heroVideo} 
             type="video/mp4" 
           />
-          {/* Fallback if video doesn't load */}
-          Your browser does not support the video tag.
+          {t.hero.videoUnsupported}
         </video>
         <div className="hero-overlay"></div>
       </div>

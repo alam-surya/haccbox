@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useLanguage } from '../../context/LanguageContext'
 import './NavDropdown.css'
 
 const ICONS = {
@@ -58,57 +59,20 @@ const ICONS = {
   )
 }
 
-const MENU_GROUPS = [
-  [
-    {
-      label: 'Organization',
-      icon: 'grid',
-      children: [
-        { label: 'Company', path: '/organization/company' },
-        { label: 'Owner Profile', path: '/organization/owner-profile' },
-        { label: 'Organization Culture', path: '/organization/organization-culture' }
-      ]
-    },
-    {
-      label: 'Product',
-      icon: 'box',
-      children: [
-        { label: 'Outer Product', path: '/product/outer-product' },
-        { label: 'Product Accessories', path: '/product/product-accessories' },
-        { label: 'Product Quality', path: '/product/product-quality' }
-      ]
-    },
-    {
-      label: 'Service',
-      icon: 'tool',
-      children: [
-        { label: 'Custom Packaging', path: '/service/custom-packaging' },
-        { label: 'Custom Printing', path: '/service/custom-printing' },
-        { label: 'Finishing Option', path: '/service/finishing-option' },
-        { label: 'Delivery Service', path: '/service/delivery-service' }
-      ]
-    },
-    { label: 'Guarantee', path: '/guarantee', icon: 'shield' },
-    { label: 'How To Order', path: '/how-to-order', icon: 'list' },
-    { label: 'Gallery', path: '/gallery', icon: 'image' }
-  ],
-  [
-    { label: 'Contact Person', path: '/contact-person', icon: 'user' }
-  ]
-]
-
 function NavDropdown({ isOpen, onClose }) {
   const navigate = useNavigate()
   const [openSubmenu, setOpenSubmenu] = useState(null)
+  const { t } = useLanguage()
+  const menuGroups = t.menu.groups
 
   const handleItemClick = (path) => {
     navigate(path)
     onClose()
   }
 
-  const handleParentToggle = (e, label) => {
+  const handleParentToggle = (e, iconKey) => {
     e.stopPropagation()
-    setOpenSubmenu((prev) => (prev === label ? null : label))
+    setOpenSubmenu((prev) => (prev === iconKey ? null : iconKey))
   }
 
   if (!isOpen) return null
@@ -122,17 +86,17 @@ function NavDropdown({ isOpen, onClose }) {
       />
       <div className="nav-dropdown" role="dialog" aria-label="Navigation menu">
         <nav className="nav-dropdown-list">
-          {MENU_GROUPS.map((group, groupIndex) => (
+          {menuGroups.map((group, groupIndex) => (
             <div key={groupIndex} className="nav-dropdown-group">
               {groupIndex > 0 && <div className="nav-dropdown-divider" />}
               {group.map((item) =>
                 item.children ? (
-                  <div key={item.label} className="nav-dropdown-item-parent-wrapper">
+                  <div key={item.icon} className="nav-dropdown-item-parent-wrapper">
                     <button
                       type="button"
                       className="nav-dropdown-item-parent"
-                      onClick={(e) => handleParentToggle(e, item.label)}
-                      aria-expanded={openSubmenu === item.label}
+                      onClick={(e) => handleParentToggle(e, item.icon)}
+                      aria-expanded={openSubmenu === item.icon}
                       aria-haspopup="true"
                       aria-label={item.label}
                       title={item.label}
@@ -141,7 +105,7 @@ function NavDropdown({ isOpen, onClose }) {
                       <span className="nav-dropdown-label">{item.label}</span>
                       <span className="nav-dropdown-chevron">{ICONS.chevronRight}</span>
                     </button>
-                    {openSubmenu === item.label && (
+                    {openSubmenu === item.icon && (
                       <div className="nav-dropdown-submenu">
                         {item.children.map((sub) => (
                           <button

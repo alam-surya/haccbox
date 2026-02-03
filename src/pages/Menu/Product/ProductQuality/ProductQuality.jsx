@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import qualityImage from '../../../../assets/gallery/galeri-02.webp'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './ProductQuality.css'
 
@@ -13,6 +14,8 @@ function ProductQuality() {
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.productQuality || {}
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -47,7 +50,7 @@ function ProductQuality() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -55,22 +58,20 @@ function ProductQuality() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Built to Last: Quality You Can Measure</h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              Our commitment to quality in every material and specification. From carton grade to foam, edge protectors, and honeycomb board, we ensure consistent standards for your packaging.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
         <div className="hero-video-container">
           <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -90,26 +91,24 @@ function ProductQuality() {
           />
         </div>
         <div className="product-quality-glass-card">
-          <h2 className="product-quality-title">Product Quality</h2>
-          <p className="product-quality-intro">
-            We maintain strict quality standards across materials and dimensions. Below are the key specifications we apply to deliver reliable, export-ready packaging.
-          </p>
+          <h2 className="product-quality-title">{p.title}</h2>
+          <p className="product-quality-intro">{p.intro}</p>
           <div className="product-quality-list">
             <div className="product-quality-item">
-              <h3 className="product-quality-item-title">Carton Quality</h3>
-              <p className="product-quality-item-text">Carton grade and grammage are selected to meet strength and print requirements. We use quality board suitable for furniture and export shipping.</p>
+              <h3 className="product-quality-item-title">{p.cartonQuality}</h3>
+              <p className="product-quality-item-text">{p.cartonQualityText}</p>
             </div>
             <div className="product-quality-item">
-              <h3 className="product-quality-item-title">Foam Quality</h3>
-              <p className="product-quality-item-text">Foam density and type are specified for cushioning and protection. We supply foam that meets durability and safety standards for your products.</p>
+              <h3 className="product-quality-item-title">{p.foamQuality}</h3>
+              <p className="product-quality-item-text">{p.foamQualityText}</p>
             </div>
             <div className="product-quality-item">
-              <h3 className="product-quality-item-title">Edge Protector Thickness</h3>
-              <p className="product-quality-item-text">Edge protector thickness is chosen to protect corners and edges during handling and transport. Consistent thickness ensures reliable protection.</p>
+              <h3 className="product-quality-item-title">{p.edgeProtector}</h3>
+              <p className="product-quality-item-text">{p.edgeProtectorText}</p>
             </div>
             <div className="product-quality-item">
-              <h3 className="product-quality-item-title">Honeycomb Board Thickness</h3>
-              <p className="product-quality-item-text">Honeycomb board thickness is specified for rigidity and void fill. We use honeycomb that meets the required thickness for structural support and protection.</p>
+              <h3 className="product-quality-item-title">{p.honeycombThickness}</h3>
+              <p className="product-quality-item-text">{p.honeycombThicknessText}</p>
             </div>
           </div>
         </div>

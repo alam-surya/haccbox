@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import deliveryServiceImage from '../../../../assets/gallery/galeri-03.webp'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './DeliveryService.css'
 
@@ -13,6 +14,8 @@ function DeliveryService() {
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.deliveryService || {}
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -47,7 +50,7 @@ function DeliveryService() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -55,22 +58,20 @@ function DeliveryService() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">From City to Country. From Island to World.</h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              We deliver within the city, out of town, inter-island, and internationally. Our fleet supports your packaging from warehouse to destination.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
         <div className="hero-video-container">
           <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -90,13 +91,9 @@ function DeliveryService() {
           />
         </div>
         <div className="delivery-service-glass-card">
-          <h2 className="delivery-service-title">From City to Country. From Island to World.</h2>
-          <p className="delivery-service-intro">
-            We offer delivery coverage at different scales: <strong>in-city</strong> for local runs, <strong>out-of-town</strong> for nearby regions, <strong>inter-island</strong> for domestic island-to-island, and <strong>international</strong> for export and overseas shipments. Each tier is set up to match your volume, timeline, and destination.
-          </p>
-          <p className="delivery-service-text">
-            Our fleet includes trucks and vehicles suited to carton and packaging loads, from small vans for in-city and out-of-town to larger trucks for inter-island and port-bound international cargo. We work with trusted partners where needed so your goods reach the end customer safely and on time.
-          </p>
+          <h2 className="delivery-service-title">{p.title}</h2>
+          <p className="delivery-service-intro">{p.intro}</p>
+          <p className="delivery-service-text">{p.text}</p>
         </div>
       </section>
     </div>

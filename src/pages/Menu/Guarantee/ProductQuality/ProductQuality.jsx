@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './ProductQuality.css'
 
@@ -12,6 +13,8 @@ function GuaranteeProductQuality() {
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.guaranteeProductQuality || {}
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -46,7 +49,7 @@ function GuaranteeProductQuality() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -54,22 +57,20 @@ function GuaranteeProductQuality() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Product Quality</h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              Our guarantees and policies designed to give you confidence in every order and delivery.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
         <div className="hero-video-container">
           <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -81,8 +82,8 @@ function GuaranteeProductQuality() {
       </section>
       <section ref={contentSectionRef} className="guarantee-product-quality-section">
         <div className="guarantee-product-quality-container">
-          <h2 className="guarantee-product-quality-title">Product Quality</h2>
-          <p className="guarantee-product-quality-text">Content for Product Quality will be added here.</p>
+          <h2 className="guarantee-product-quality-title">{p.title}</h2>
+          <p className="guarantee-product-quality-text">{p.text}</p>
         </div>
       </section>
     </div>

@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import companyImage from '../../../../assets/images/company.webp'
 import logoImage from '../../../../assets/images/logo.webp'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './Company.css'
 
@@ -15,6 +16,8 @@ function Company() {
   const contentRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const c = t.pages?.company || {}
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -50,7 +53,7 @@ function Company() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -59,18 +62,16 @@ function Company() {
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
             <h1 className="hero-heading">
-              Our Company: Growth, Milestones, and Commitment to Quality
+              {c.heading}
             </h1>
           </div>
           <div className="hero-content-right">
             <p className="hero-description">
-              From our founding to today, we have built a company focused on reliable custom packaging
-              and export-ready solutions. Discover our journey, key milestones, and the values that
-              drive us to deliver quality and trust to every partner.
+              {c.description}
             </p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {c.seeMore}
             </button>
           </div>
         </div>
@@ -85,7 +86,7 @@ function Company() {
             preload="auto"
           >
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {c.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -111,19 +112,11 @@ function Company() {
         </div>
         <div className="company-glass-card">
           <img src={logoImage} alt="Haccbox" className="company-card-logo" />
-          <h2 className="company-title">Our Journey</h2>
-          <p className="company-intro">
-            <strong>Haccbox</strong> is the brand identity of <strong>CV. Cahaya Abadi Habsoro</strong>, a trusted name in quality packaging and distribution, serving producers and customers with custom solutions.
-          </p>
-          <p className="company-text">
-            <strong>Cahaya Abadi</strong> markets and distributes high-quality carton box packaging for the furniture industry. We are part of the <strong>Mitra Persada Carton Box</strong> group, in the industry since 2012.
-          </p>
-          <p className="company-text">
-            In <strong>2021</strong>, Cahaya Abadi was established to bridge producers and customers with custom packaging that meets export and lab standards, plus complementary solutions like styrofoam for optimal shipping protection.
-          </p>
-          <p className="company-text">
-            We keep innovating with safe, durable, and eco-friendly packaging. In <strong>2025</strong>, we launched <strong>Haccbox</strong> as our new brand to deliver customizable packaging design and more precise, professional service.
-          </p>
+          <h2 className="company-title">{c.journey}</h2>
+          <p className="company-intro">{c.intro}</p>
+          <p className="company-text">{c.text1}</p>
+          <p className="company-text">{c.text2}</p>
+          <p className="company-text">{c.text3}</p>
         </div>
       </section>
     </div>

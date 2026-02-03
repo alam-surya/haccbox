@@ -2,12 +2,15 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../assets/videos/hero-update.mp4'
+import { useLanguage } from '../../../context/LanguageContext'
 import './Service.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function Service() {
   const heroRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.service || {}
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
@@ -95,14 +98,14 @@ function Service() {
               src={heroVideo} 
               type="video/mp4" 
             />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay"></div>
         </div>
         <div className="about-hero-content">
-          <h1 className="about-hero-title">From Concept to Delivery: We've Got You Covered</h1>
+          <h1 className="about-hero-title">{p.heroTitle}</h1>
           <p className="about-hero-subtitle">
-            comprehensive packaging services tailored to your needs
+            {p.heroSubtitle}
           </p>
         </div>
         <div 
@@ -125,9 +128,9 @@ function Service() {
 
       <section ref={contentSectionRef} className="service-section">
         <div className="service-container">
-          <h2 className="service-title">Our Services</h2>
+          <h2 className="service-title">{p.title}</h2>
           <p className="service-text">
-            Content about services offered will be added here.
+            {p.text}
           </p>
         </div>
       </section>

@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import NavDropdown from '../NavDropdown/NavDropdown'
 import logo from '../../assets/images/logo.webp'
+import { useLanguage } from '../../context/LanguageContext'
 import './Navigation.css'
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { language, setLanguage, t } = useLanguage()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -29,20 +31,24 @@ function Navigation() {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          MENU
+          {t.nav.menu}
         </button>
         
         <a href="/" className="logo-link" onClick={closeMenu}>
           <img src={logo} alt="Haccbox" className="logo-image" />
         </a>
         
-        <a 
-          href="#contact" 
-          className="contact-button"
-          onClick={closeMenu}
+        <button
+          type="button"
+          className="contact-button language-button"
+          onClick={() => {
+            setLanguage((lang) => (lang === 'id' ? 'en' : 'id'))
+            closeMenu()
+          }}
+          aria-label={language === 'id' ? t.nav.ariaSwitchEn : t.nav.ariaSwitchId}
         >
-          ID/EN
-        </a>
+          {language === 'id' ? t.nav.switchToEn : t.nav.switchToId}
+        </button>
       </nav>
       
       <NavDropdown isOpen={isMenuOpen} onClose={closeMenu} />

@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import finishingOptionImage from '../../../../assets/gallery/galeri-03.webp'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './FinishingOption.css'
 
@@ -13,6 +14,8 @@ function FinishingOption() {
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.finishingOption || {}
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -47,7 +50,7 @@ function FinishingOption() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -55,22 +58,20 @@ function FinishingOption() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Glue, Staples, or Stitching: Finish It Your Way.</h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              We offer two finishing options for your box: glue or staples and stitching. Choose the one that fits your product and handling needs.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
         <div className="hero-video-container">
           <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -90,18 +91,16 @@ function FinishingOption() {
           />
         </div>
         <div className="finishing-option-glass-card">
-          <h2 className="finishing-option-title">Glue, Staples, or Stitching.</h2>
-          <p className="finishing-option-intro">
-            We offer two main finishing options for your box so you can match strength, appearance, and handling to your product and logistics.
-          </p>
+          <h2 className="finishing-option-title">{p.title}</h2>
+          <p className="finishing-option-intro">{p.intro}</p>
           <div className="finishing-option-list">
             <div className="finishing-option-item">
-              <h3 className="finishing-option-item-title">Glue</h3>
-              <p className="finishing-option-item-text">Glue finishing bonds the box panels for a clean, seamless look. Suited for retail and display packaging where a smooth finish is preferred.</p>
+              <h3 className="finishing-option-item-title">{p.glue}</h3>
+              <p className="finishing-option-item-text">{p.glueText}</p>
             </div>
             <div className="finishing-option-item">
-              <h3 className="finishing-option-item-title">Staples or Stitching</h3>
-              <p className="finishing-option-item-text">Staples or stitching gives a strong, durable closure. Ideal for heavier loads, shipping, and reuse where extra hold is needed.</p>
+              <h3 className="finishing-option-item-title">{p.staples}</h3>
+              <p className="finishing-option-item-text">{p.staplesText}</p>
             </div>
           </div>
         </div>

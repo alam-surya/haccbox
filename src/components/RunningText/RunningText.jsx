@@ -2,11 +2,13 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import hbLogo from '../../assets/images/hb-logo.webp'
+import { useLanguage } from '../../context/LanguageContext'
 import './RunningText.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function RunningText() {
+  const { t } = useLanguage()
   const pinHeightRef = useRef(null)
   const containerRef = useRef(null)
   const sentence1Ref = useRef(null)
@@ -61,23 +63,23 @@ function RunningText() {
           <div className="sentences">
             <div className="sentence sentence1">
               <p ref={sentence1Ref}>
-                <span> Professional </span>
+                <span> {t.runningText.professional} </span>
                 <img className="glyph" src={hbLogo} alt="" />
-                <span> Disciplined </span>
+                <span> {t.runningText.disciplined} </span>
                 <img className="glyph" src={hbLogo} alt="" />
-                <span> Growing </span>
+                <span> {t.runningText.growing} </span>
                 <img className="glyph" src={hbLogo} alt="" />
-                <span> Professional </span>
+                <span> {t.runningText.professional} </span>
                 <img className="glyph" src={hbLogo} alt="" />
-                <span> Disciplined </span>
+                <span> {t.runningText.disciplined} </span>
                 <img className="glyph" src={hbLogo} alt="" />
-                <span> Growing </span>
+                <span> {t.runningText.growing} </span>
                 <img className="glyph" src={hbLogo} alt="" />
-                <span> Professional </span>
+                <span> {t.runningText.professional} </span>
                 <img className="glyph" src={hbLogo} alt="" />
-                <span> Disciplined </span>
+                <span> {t.runningText.disciplined} </span>
                 <img className="glyph" src={hbLogo} alt="" />
-                <span> Growing </span>
+                <span> {t.runningText.growing} </span>
                 <img className="glyph" src={hbLogo} alt="" />
               </p>
             </div>

@@ -2,12 +2,15 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../assets/videos/hero-update.mp4'
+import { useLanguage } from '../../../context/LanguageContext'
 import './Product.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function Product() {
   const heroRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.product || {}
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
@@ -95,14 +98,14 @@ function Product() {
               src={heroVideo} 
               type="video/mp4" 
             />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay"></div>
         </div>
         <div className="about-hero-content">
-          <h1 className="about-hero-title">From Box to Solution: Explore What We Make</h1>
+          <h1 className="about-hero-title">{p.heroTitle}</h1>
           <p className="about-hero-subtitle">
-            explore our comprehensive product range
+            {p.heroSubtitle}
           </p>
         </div>
         <div 
@@ -125,9 +128,9 @@ function Product() {
 
       <section ref={contentSectionRef} className="product-section">
         <div className="product-container">
-          <h2 className="product-title">Our Products</h2>
+          <h2 className="product-title">{p.title}</h2>
           <p className="product-text">
-            Content about products and product categories will be added here.
+            {p.text}
           </p>
         </div>
       </section>

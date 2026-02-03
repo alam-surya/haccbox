@@ -6,43 +6,28 @@ import hexaWrapImg from '../../../../assets/images/Product/ProductAccessories/He
 import honeycombBoardImg from '../../../../assets/images/Product/ProductAccessories/Honeycomb Board.webp'
 import honeycombCoreImg from '../../../../assets/images/Product/ProductAccessories/Honeycomb Core.webp'
 import paperCoreImg from '../../../../assets/images/Product/ProductAccessories/Paper Core.webp'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './ProductAccessories.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const PRODUCTS = [
-  {
-    id: 'hexa-wrap',
-    name: 'Hexa Wrap',
-    description: 'Hexagonal wrap for cushioning and protection around products. Ideal as an outer complement to boxes for fragile or irregular items.',
-    image: hexaWrapImg
-  },
-  {
-    id: 'honeycomb-board',
-    name: 'Honeycomb Board',
-    description: 'Lightweight honeycomb board for internal reinforcement and void fill. Complements box structure with strength without extra weight.',
-    image: honeycombBoardImg
-  },
-  {
-    id: 'honeycomb-core',
-    name: 'Honeycomb Core',
-    description: 'Honeycomb core material for panels and inserts. Used alongside boxes to add rigidity and protection in shipping and display.',
-    image: honeycombCoreImg
-  },
-  {
-    id: 'paper-core',
-    name: 'Paper Core',
-    description: 'Paper core for tubes, rolls, and structural support. A versatile accessory outside the box for wrapping and core applications.',
-    image: paperCoreImg
-  }
-]
+const PRODUCT_IDS = ['hexa-wrap', 'honeycomb-board', 'honeycomb-core', 'paper-core']
+const PRODUCT_IMAGES = [hexaWrapImg, honeycombBoardImg, honeycombCoreImg, paperCoreImg]
 
 function ProductAccessories() {
   const sectionRef = useRef(null)
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.productAccessories || {}
+  const products = (p.products || []).map((item, i) => ({
+    id: PRODUCT_IDS[i],
+    name: item.name,
+    description: item.description,
+    image: PRODUCT_IMAGES[i]
+  }))
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -77,7 +62,7 @@ function ProductAccessories() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -85,22 +70,20 @@ function ProductAccessories() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Every Detail Counts: Accessories That Complete the Box</h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              Complementary products outside the box: wraps, boards, cores, and supports that complete your packaging solution.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
         <div className="hero-video-container">
           <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -112,10 +95,10 @@ function ProductAccessories() {
       </section>
       <section ref={contentSectionRef} className="product-accessories-section">
         <div className="product-accessories-container">
-          <h2 className="product-accessories-title">Product Accessories</h2>
-          <p className="product-accessories-intro">Complementary products outside the box: wraps, boards, cores, and supports for complete packaging.</p>
+          <h2 className="product-accessories-title">{p.title}</h2>
+          <p className="product-accessories-intro">{p.intro}</p>
           <div className="product-accessories-cards">
-            {PRODUCTS.map((product, index) => (
+            {products.map((product, index) => (
               <article key={product.id} className="product-accessories-card">
                 <div className="product-accessories-card-left">
                   <span className="product-accessories-card-number">{index + 1}</span>

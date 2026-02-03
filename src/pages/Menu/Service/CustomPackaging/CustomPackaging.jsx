@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import customPackagingImage from '../../../../assets/gallery/galeri-03.webp'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './CustomPackaging.css'
 
@@ -13,6 +14,8 @@ function CustomPackaging() {
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.customPackaging || {}
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -47,7 +50,7 @@ function CustomPackaging() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -55,22 +58,20 @@ function CustomPackaging() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Your Product, Your Packaging.</h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              We customize packaging to your specifications: shape, size, structure, and finish. From L-shape and box styles to die-cut and empty box, we deliver solutions that fit your product and brand.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
         <div className="hero-video-container">
           <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -90,13 +91,9 @@ function CustomPackaging() {
           />
         </div>
         <div className="custom-packaging-glass-card">
-          <h2 className="custom-packaging-title">Your Product, Your Packaging.</h2>
-          <p className="custom-packaging-intro">
-            We tailor packaging to your needs. Our capability covers a range of box and empty types, from <strong>L-shape</strong> and <strong>Box A1</strong> to <strong>slanted-top</strong>, <strong>die-cut</strong>, <strong>empty box</strong>, <strong>bottom</strong>, and <strong>top-bottom</strong>, so you get the right structure, size, and finish for your product and industry.
-          </p>
-          <p className="custom-packaging-text">
-            Custom dimensions, materials, and printing can be combined with these formats. We work to export and lab standards so your packaging is reliable for shipping and display.
-          </p>
+          <h2 className="custom-packaging-title">{p.title}</h2>
+          <p className="custom-packaging-intro">{p.intro}</p>
+          <p className="custom-packaging-text">{p.text}</p>
         </div>
       </section>
     </div>

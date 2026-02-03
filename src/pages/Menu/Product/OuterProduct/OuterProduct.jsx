@@ -9,61 +9,28 @@ import dieCutImg from '../../../../assets/images/Product/OuterProduct/Die Cut.we
 import emptyBoxImg from '../../../../assets/images/Product/OuterProduct/Empty Box.webp'
 import bottomImg from '../../../../assets/images/Product/OuterProduct/Bottom.webp'
 import topBottomImg from '../../../../assets/images/Product/OuterProduct/Top Bottom.webp'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './OuterProduct.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const PRODUCTS = [
-  {
-    id: 'l-shape',
-    name: 'L Shape',
-    description: 'L-shaped rigid box for display or partition. Ideal for retail presentation and modular layouts.',
-    image: lShapeImg
-  },
-  {
-    id: 'box-a1',
-    name: 'Box A1',
-    description: 'Classic A1 style box for retail and shipping. Durable construction for safe transport.',
-    image: boxA1Img
-  },
-  {
-    id: 'box-miring',
-    name: 'Box Miring',
-    description: 'Slanted-top box for distinctive presentation. Adds visual interest to shelf and counter displays.',
-    image: boxMiringImg
-  },
-  {
-    id: 'die-cut',
-    name: 'Die Cut',
-    description: 'Custom die-cut window or shape for visibility. Showcase your product while keeping it protected.',
-    image: dieCutImg
-  },
-  {
-    id: 'empty-box',
-    name: 'Empty Box',
-    description: 'Flat-packed empty box for assembly. Cost-effective and easy to store until use.',
-    image: emptyBoxImg
-  },
-  {
-    id: 'bottom',
-    name: 'Bottom',
-    description: 'Bottom-only base for trays or inserts. Versatile base unit for layered packaging.',
-    image: bottomImg
-  },
-  {
-    id: 'top-bottom',
-    name: 'Top Bottom',
-    description: 'Separate top and bottom for easy access. Perfect for reusable or frequently opened packaging.',
-    image: topBottomImg
-  }
-]
+const PRODUCT_IDS = ['l-shape', 'box-a1', 'box-miring', 'die-cut', 'empty-box', 'bottom', 'top-bottom']
+const PRODUCT_IMAGES = [lShapeImg, boxA1Img, boxMiringImg, dieCutImg, emptyBoxImg, bottomImg, topBottomImg]
 
 function OuterProduct() {
   const sectionRef = useRef(null)
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.outerProduct || {}
+  const products = (p.products || []).map((item, i) => ({
+    id: PRODUCT_IDS[i],
+    name: item.name,
+    description: item.description,
+    image: PRODUCT_IMAGES[i]
+  }))
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -98,7 +65,7 @@ function OuterProduct() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -106,22 +73,20 @@ function OuterProduct() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Shapes That Protect: Outer Packaging Built for Export</h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              Explore our product range and packaging solutions tailored for the furniture industry and export standards.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
         <div className="hero-video-container">
           <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -133,10 +98,10 @@ function OuterProduct() {
       </section>
       <section ref={contentSectionRef} className="outer-product-section">
         <div className="outer-product-container">
-          <h2 className="outer-product-title">Outer Product</h2>
-          <p className="outer-product-intro">Box and empty types for display, shipping, and custom packaging. Choose from our range of shapes and styles.</p>
+          <h2 className="outer-product-title">{p.title}</h2>
+          <p className="outer-product-intro">{p.intro}</p>
           <div className="outer-product-cards">
-            {PRODUCTS.map((product, index) => (
+            {products.map((product, index) => (
               <article key={product.id} className="outer-product-card">
                 <div className="outer-product-card-left">
                   <span className="outer-product-card-number">{index + 1}</span>

@@ -2,12 +2,15 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../assets/videos/hero-update.mp4'
+import { useLanguage } from '../../../context/LanguageContext'
 import './ContactPerson.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function ContactPerson() {
   const sectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.contactPerson || {}
   const videoRef = useRef(null)
   const contentRef = useRef(null)
   const marketingOfficeRef = useRef(null)
@@ -135,22 +138,16 @@ function ContactPerson() {
         {/* Text Content Section */}
         <div ref={contentRef} className="contact-hero-content">
           <div className="contact-hero-left">
-            <h1 className="contact-hero-heading">
-              Talk to our team: fast, clear, and reliable support.
-            </h1>
+            <h1 className="contact-hero-heading">{p.heading}</h1>
           </div>
           <div className="contact-hero-right">
-            <p className="contact-hero-description">
-              Get expert guidance on your packaging needs, shipping specifications, and custom solutions. 
-              Our team responds quickly to help you find the right carton box packaging that meets your 
-              export and laboratory standards.
-            </p>
+            <p className="contact-hero-description">{p.description}</p>
             <button 
               onClick={handleScrollToLocations}
               className="contact-hero-cta"
             >
               <span className="material-symbols-outlined">chevron_right</span>
-              View Our Locations
+              {p.viewLocations}
             </button>
           </div>
         </div>
@@ -170,7 +167,7 @@ function ContactPerson() {
               src={heroVideo} 
               type="video/mp4" 
             />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="contact-hero-overlay"></div>
         </div>
@@ -179,7 +176,7 @@ function ContactPerson() {
       {/* Marketing Office Section */}
       <section ref={marketingOfficeRef} className="contact-location-section">
         <div className="contact-location-container">
-          <h2 className="contact-location-title">Marketing Office</h2>
+          <h2 className="contact-location-title">{p.marketingOffice}</h2>
           <p className="contact-location-address">
             Ayodyapark D/06 Cangkiran<br />
             Kota Semarang, Jawa Tengah<br />
@@ -203,7 +200,7 @@ function ContactPerson() {
             rel="noopener noreferrer"
             className="contact-location-link"
           >
-            Open in Google Maps
+            {p.openInMaps}
           </a>
         </div>
       </section>
@@ -211,7 +208,7 @@ function ContactPerson() {
       {/* Production Warehouse Section */}
       <section ref={warehouseRef} className="contact-location-section">
         <div className="contact-location-container">
-          <h2 className="contact-location-title">Production Warehouse</h2>
+          <h2 className="contact-location-title">{p.productionWarehouse}</h2>
           <p className="contact-location-address">
             Jl. Lingkungan Industri Kecil (LIK) Gang 14 No 530<br />
             Kota Semarang, Jawa Tengah<br />
@@ -235,7 +232,7 @@ function ContactPerson() {
             rel="noopener noreferrer"
             className="contact-location-link"
           >
-            Open in Google Maps
+            {p.openInMaps}
           </a>
         </div>
       </section>
@@ -257,7 +254,7 @@ function ContactPerson() {
                   {social.icon}
                 </div>
                 <h3 className="contact-social-platform">{social.platform}</h3>
-                <p className="contact-social-action">Visit Profile</p>
+                <p className="contact-social-action">{p.visitProfile}</p>
               </a>
             ))}
           </div>

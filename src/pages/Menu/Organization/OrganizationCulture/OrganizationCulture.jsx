@@ -5,31 +5,11 @@ import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import sampleVideo from '../../../../assets/videos/sample.mp4'
 import sample2Video from '../../../../assets/videos/sample2.mp4'
 import sample3Video from '../../../../assets/videos/sample3.mp4'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './OrganizationCulture.css'
 
 gsap.registerPlugin(ScrollTrigger)
-
-const VALUE_CARDS = [
-  {
-    id: 'professional',
-    title: 'Professional',
-    description: 'We run every aspect of our business to the highest standards, with transparency and strong collaboration, so our products meet industry expectations.',
-    video: sampleVideo
-  },
-  {
-    id: 'disciplined',
-    title: 'Disciplined',
-    description: 'Through a culture of discipline, we keep to timelines, production precision, and full compliance with export and laboratory testing standards.',
-    video: sample2Video
-  },
-  {
-    id: 'growing',
-    title: 'Growing',
-    description: 'As the industry evolves, we keep innovating in technology, materials, and strategy to deliver better packaging solutions.',
-    video: sample3Video
-  }
-]
 
 function OrganizationCulture() {
   const sectionRef = useRef(null)
@@ -39,6 +19,13 @@ function OrganizationCulture() {
   const contentSectionRef = useRef(null)
   const carouselVideoRef = useRef(null)
   const [currentSlide, setCurrentSlide] = useState(0)
+  const { t } = useLanguage()
+  const p = t.pages?.organizationCulture || {}
+  const VALUE_CARDS = [
+    { id: 'professional', title: p.professional, description: p.professionalDesc, video: sampleVideo },
+    { id: 'disciplined', title: p.disciplined, description: p.disciplinedDesc, video: sample2Video },
+    { id: 'growing', title: p.growing, description: p.growingDesc, video: sample3Video }
+  ]
 
   const goToSlide = (index) => {
     setCurrentSlide((index + VALUE_CARDS.length) % VALUE_CARDS.length)
@@ -80,7 +67,7 @@ function OrganizationCulture() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -88,19 +75,13 @@ function OrganizationCulture() {
       <section ref={sectionRef} className="hero-content-section">
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">
-              Our Culture: Values, Beliefs, and How We Work
-            </h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              The principles that guide our team every day. We believe in quality, transparency,
-              and long-term partnerships. Here is how we turn those values into action: in the way
-              we collaborate, serve customers, and grow together.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
@@ -115,7 +96,7 @@ function OrganizationCulture() {
             preload="auto"
           >
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -134,10 +115,8 @@ function OrganizationCulture() {
         <div className="organization-culture-section-bg" aria-hidden="true" />
         <div className="organization-culture-header">
          
-          <h2 className="organization-culture-title">Organization Culture</h2>
-          <p className="organization-culture-intro">
-            Our values and how we care for our people reflect the health of our company. We stand on three pillars: <strong>Professional</strong>, <strong>Disciplined</strong>, and <strong>Growing</strong>.
-          </p>
+          <h2 className="organization-culture-title">{p.title}</h2>
+          <p className="organization-culture-intro">{p.intro}</p>
         </div>
         <div className="organization-culture-carousel-wrapper">
           <div className="organization-culture-carousel-card">
@@ -153,7 +132,7 @@ function OrganizationCulture() {
                 playsInline
                 preload="auto"
               >
-                Your browser does not support the video tag.
+                {p.videoUnsupported}
               </video>
             </div>
             <div className="organization-culture-carousel-content-col">

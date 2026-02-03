@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import customPrintingImage from '../../../../assets/gallery/galeri-03.webp'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './CustomPrinting.css'
 
@@ -13,6 +14,8 @@ function CustomPrinting() {
   const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.customPrinting || {}
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -47,7 +50,7 @@ function CustomPrinting() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -55,22 +58,20 @@ function CustomPrinting() {
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">Quality Color, On Your Box.</h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              We accept box printing to your design, with a focus on color quality. From logo and graphics to full-color print, we deliver sharp, consistent results on your packaging.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
         <div className="hero-video-container">
           <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -90,13 +91,9 @@ function CustomPrinting() {
           />
         </div>
         <div className="custom-printing-glass-card">
-          <h2 className="custom-printing-title">Quality Color, On Your Box.</h2>
-          <p className="custom-printing-intro">
-            We take on box printing with an emphasis on <strong>color quality</strong>. Whether it’s spot color, full-color process, or brand-matched Pantone, we aim for accurate, vivid, and consistent print so your packaging looks professional and on-brand.
-          </p>
-          <p className="custom-printing-text">
-            Our capability covers printing on carton and corrugated box: logos, graphics, text, and barcodes. We work to your artwork and specifications so the final result meets retail and export expectations.
-          </p>
+          <h2 className="custom-printing-title">{p.title}</h2>
+          <p className="custom-printing-intro">{p.intro}</p>
+          <p className="custom-printing-text">{p.text}</p>
         </div>
       </section>
     </div>

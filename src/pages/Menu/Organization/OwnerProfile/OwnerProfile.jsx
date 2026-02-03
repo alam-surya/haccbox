@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import ownerProfileImage from '../../../../assets/images/OwnerProfile.webp'
 import logoImage from '../../../../assets/images/logo.webp'
+import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import './OwnerProfile.css'
 
@@ -15,6 +16,8 @@ function OwnerProfile() {
   const contentRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
+  const { t } = useLanguage()
+  const p = t.pages?.ownerProfile || {}
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -50,7 +53,7 @@ function OwnerProfile() {
         scrollTrigger: { trigger: contentSection, start: 'top 80%', toggleActions: 'play none none reverse' }
       }
     )
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   }, [])
 
   return (
@@ -58,19 +61,13 @@ function OwnerProfile() {
       <section ref={sectionRef} className="hero-content-section">
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
-            <h1 className="hero-heading">
-              Meet the Leadership Behind Haccbox
-            </h1>
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
           <div className="hero-content-right">
-            <p className="hero-description">
-              The people who guide our vision and daily operations. Get to know the faces behind
-              Haccbox: their experience, values, and commitment to delivering quality packaging
-              solutions and lasting partnerships.
-            </p>
+            <p className="hero-description">{p.description}</p>
             <button type="button" className="hero-learn-more" onClick={scrollToContent}>
               <span className="material-symbols-outlined">chevron_right</span>
-              See more
+              {p.seeMore}
             </button>
           </div>
         </div>
@@ -85,7 +82,7 @@ function OwnerProfile() {
             preload="auto"
           >
             <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+            {p.videoUnsupported}
           </video>
           <div className="hero-overlay" />
         </div>
@@ -111,19 +108,13 @@ function OwnerProfile() {
         </div>
         <div className="owner-profile-glass-card">
           <img src={logoImage} alt="Haccbox" className="owner-profile-card-logo" />
-          <h2 className="owner-profile-title">Owner Profile</h2>
-          <p className="owner-profile-intro">
-            We build a strong organisational culture on three pillars: <strong>Professionalism</strong>, <strong>Discipline</strong>, and <strong>Growing</strong>, ensuring sustainable, valuable business for our customers, especially in the furniture industry.
-          </p>
-          <p className="owner-profile-text">
-            We run every aspect of our business to the highest standards, with transparency and strong collaboration, so our products meet industry expectations. Through a culture of discipline, we keep to timelines, production precision, and compliance with export and laboratory testing standards.
-          </p>
-          <p className="owner-profile-text">
-            As the industry evolves, we keep innovating in technology, materials, and strategy to deliver better packaging solutions. Through these three pillars, Cahaya Abadi is committed to being an adaptive, progressive partner, delivering high-quality, sustainable packaging.
-          </p>
+          <h2 className="owner-profile-title">{p.title}</h2>
+          <p className="owner-profile-intro">{p.intro}</p>
+          <p className="owner-profile-text">{p.text1}</p>
+          <p className="owner-profile-text">{p.text2}</p>
           <p className="owner-profile-attribution">
-            <strong>Moh Akhim Bayu Habsoro, S.E. MBA</strong><br />
-            President Director
+            <strong>{p.attribution}</strong><br />
+            {p.attributionRole}
           </p>
         </div>
       </section>
