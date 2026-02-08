@@ -1,14 +1,14 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import videoPrimary from '../../assets/videos/video-primary.mp4'
+import videoDesktop from '../../assets/videos/haccbox-hero.mp4'
+import videoMobile from '../../assets/videos/haccbox-hero-mobile.mp4'
 import './Hero.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function Hero() {
   const heroRef = useRef(null)
-  const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const textRef = useRef(null)
 
@@ -76,19 +76,25 @@ function Hero() {
       {/* Video Background */}
       <div className="hero-video-background">
         <video
-          ref={videoRef}
-          className="hero-video-bg"
+          className="hero-video-bg hero-video-desktop"
           autoPlay
           loop
           muted
           playsInline
           preload="auto"
         >
-          <source 
-            src={videoPrimary} 
-            type="video/mp4" 
-          />
-          {/* Fallback if video doesn't load */}
+          <source src={videoDesktop} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <video
+          className="hero-video-bg hero-video-mobile"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        >
+          <source src={videoMobile} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="hero-video-overlay"></div>

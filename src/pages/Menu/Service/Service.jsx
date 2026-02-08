@@ -3,6 +3,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../assets/videos/hero-update.mp4'
 import { useLanguage } from '../../../context/LanguageContext'
+import '../../../components/HeroContent/HeroContent.css'
+import '../../../components/PageHeroDark/PageHeroDark.css'
 import './Service.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -82,45 +84,32 @@ function Service() {
   }, [])
 
   return (
-    <div className="service-page">
-      <section ref={heroRef} className="about-hero">
-        <div className="hero-video-container">
-          <video
-            ref={videoRef}
-            className="hero-video"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-          >
-            <source 
-              src={heroVideo} 
-              type="video/mp4" 
-            />
-            {p.videoUnsupported}
-          </video>
-          <div className="hero-overlay"></div>
+    <div className="service-page page-hero-dark">
+      <section ref={heroRef} className="hero-content-section">
+        <div className="hero-content">
+          <div className="hero-content-left">
+            <h1 className="hero-heading">{p.heroTitle}</h1>
+          </div>
+          <div className="hero-content-right">
+            <p className="hero-description">{p.heroSubtitle}</p>
+          </div>
         </div>
-        <div className="about-hero-content">
-          <h1 className="about-hero-title">{p.heroTitle}</h1>
-          <p className="about-hero-subtitle">
-            {p.heroSubtitle}
-          </p>
+        <div className="hero-video-grid">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="hero-video-card">
+              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
+                <source src={heroVideo} type="video/mp4" />
+                {p.videoUnsupported}
+              </video>
+            </div>
+          ))}
         </div>
-        <div 
+        <div
           ref={scrollIndicatorRef}
           className="scroll-indicator"
           aria-label="Scroll down"
         >
-          <svg 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2"
-          >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M6 9l6 6 6-6" />
           </svg>
         </div>

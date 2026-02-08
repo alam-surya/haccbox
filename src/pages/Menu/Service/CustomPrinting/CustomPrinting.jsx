@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import customPrintingImage from '../../../../assets/gallery/galeri-03.webp'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
+import '../../../../components/PageHeroDark/PageHeroDark.css'
 import './CustomPrinting.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -54,7 +56,7 @@ function CustomPrinting() {
   }, [])
 
   return (
-    <div className="custom-printing-page">
+    <div className="custom-printing-page page-hero-dark">
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
@@ -62,18 +64,17 @@ function CustomPrinting() {
           </div>
           <div className="hero-content-right">
             <p className="hero-description">{p.description}</p>
-            <button type="button" className="hero-learn-more" onClick={scrollToContent}>
-              <span className="material-symbols-outlined">chevron_right</span>
-              {p.seeMore}
-            </button>
           </div>
         </div>
-        <div className="hero-video-container">
-          <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
-            <source src={heroVideo} type="video/mp4" />
-            {p.videoUnsupported}
-          </video>
-          <div className="hero-overlay" />
+        <div className="hero-video-grid">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="hero-video-card">
+              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
+                <source src={heroVideo} type="video/mp4" />
+                {p.videoUnsupported}
+              </video>
+            </div>
+          ))}
         </div>
         <div ref={scrollIndicatorRef} className="scroll-indicator" aria-label="Scroll down">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -82,18 +83,25 @@ function CustomPrinting() {
         </div>
       </section>
       <section ref={contentSectionRef} className="custom-printing-section">
-        <div className="custom-printing-section-bg" aria-hidden="true">
-          <img
-            src={customPrintingImage}
-            alt=""
-            className="custom-printing-section-bg-image"
-            loading="lazy"
-          />
-        </div>
-        <div className="custom-printing-glass-card">
-          <h2 className="custom-printing-title">{p.title}</h2>
-          <p className="custom-printing-intro">{p.intro}</p>
-          <p className="custom-printing-text">{p.text}</p>
+        <header className="custom-printing-about-header">
+          <span className="custom-printing-about-prefix">_</span>
+          <h2 className="custom-printing-about-heading">{p.aboutMainHeading}</h2>
+        </header>
+        <div className="custom-printing-about-layout">
+          <div className="custom-printing-about-text">
+            <p className="custom-printing-about-supporting">{p.aboutSupporting}</p>
+            <Link to="/contact-person" className="custom-printing-about-btn">
+              {p.aboutCta}
+            </Link>
+          </div>
+          <div className="custom-printing-about-image-wrap">
+            <img
+              src={customPrintingImage}
+              alt=""
+              className="custom-printing-about-image"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
     </div>

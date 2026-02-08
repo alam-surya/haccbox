@@ -9,7 +9,7 @@
 .nav-dropdown {
   position: fixed;
   top: 5.5rem;
-  left: 2rem;
+  left: 5rem;
   z-index: 1001;
   width: 280px;
   background: rgba(26, 26, 26, 0.45);
@@ -195,11 +195,17 @@
   color: #B0916E;
 }
 
+@media (max-width: 1024px) {
+  .nav-dropdown {
+    left: 4rem;
+  }
+}
+
 /* Responsive: icon-only menu so sub-menus stay usable */
 @media (max-width: 768px) {
   .nav-dropdown {
     top: 4.5rem;
-    left: 1rem;
+    left: 2rem;
     width: auto;
     min-width: 56px;
     padding: 0.35rem 0;
@@ -240,7 +246,7 @@
 @media (max-width: 480px) {
   .nav-dropdown {
     top: 4rem;
-    left: 0.75rem;
+    left: 1.5rem;
     min-width: 52px;
   }
 

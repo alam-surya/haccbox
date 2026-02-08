@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
-import companyImage from '../../../../assets/images/company.webp'
-import logoImage from '../../../../assets/images/logo.webp'
+import companyImage from '../../../../assets/images/cahaya-abadi.png'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
+import '../../../../components/PageHeroDark/PageHeroDark.css'
 import './Company.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -57,7 +58,7 @@ function Company() {
   }, [])
 
   return (
-    <div className="company-page">
+    <div className="company-page page-hero-dark">
       <section ref={sectionRef} className="hero-content-section">
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
@@ -69,26 +70,17 @@ function Company() {
             <p className="hero-description">
               {c.description}
             </p>
-            <button type="button" className="hero-learn-more" onClick={scrollToContent}>
-              <span className="material-symbols-outlined">chevron_right</span>
-              {c.seeMore}
-            </button>
           </div>
         </div>
-        <div className="hero-video-container">
-          <video
-            ref={videoRef}
-            className="hero-video"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-          >
-            <source src={heroVideo} type="video/mp4" />
-            {c.videoUnsupported}
-          </video>
-          <div className="hero-overlay" />
+        <div className="hero-video-grid">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="hero-video-card">
+              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
+                <source src={heroVideo} type="video/mp4" />
+                {c.videoUnsupported}
+              </video>
+            </div>
+          ))}
         </div>
         <div
           ref={scrollIndicatorRef}
@@ -102,22 +94,43 @@ function Company() {
       </section>
 
       <section ref={contentSectionRef} className="company-section">
-        <div className="company-section-bg" aria-hidden="true">
-          <img
-            src={companyImage}
-            alt=""
-            className="company-section-bg-image"
-            loading="lazy"
-          />
+        <header className="company-about-header">
+          <span className="company-about-prefix">_</span>
+          <h2 className="company-about-heading">{c.aboutMainHeading}</h2>
+        </header>
+        <div className="company-about-layout">
+          <div className="company-about-text">
+            <p className="company-about-supporting">{c.aboutSupporting}</p>
+            <Link to="/contact-person" className="company-about-btn">
+              {c.aboutCta}
+            </Link>
+          </div>
+          <div className="company-about-image-wrap">
+            <img
+              src={companyImage}
+              alt=""
+              className="company-about-image"
+              loading="lazy"
+            />
+          </div>
         </div>
-        <div className="company-glass-card">
-          <img src={logoImage} alt="Haccbox" className="company-card-logo" />
-          <h2 className="company-title">{c.journey}</h2>
-          <p className="company-intro">{c.intro}</p>
-          <p className="company-text">{c.text1}</p>
-          <p className="company-text">{c.text2}</p>
-          <p className="company-text">{c.text3}</p>
-        </div>
+
+        <section className="company-history-section">
+          <div className="company-history-grid">
+            <div className="company-history-card">
+              <h3 className="company-history-title">{c.milestone2012}</h3>
+              <p className="company-history-text">{c.milestone2012Text}</p>
+            </div>
+            <div className="company-history-card">
+              <h3 className="company-history-title">{c.milestone2021}</h3>
+              <p className="company-history-text">{c.milestone2021Text}</p>
+            </div>
+            <div className="company-history-card">
+              <h3 className="company-history-title">{c.milestone2025}</h3>
+              <p className="company-history-text">{c.milestone2025Text}</p>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
   )

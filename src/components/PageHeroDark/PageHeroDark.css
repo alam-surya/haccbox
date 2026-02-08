@@ -1,0 +1,103 @@
+/* Shared dark hero design - 3 video grid, aligned left, white text */
+
+.page-hero-dark {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+.page-hero-dark .hero-content-section {
+  background: #000000 !important;
+}
+
+.page-hero-dark .hero-content {
+  background: #000000 !important;
+}
+
+.page-hero-dark .hero-heading {
+  color: #ffffff !important;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+  line-height: 1.15 !important;
+}
+
+.page-hero-dark .hero-description {
+  color: #ffffff !important;
+}
+
+.page-hero-dark .hero-content-right {
+  text-align: right !important;
+  align-items: flex-end !important;
+}
+
+/* 3 video panels - no borders, align left with title */
+.page-hero-dark .hero-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem 5rem 0 5rem;
+  padding: 0;
+  z-index: 1;
+}
+
+.page-hero-dark .hero-video-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.page-hero-dark .hero-video-card .hero-video-card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.page-hero-dark .scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: #ffffff !important;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.page-hero-dark .scroll-indicator:hover {
+  opacity: 0.7;
+}
+
+.page-hero-dark .page-hero-dark-cta {
+  color: #ffffff !important;
+}
+
+.page-hero-dark .page-hero-dark-cta:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+  .page-hero-dark .hero-video-grid {
+    margin: 2rem 4rem 0 4rem;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero-dark .hero-video-grid {
+    margin: 2rem 2rem 0 2rem;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero-dark .hero-video-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 2rem 1.5rem 0 1.5rem;
+  }
+}

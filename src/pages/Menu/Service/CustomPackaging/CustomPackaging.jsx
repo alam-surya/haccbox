@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import customPackagingImage from '../../../../assets/gallery/galeri-03.webp'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
+import '../../../../components/PageHeroDark/PageHeroDark.css'
 import './CustomPackaging.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -54,7 +56,7 @@ function CustomPackaging() {
   }, [])
 
   return (
-    <div className="custom-packaging-page">
+    <div className="custom-packaging-page page-hero-dark">
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
@@ -62,18 +64,17 @@ function CustomPackaging() {
           </div>
           <div className="hero-content-right">
             <p className="hero-description">{p.description}</p>
-            <button type="button" className="hero-learn-more" onClick={scrollToContent}>
-              <span className="material-symbols-outlined">chevron_right</span>
-              {p.seeMore}
-            </button>
           </div>
         </div>
-        <div className="hero-video-container">
-          <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
-            <source src={heroVideo} type="video/mp4" />
-            {p.videoUnsupported}
-          </video>
-          <div className="hero-overlay" />
+        <div className="hero-video-grid">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="hero-video-card">
+              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
+                <source src={heroVideo} type="video/mp4" />
+                {p.videoUnsupported}
+              </video>
+            </div>
+          ))}
         </div>
         <div ref={scrollIndicatorRef} className="scroll-indicator" aria-label="Scroll down">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -82,18 +83,25 @@ function CustomPackaging() {
         </div>
       </section>
       <section ref={contentSectionRef} className="custom-packaging-section">
-        <div className="custom-packaging-section-bg" aria-hidden="true">
-          <img
-            src={customPackagingImage}
-            alt=""
-            className="custom-packaging-section-bg-image"
-            loading="lazy"
-          />
-        </div>
-        <div className="custom-packaging-glass-card">
-          <h2 className="custom-packaging-title">{p.title}</h2>
-          <p className="custom-packaging-intro">{p.intro}</p>
-          <p className="custom-packaging-text">{p.text}</p>
+        <header className="custom-packaging-about-header">
+          <span className="custom-packaging-about-prefix">_</span>
+          <h2 className="custom-packaging-about-heading">{p.aboutMainHeading}</h2>
+        </header>
+        <div className="custom-packaging-about-layout">
+          <div className="custom-packaging-about-text">
+            <p className="custom-packaging-about-supporting">{p.aboutSupporting}</p>
+            <Link to="/contact-person" className="custom-packaging-about-btn">
+              {p.aboutCta}
+            </Link>
+          </div>
+          <div className="custom-packaging-about-image-wrap">
+            <img
+              src={customPackagingImage}
+              alt=""
+              className="custom-packaging-about-image"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
     </div>

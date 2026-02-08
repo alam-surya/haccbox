@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Link } from 'react-router-dom'
 import heroVideo from '../../assets/videos/hero-update.mp4'
 import { useLanguage } from '../../context/LanguageContext'
 import './HeroContent.css'
@@ -39,10 +38,6 @@ function HeroContent() {
           <p className="hero-description">
             {t.hero.description}
           </p>
-          <Link to="#work" className="hero-learn-more">
-            <span className="material-symbols-outlined">chevron_right</span>
-            {t.hero.learnMore}
-          </Link>
         </div>
       </div>
 

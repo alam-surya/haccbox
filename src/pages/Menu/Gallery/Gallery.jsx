@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../assets/videos/hero-update.mp4'
 import { useLanguage } from '../../../context/LanguageContext'
 import '../../../components/HeroContent/HeroContent.css'
+import '../../../components/PageHeroDark/PageHeroDark.css'
 import './Gallery.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -123,7 +124,7 @@ function Gallery() {
   }, [])
 
   return (
-    <div className="gallery-page">
+    <div className="gallery-page page-hero-dark">
       <section ref={sectionRef} className="hero-content-section">
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
@@ -131,26 +132,17 @@ function Gallery() {
           </div>
           <div className="hero-content-right">
             <p className="hero-description">{p.description}</p>
-            <button type="button" className="hero-learn-more" onClick={scrollToContent}>
-              <span className="material-symbols-outlined">chevron_right</span>
-              {p.seeMore}
-            </button>
           </div>
         </div>
-        <div className="hero-video-container">
-          <video
-            ref={videoRef}
-            className="hero-video"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-          >
-            <source src={heroVideo} type="video/mp4" />
-            {p.videoUnsupported}
-          </video>
-          <div className="hero-overlay" />
+        <div className="hero-video-grid">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="hero-video-card">
+              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
+                <source src={heroVideo} type="video/mp4" />
+                {p.videoUnsupported}
+              </video>
+            </div>
+          ))}
         </div>
         <div
           ref={scrollIndicatorRef}

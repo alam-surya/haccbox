@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import finishingOptionImage from '../../../../assets/gallery/galeri-03.webp'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
+import '../../../../components/PageHeroDark/PageHeroDark.css'
 import './FinishingOption.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -54,7 +56,7 @@ function FinishingOption() {
   }, [])
 
   return (
-    <div className="finishing-option-page">
+    <div className="finishing-option-page page-hero-dark">
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
@@ -62,18 +64,17 @@ function FinishingOption() {
           </div>
           <div className="hero-content-right">
             <p className="hero-description">{p.description}</p>
-            <button type="button" className="hero-learn-more" onClick={scrollToContent}>
-              <span className="material-symbols-outlined">chevron_right</span>
-              {p.seeMore}
-            </button>
           </div>
         </div>
-        <div className="hero-video-container">
-          <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
-            <source src={heroVideo} type="video/mp4" />
-            {p.videoUnsupported}
-          </video>
-          <div className="hero-overlay" />
+        <div className="hero-video-grid">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="hero-video-card">
+              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
+                <source src={heroVideo} type="video/mp4" />
+                {p.videoUnsupported}
+              </video>
+            </div>
+          ))}
         </div>
         <div ref={scrollIndicatorRef} className="scroll-indicator" aria-label="Scroll down">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -82,28 +83,39 @@ function FinishingOption() {
         </div>
       </section>
       <section ref={contentSectionRef} className="finishing-option-section">
-        <div className="finishing-option-section-bg" aria-hidden="true">
-          <img
-            src={finishingOptionImage}
-            alt=""
-            className="finishing-option-section-bg-image"
-            loading="lazy"
-          />
-        </div>
-        <div className="finishing-option-glass-card">
-          <h2 className="finishing-option-title">{p.title}</h2>
-          <p className="finishing-option-intro">{p.intro}</p>
-          <div className="finishing-option-list">
-            <div className="finishing-option-item">
-              <h3 className="finishing-option-item-title">{p.glue}</h3>
-              <p className="finishing-option-item-text">{p.glueText}</p>
-            </div>
-            <div className="finishing-option-item">
-              <h3 className="finishing-option-item-title">{p.staples}</h3>
-              <p className="finishing-option-item-text">{p.staplesText}</p>
-            </div>
+        <header className="finishing-option-about-header">
+          <span className="finishing-option-about-prefix">_</span>
+          <h2 className="finishing-option-about-heading">{p.aboutMainHeading}</h2>
+        </header>
+        <div className="finishing-option-about-layout">
+          <div className="finishing-option-about-text">
+            <p className="finishing-option-about-supporting">{p.aboutSupporting}</p>
+            <Link to="/contact-person" className="finishing-option-about-btn">
+              {p.aboutCta}
+            </Link>
+          </div>
+          <div className="finishing-option-about-image-wrap">
+            <img
+              src={finishingOptionImage}
+              alt=""
+              className="finishing-option-about-image"
+              loading="lazy"
+            />
           </div>
         </div>
+
+        <section className="finishing-option-specs-section">
+          <div className="finishing-option-specs-grid">
+            <div className="finishing-option-spec-card">
+              <h3 className="finishing-option-spec-title">{p.glue}</h3>
+              <p className="finishing-option-spec-text">{p.glueText}</p>
+            </div>
+            <div className="finishing-option-spec-card">
+              <h3 className="finishing-option-spec-title">{p.staples}</h3>
+              <p className="finishing-option-spec-text">{p.staplesText}</p>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
   )

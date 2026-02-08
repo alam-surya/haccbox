@@ -1,8 +1,8 @@
 .custom-printing-page {
   width: 100%;
   min-height: 100vh;
-  background: #000000;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   overflow-x: hidden;
 }
 
@@ -12,7 +12,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  color: white;
+  color: #000000;
   cursor: pointer;
   transition: opacity 0.3s ease;
   border: none;
@@ -39,95 +39,105 @@
 .custom-printing-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  height: 100vh;
-  padding-top: 5.5rem;
+  padding: 6rem 5rem 8rem 5rem;
+  background: #ffffff;
   overflow: hidden;
+}
+
+.custom-printing-about-header {
+  max-width: 1200px;
+  margin: 0 0 4rem 0;
   display: flex;
-  align-items: stretch;
-  box-sizing: border-box;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.custom-printing-section-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.custom-printing-about-layout {
+  max-width: 1200px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.custom-printing-section-bg-image {
+.custom-printing-about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 90%;
+}
+
+.custom-printing-about-prefix {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1;
+}
+
+.custom-printing-about-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.custom-printing-about-supporting {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+.custom-printing-about-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  background: #000000;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+  align-self: flex-start;
+}
+
+.custom-printing-about-btn:hover {
+  background: #333333;
+  color: #ffffff;
+}
+
+.custom-printing-about-image-wrap {
   width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.custom-printing-about-image {
+  width: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center;
   display: block;
-}
-
-.custom-printing-glass-card {
-  position: relative;
-  z-index: 1;
-  width: 38%;
-  max-width: 520px;
-  min-height: calc(100vh - 5.5rem);
-  padding: 4rem 3rem 3rem;
-  background: rgba(26, 26, 26, 0.52);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 0;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-}
-
-.custom-printing-glass-card .custom-printing-title {
-  font-size: 2.25rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  margin-bottom: 1.25rem;
-  line-height: 1.25;
-  color: #ffffff;
-}
-
-.custom-printing-intro {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #ffffff;
-  opacity: 0.95;
-  margin-bottom: 1.5rem;
-}
-
-.custom-printing-text {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #ffffff;
-  opacity: 0.95;
-  margin-bottom: 0;
+  vertical-align: middle;
 }
 
 @media (max-width: 1024px) {
   .custom-printing-section {
-    min-height: 100vh;
-    height: 100vh;
+    padding: 5rem 4rem 6rem 4rem;
   }
 
-  .custom-printing-glass-card {
-    width: 48%;
-    max-width: 480px;
-    padding: 3.5rem 2.5rem 2.5rem;
-    min-height: calc(100vh - 5.5rem);
+  .custom-printing-about-layout {
+    gap: 3rem;
   }
 
-  .custom-printing-glass-card .custom-printing-title {
-    font-size: 2rem;
-  }
-
-  .custom-printing-intro,
-  .custom-printing-text {
-    font-size: 0.95rem;
+  .custom-printing-about-text {
+    max-width: 100%;
   }
 }
 
@@ -137,28 +147,24 @@
   }
 
   .custom-printing-section {
-    min-height: 100vh;
-    height: auto;
+    padding: 4rem 2rem 6rem 2rem;
   }
 
-  .custom-printing-glass-card {
-    width: 100%;
-    max-width: 100%;
-    min-height: auto;
-    padding: 4rem 2rem 2.5rem;
+  .custom-printing-about-header {
+    margin-bottom: 2.5rem;
   }
 
-  .custom-printing-section-bg-image {
-    min-height: 100%;
+  .custom-printing-about-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
-  .custom-printing-glass-card .custom-printing-title {
-    font-size: 1.75rem;
+  .custom-printing-about-text {
+    order: 0;
   }
 
-  .custom-printing-intro,
-  .custom-printing-text {
-    font-size: 0.95rem;
+  .custom-printing-about-image-wrap {
+    order: 1;
   }
 }
 
@@ -167,16 +173,15 @@
     bottom: 1rem;
   }
 
-  .custom-printing-glass-card {
-    padding: 3rem 1.5rem 2rem;
+  .custom-printing-section {
+    padding: 3rem 1.5rem 4rem 1.5rem;
   }
 
-  .custom-printing-glass-card .custom-printing-title {
+  .custom-printing-about-heading {
     font-size: 1.5rem;
   }
 
-  .custom-printing-intro,
-  .custom-printing-text {
-    font-size: 0.9rem;
+  .custom-printing-about-supporting {
+    font-size: 1.125rem;
   }
 }

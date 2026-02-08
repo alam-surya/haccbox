@@ -19,6 +19,7 @@ import DeliveryService from './pages/Menu/Service/DeliveryService/DeliveryServic
 import Guarantee from './pages/Menu/Guarantee/Guarantee'
 import HowToOrder from './pages/Menu/HowToOrder/HowToOrder'
 import Gallery from './pages/Menu/Gallery/Gallery'
+import Articles from './pages/Menu/Articles/Articles'
 import './App.css'
 
 function AppRoutes() {
@@ -63,6 +64,7 @@ function AppRoutes() {
             <Route path="/guarantee" element={<Guarantee />} />
             <Route path="/how-to-order" element={<HowToOrder />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/articles" element={<Articles />} />
           </Routes>
         </motion.div>
       </AnimatePresence>

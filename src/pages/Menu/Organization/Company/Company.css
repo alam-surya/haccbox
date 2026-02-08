@@ -1,8 +1,8 @@
 .company-page {
   width: 100%;
   min-height: 100vh;
-  background: #000000;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   overflow-x: hidden;
 }
 
@@ -12,7 +12,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  color: white;
+  color: #000000;
   cursor: pointer;
   transition: opacity 0.3s ease;
   border: none;
@@ -39,101 +39,151 @@
 .company-section {
   position: relative;
   width: 100%;
-  min-height: 85vh;
-  padding-top: 5.5rem;
+  padding: 6rem 5rem 8rem 5rem;
+  background: #ffffff;
   overflow: hidden;
+}
+
+.company-about-header {
+  max-width: 1200px;
+  margin: 0 0 4rem 0;
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.company-section-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.company-about-layout {
+  max-width: 1200px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.company-section-bg-image {
+.company-about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 90%;
+}
+
+.company-about-prefix {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1;
+}
+
+.company-about-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.company-about-supporting {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+.company-about-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  background: #000000;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+  align-self: flex-start;
+}
+
+.company-about-btn:hover {
+  background: #333333;
+  color: #ffffff;
+}
+
+.company-about-image-wrap {
   width: 100%;
-  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.company-about-image {
+  width: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center;
   display: block;
+  vertical-align: middle;
 }
 
-.company-glass-card {
-  position: relative;
-  z-index: 1;
-  width: 38%;
-  max-width: 520px;
-  min-height: calc(85vh - 5.5rem);
-  padding: 4rem 3rem 3rem;
-  background: rgba(26, 26, 26, 0.52);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 0;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
+.company-history-section {
+  margin-top: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.company-card-logo {
-  width: 120px;
-  height: auto;
-  margin-bottom: 2rem;
-  filter: brightness(0) invert(1);
+.company-history-grid {
+  max-width: 1200px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
-.company-glass-card .company-title {
-  font-size: 2.25rem;
-  font-weight: 700;
+.company-history-card {
+  padding: 0;
+  margin: 0;
+}
+
+.company-history-title {
+  font-size: 1rem;
+  font-weight: 600;
   letter-spacing: 0.02em;
-  text-transform: none;
-  margin-bottom: 1.5rem;
-  line-height: 1.25;
-  color: #ffffff;
+  color: #000000;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
 }
 
-.company-glass-card .company-intro {
-  font-size: 1rem;
+.company-history-text {
+  font-size: 0.9375rem;
   font-weight: 400;
-  line-height: 1.7;
-  color: #ffffff;
-  opacity: 0.95;
-  margin-bottom: 1.5rem;
-}
-
-.company-glass-card .company-text {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #ffffff;
-  opacity: 0.95;
-  margin-bottom: 1.25rem;
-}
-
-.company-glass-card .company-text:last-of-type {
-  margin-bottom: 0;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
 }
 
 @media (max-width: 1024px) {
   .company-section {
-    min-height: 80vh;
+    padding: 5rem 4rem 6rem 4rem;
   }
 
-  .company-glass-card {
-    width: 48%;
-    max-width: 480px;
-    padding: 3.5rem 2.5rem 2.5rem;
-    min-height: 80vh;
+  .company-about-layout {
+    gap: 3rem;
   }
 
-  .company-glass-card .company-title {
-    font-size: 2rem;
+  .company-about-text {
+    max-width: 100%;
   }
 
-  .company-glass-card .company-intro,
-  .company-glass-card .company-text {
-    font-size: 0.95rem;
+  .company-history-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .company-history-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
   }
 }
 
@@ -143,27 +193,34 @@
   }
 
   .company-section {
-    min-height: auto;
+    padding: 4rem 2rem 6rem 2rem;
   }
 
-  .company-glass-card {
-    width: 100%;
-    max-width: 100%;
-    min-height: auto;
-    padding: 4rem 2rem 2.5rem;
+  .company-about-header {
+    margin-bottom: 2.5rem;
   }
 
-  .company-section-bg-image {
-    min-height: 60vh;
+  .company-about-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
-  .company-glass-card .company-title {
-    font-size: 1.75rem;
+  .company-about-text {
+    order: 0;
   }
 
-  .company-glass-card .company-intro,
-  .company-glass-card .company-text {
-    font-size: 0.95rem;
+  .company-about-image-wrap {
+    order: 1;
+  }
+
+  .company-history-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+  }
+
+  .company-history-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }
 
@@ -172,21 +229,23 @@
     bottom: 1rem;
   }
 
-  .company-glass-card {
-    padding: 3rem 1.5rem 2rem;
+  .company-section {
+    padding: 3rem 1.5rem 4rem 1.5rem;
   }
 
-  .company-card-logo {
-    width: 100px;
-    margin-bottom: 1.5rem;
-  }
-
-  .company-glass-card .company-title {
+  .company-about-heading {
     font-size: 1.5rem;
   }
 
-  .company-glass-card .company-intro,
-  .company-glass-card .company-text {
-    font-size: 0.9rem;
+  .company-about-supporting {
+    font-size: 1.125rem;
+  }
+
+  .company-history-title {
+    font-size: 0.9375rem;
+  }
+
+  .company-history-text {
+    font-size: 0.875rem;
   }
 }

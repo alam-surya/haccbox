@@ -11,6 +11,7 @@ import bottomImg from '../../../../assets/images/Product/OuterProduct/Bottom.web
 import topBottomImg from '../../../../assets/images/Product/OuterProduct/Top Bottom.webp'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
+import '../../../../components/PageHeroDark/PageHeroDark.css'
 import './OuterProduct.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -69,7 +70,7 @@ function OuterProduct() {
   }, [])
 
   return (
-    <div className="outer-product-page">
+    <div className="outer-product-page page-hero-dark">
       <section ref={sectionRef} className="hero-content-section">
         <div className="hero-content">
           <div className="hero-content-left">
@@ -77,18 +78,17 @@ function OuterProduct() {
           </div>
           <div className="hero-content-right">
             <p className="hero-description">{p.description}</p>
-            <button type="button" className="hero-learn-more" onClick={scrollToContent}>
-              <span className="material-symbols-outlined">chevron_right</span>
-              {p.seeMore}
-            </button>
           </div>
         </div>
-        <div className="hero-video-container">
-          <video ref={videoRef} className="hero-video" autoPlay loop muted playsInline preload="auto">
-            <source src={heroVideo} type="video/mp4" />
-            {p.videoUnsupported}
-          </video>
-          <div className="hero-overlay" />
+        <div className="hero-video-grid">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="hero-video-card">
+              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
+                <source src={heroVideo} type="video/mp4" />
+                {p.videoUnsupported}
+              </video>
+            </div>
+          ))}
         </div>
         <div ref={scrollIndicatorRef} className="scroll-indicator" aria-label="Scroll down">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

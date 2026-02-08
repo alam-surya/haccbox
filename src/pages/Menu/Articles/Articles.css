@@ -1,0 +1,243 @@
+.articles-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Hero - dark theme seperti design */
+.articles-page .hero-content-section {
+  padding-top: 7.5rem;
+  background: #000000;
+}
+
+.articles-page .hero-content {
+  background: #000000;
+}
+
+.articles-page .hero-heading {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.articles-page .hero-description {
+  color: #ffffff;
+}
+
+.articles-page .hero-content-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* scroll-indicator - position shared via PageHeroDark */
+.articles-page .scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: #ffffff;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.articles-page .scroll-indicator:hover {
+  opacity: 0.7;
+}
+
+.articles-section {
+  position: relative;
+  width: 100%;
+  padding: 6rem 4rem 8rem;
+  background: #ffffff;
+}
+
+.articles-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ——— Article list (navigation) ——— */
+.articles-nav {
+  position: sticky;
+  top: 6rem;
+}
+
+.articles-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.articles-nav-item {
+  margin: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.articles-nav-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.articles-nav-link {
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+  background: none;
+  border: none;
+  color: #000000;
+  font: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+.articles-nav-link:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.articles-nav-link--active {
+  font-weight: 700;
+  color: #000000;
+}
+
+/* ——— Main content: article blocks ——— */
+.articles-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-height: calc(100vh - 12rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.articles-article {
+  scroll-margin-top: 6rem;
+}
+
+.articles-article-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  color: #000000;
+}
+
+.articles-article-meta {
+  margin: 0 0 1.5rem;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.65);
+  letter-spacing: 0.02em;
+}
+
+.articles-article-hero {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.articles-article-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  vertical-align: middle;
+}
+
+.articles-article-body {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+.articles-article-para {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.articles-article-para:last-child {
+  margin-bottom: 0;
+}
+
+/* ——— Single CTA ——— */
+.articles-cta-wrap {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.articles-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: #000000;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.articles-view-all:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: #000000;
+  color: #ffffff;
+}
+
+/* ——— Mobile: stack vertically ——— */
+@media (max-width: 768px) {
+  .articles-section {
+    padding: 4rem 2rem 6rem;
+  }
+
+  .articles-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .articles-nav {
+    position: static;
+  }
+
+  .articles-main {
+    max-height: calc(100vh - 10rem);
+  }
+
+  .articles-nav-link {
+    padding: 0.875rem 0;
+    font-size: 0.9375rem;
+  }
+
+  .articles-article {
+    scroll-margin-top: 4rem;
+  }
+
+  .articles-article-title {
+    font-size: 1.5rem;
+  }
+
+  .articles-article-para {
+    font-size: 0.9375rem;
+  }
+}

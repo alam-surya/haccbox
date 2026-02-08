@@ -1,8 +1,8 @@
 .category-section {
   width: 100%;
-  min-height:auto;
-  padding: 7rem 2rem 0.5rem;
-  background: #000;
+  min-height: auto;
+  padding: 7rem 2rem 9rem;
+  background: #ffffff;
 }
 
 .category-grid {
@@ -22,7 +22,7 @@
 
 @media (max-width: 1024px) {
   .category-section {
-    padding: 6rem 1.5rem 0.5rem;
+    padding: 6rem 1.5rem 7rem;
   }
   
   .category-grid {
@@ -38,7 +38,7 @@
 
 @media (max-width: 768px) {
   .category-section {
-    padding: 5.5rem 1rem 0.25rem;
+    padding: 5.5rem 1rem 5.5rem;
   }
   
   .category-grid {
@@ -53,7 +53,7 @@
 
 @media (max-width: 480px) {
   .category-section {
-    padding: 5rem 0.75rem 0.25rem;
+    padding: 5rem 0.75rem 4rem;
   }
   
   .category-grid {

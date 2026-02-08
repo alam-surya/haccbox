@@ -1,7 +1,9 @@
 .certification-section {
+  --bg-color: #000000;
+  --text-color: #ffffff;
   width: 100%;
-  background: var(--bg-color, #000000);
-  color: var(--text-color, #ffffff);
+  background: var(--bg-color);
+  color: var(--text-color);
   padding: 10rem 5rem 9rem;
 }
 

@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import ownerProfileImage from '../../../../assets/images/OwnerProfile.webp'
-import logoImage from '../../../../assets/images/logo.webp'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
+import '../../../../components/PageHeroDark/PageHeroDark.css'
 import './OwnerProfile.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -57,7 +58,7 @@ function OwnerProfile() {
   }, [])
 
   return (
-    <div className="owner-profile-page">
+    <div className="owner-profile-page page-hero-dark">
       <section ref={sectionRef} className="hero-content-section">
         <div ref={contentRef} className="hero-content">
           <div className="hero-content-left">
@@ -65,26 +66,17 @@ function OwnerProfile() {
           </div>
           <div className="hero-content-right">
             <p className="hero-description">{p.description}</p>
-            <button type="button" className="hero-learn-more" onClick={scrollToContent}>
-              <span className="material-symbols-outlined">chevron_right</span>
-              {p.seeMore}
-            </button>
           </div>
         </div>
-        <div className="hero-video-container">
-          <video
-            ref={videoRef}
-            className="hero-video"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-          >
-            <source src={heroVideo} type="video/mp4" />
-            {p.videoUnsupported}
-          </video>
-          <div className="hero-overlay" />
+        <div className="hero-video-grid">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="hero-video-card">
+              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
+                <source src={heroVideo} type="video/mp4" />
+                {p.videoUnsupported}
+              </video>
+            </div>
+          ))}
         </div>
         <div
           ref={scrollIndicatorRef}
@@ -98,24 +90,31 @@ function OwnerProfile() {
       </section>
 
       <section ref={contentSectionRef} className="owner-profile-section">
-        <div className="owner-profile-section-bg" aria-hidden="true">
-          <img
-            src={ownerProfileImage}
-            alt=""
-            className="owner-profile-section-bg-image"
-            loading="lazy"
-          />
-        </div>
-        <div className="owner-profile-glass-card">
-          <img src={logoImage} alt="Haccbox" className="owner-profile-card-logo" />
-          <h2 className="owner-profile-title">{p.title}</h2>
-          <p className="owner-profile-intro">{p.intro}</p>
-          <p className="owner-profile-text">{p.text1}</p>
-          <p className="owner-profile-text">{p.text2}</p>
-          <p className="owner-profile-attribution">
-            <strong>{p.attribution}</strong><br />
-            {p.attributionRole}
-          </p>
+        <header className="owner-profile-about-header">
+          <span className="owner-profile-about-prefix">_</span>
+          <h2 className="owner-profile-about-heading">{p.aboutMainHeading}</h2>
+        </header>
+        <div className="owner-profile-about-layout">
+          <div className="owner-profile-about-text">
+            <p className="owner-profile-about-supporting">{p.aboutSupporting}</p>
+            {(p.attribution || p.attributionRole) && (
+              <p className="owner-profile-attribution">
+                <strong>{p.attribution}</strong>
+                {p.attributionRole && <><br />{p.attributionRole}</>}
+              </p>
+            )}
+            <Link to="/contact-person" className="owner-profile-about-btn">
+              {p.aboutCta}
+            </Link>
+          </div>
+          <div className="owner-profile-about-image-wrap">
+            <img
+              src={ownerProfileImage}
+              alt=""
+              className="owner-profile-about-image"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
     </div>

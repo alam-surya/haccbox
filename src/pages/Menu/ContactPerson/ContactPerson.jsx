@@ -3,6 +3,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../assets/videos/hero-update.mp4'
 import { useLanguage } from '../../../context/LanguageContext'
+import '../../../components/HeroContent/HeroContent.css'
+import '../../../components/PageHeroDark/PageHeroDark.css'
 import './ContactPerson.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -132,44 +134,32 @@ function ContactPerson() {
   }
 
   return (
-    <div className="contact-person-page">
-      {/* Hero Section - HeroContent style */}
-      <section ref={sectionRef} className="contact-hero-section">
-        {/* Text Content Section */}
-        <div ref={contentRef} className="contact-hero-content">
-          <div className="contact-hero-left">
-            <h1 className="contact-hero-heading">{p.heading}</h1>
+    <div className="contact-person-page page-hero-dark">
+      <section ref={sectionRef} className="hero-content-section">
+        <div ref={contentRef} className="hero-content">
+          <div className="hero-content-left">
+            <h1 className="hero-heading">{p.heading}</h1>
           </div>
-          <div className="contact-hero-right">
-            <p className="contact-hero-description">{p.description}</p>
-            <button 
+          <div className="hero-content-right">
+            <p className="hero-description">{p.description}</p>
+            <button
               onClick={handleScrollToLocations}
-              className="contact-hero-cta"
+              className="contact-hero-cta page-hero-dark-cta"
             >
               <span className="material-symbols-outlined">chevron_right</span>
               {p.viewLocations}
             </button>
           </div>
         </div>
-
-        {/* Video Section */}
-        <div className="contact-hero-video-container">
-          <video
-            ref={videoRef}
-            className="contact-hero-video"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-          >
-            <source 
-              src={heroVideo} 
-              type="video/mp4" 
-            />
-            {p.videoUnsupported}
-          </video>
-          <div className="contact-hero-overlay"></div>
+        <div className="hero-video-grid">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="hero-video-card">
+              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
+                <source src={heroVideo} type="video/mp4" />
+                {p.videoUnsupported}
+              </video>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;   /* dari space-between → flex-start */
   align-items: center;
-  padding: 2rem 3rem;
+  gap: 1rem;                    /* jarak antar menu & logo */
+  padding: 2rem 3rem 2rem 5rem; /* sejajar dengan hero title */
   background: transparent;
   pointer-events: none;
   mix-blend-mode: difference;
@@ -56,12 +56,17 @@
 }
 
 .logo-link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   text-decoration: none;
   color: white;
   transition: opacity 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: inherit;
 }
 
 .logo-link:hover {
@@ -85,13 +90,13 @@
 
 @media (max-width: 1024px) {
   .navigation {
-    padding: 1.75rem 2.5rem;
+    padding: 1.75rem 2.5rem 1.75rem 4rem;
   }
 }
 
 @media (max-width: 768px) {
   .navigation {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 2rem 1.5rem 2rem;
   }
   
   .menu-button,
@@ -112,7 +117,7 @@
 
 @media (max-width: 480px) {
   .navigation {
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem 1.5rem 1.25rem 1.5rem;
   }
   
   .menu-button,
