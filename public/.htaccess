@@ -1,6 +1,11 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Proxy Google Sheets API (PHP) - sebelum rule SPA
+  RewriteCond %{REQUEST_URI} ^/api/sheets-export
+  RewriteRule ^api/sheets-export.*$ api/sheets-export.php [L,QSA]
+
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

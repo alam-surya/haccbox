@@ -1,17 +1,13 @@
 /**
  * Fetch public Google Sheet as CSV and parse to rows.
- * Uses proxy in dev (Vite) and CORS proxy in production.
+ * Dev: Vite proxy. Production: PHP proxy di server (api/sheets-export.php).
  */
 
 const SHEET_ID = '1iiRQkmHqMarmgjAkbcE3suVcTtH9aniYAf1wr75aQeY'
 const GID = '0'
 
 function getSheetCsvUrl() {
-  const direct = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID}`
-  if (import.meta.env.DEV) {
-    return `/api/sheets-export?format=csv&gid=${GID}`
-  }
-  return `https://api.allorigins.win/raw?url=${encodeURIComponent(direct)}`
+  return `/api/sheets-export?format=csv&gid=${GID}`
 }
 
 /**
