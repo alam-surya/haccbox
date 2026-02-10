@@ -9,7 +9,7 @@ export function LanguageProvider({ children }) {
       const stored = localStorage.getItem(STORAGE_KEY)
       if (stored === 'id' || stored === 'en') return stored
     } catch (_) {}
-    return 'id'
+    return 'en'
   })
 
   const setLanguage = (value) => {
