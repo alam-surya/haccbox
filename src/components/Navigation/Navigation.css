@@ -2,15 +2,23 @@
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 1000;
   display: flex;
-  justify-content: flex-start;   /* dari space-between → flex-start */
+  justify-content: flex-start;
   align-items: center;
-  gap: 1rem;                    /* jarak antar menu & logo */
-  padding: 2rem 3rem 2rem 5rem; /* sejajar dengan hero title */
+  gap: 1rem;
+  padding: 2rem 3rem 2rem 5rem;
   background: transparent;
   pointer-events: none;
   mix-blend-mode: difference;
+}
+
+@media (min-width: 1025px) {
+  .navigation {
+    justify-content: space-between;
+    padding-right: 5rem;
+  }
 }
 
 .navigation > * {
@@ -22,8 +30,8 @@
   background: none;
   border: none;
   color: white;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.9375rem;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   cursor: pointer;
@@ -81,11 +89,49 @@
 
 .logo-text {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.1em;
   margin: 0;
   color: white;
   text-transform: uppercase;
+}
+
+/* Language button: top-right, desktop only */
+.navigation-lang-btn {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .navigation-lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.3s ease;
+  }
+
+  .navigation-lang-btn:hover {
+    opacity: 0.8;
+  }
+
+  .navigation-lang-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navigation-lang-label {
+    line-height: 1;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -101,7 +147,7 @@
   
   .menu-button,
   .contact-button {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     letter-spacing: 0.1em;
   }
   
@@ -110,7 +156,7 @@
   }
   
   .logo-text {
-    font-size: 1rem;
+    font-size: 1.0625rem;
     letter-spacing: 0.08em;
   }
 }
@@ -130,7 +176,7 @@
   }
   
   .logo-text {
-    font-size: 0.9rem;
+    font-size: 0.9375rem;
   }
 }
 

@@ -160,7 +160,7 @@ function NavDropdown({ isOpen, onClose }) {
           ))}
           <button
             type="button"
-            className="nav-dropdown-item"
+            className="nav-dropdown-item nav-dropdown-item--language"
             onClick={() => {
               setLanguage((lang) => (lang === 'id' ? 'en' : 'id'))
               onClose()

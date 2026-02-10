@@ -23,8 +23,8 @@ function Gallery() {
     gallerySectionRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const galleryPageModules = import.meta.glob('/src/assets/gallery/gallery-page/*.jpg', { eager: true })
-  const galleryImages = Object.entries(galleryPageModules)
+  const galleryImageModules = import.meta.glob('/src/assets/images/Gallery/*.webp', { eager: true })
+  const galleryImages = Object.entries(galleryImageModules)
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([, mod], index) => ({
       id: index + 1,

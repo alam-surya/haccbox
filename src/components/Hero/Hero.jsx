@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import videoDesktop from '../../assets/videos/haccbox-hero.mp4'
-import videoMobile from '../../assets/videos/haccbox-hero-mobile.mp4'
+import videoDesktop from '../../assets/videos/new-hero-desktop.mp4'
+import videoMobile from '../../assets/videos/new-hero-mobile.mp4'
 import './Hero.css'
 
 gsap.registerPlugin(ScrollTrigger)

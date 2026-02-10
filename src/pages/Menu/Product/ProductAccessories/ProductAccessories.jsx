@@ -1,11 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useMemo } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
-import hexaWrapImg from '../../../../assets/images/Product/ProductAccessories/Hexa Wrap.webp'
-import honeycombBoardImg from '../../../../assets/images/Product/ProductAccessories/Honeycomb Board.webp'
-import honeycombCoreImg from '../../../../assets/images/Product/ProductAccessories/Honeycomb Core.webp'
-import paperCoreImg from '../../../../assets/images/Product/ProductAccessories/Paper Core.webp'
+import ProductCarousel from '../../../../components/ProductCarousel/ProductCarousel'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import '../../../../components/PageHeroDark/PageHeroDark.css'
@@ -14,7 +11,28 @@ import './ProductAccessories.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const PRODUCT_IDS = ['hexa-wrap', 'honeycomb-board', 'honeycomb-core', 'paper-core']
-const PRODUCT_IMAGES = [hexaWrapImg, honeycombBoardImg, honeycombCoreImg, paperCoreImg]
+
+const FOLDER_BY_PRODUCT_ID = {
+  'hexa-wrap': 'Hexa Wrap',
+  'honeycomb-board': 'Honeycomb board',
+  'honeycomb-core': 'Honeycomb Core',
+  'paper-core': 'Paper Core'
+}
+
+const productAccessoriesImageModules = import.meta.glob(
+  '/src/assets/images/Product/ProductAccessories/*/*.webp',
+  { eager: true }
+)
+
+function getImagesByProductId(productId) {
+  const folderName = FOLDER_BY_PRODUCT_ID[productId]
+  if (!folderName) return []
+  const prefix = `/src/assets/images/Product/ProductAccessories/${folderName}/`
+  return Object.entries(productAccessoriesImageModules)
+    .filter(([path]) => path.startsWith(prefix))
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([, mod]) => mod.default)
+}
 
 function ProductAccessories() {
   const sectionRef = useRef(null)
@@ -23,12 +41,16 @@ function ProductAccessories() {
   const contentSectionRef = useRef(null)
   const { t } = useLanguage()
   const p = t.pages?.productAccessories || {}
-  const products = (p.products || []).map((item, i) => ({
-    id: PRODUCT_IDS[i],
-    name: item.name,
-    description: item.description,
-    image: PRODUCT_IMAGES[i]
-  }))
+  const products = useMemo(
+    () =>
+      (p.products || []).map((item, i) => ({
+        id: PRODUCT_IDS[i],
+        name: item.name,
+        description: item.description,
+        images: getImagesByProductId(PRODUCT_IDS[i])
+      })),
+    [p.products]
+  )
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -107,11 +129,7 @@ function ProductAccessories() {
                 <div className="product-accessories-card-right">
                   <p className="product-accessories-card-description">{product.description}</p>
                   <div className="product-accessories-card-visual">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="product-accessories-card-image"
-                    />
+                    <ProductCarousel images={product.images} alt={product.name} />
                   </div>
                 </div>
               </article>

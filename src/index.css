@@ -9,8 +9,8 @@
 
 :root {
   font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
-  --text-color: #ffffff;
-  --bg-color: #000000;
+  --text-color: #E8E8E8;
+  --bg-color: #1B1B1C;
 }
 
 html {
@@ -30,7 +30,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
 }
 

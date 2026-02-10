@@ -30,10 +30,10 @@
 }
 
 .nav-dropdown-title {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.9375rem;
+  font-weight: 600;
   letter-spacing: 0.05em;
-  color: #ffffff;
+  color: #E8E8E8;
 }
 
 .nav-dropdown-close {
@@ -42,7 +42,7 @@
   border: none;
   border-radius: 50%;
   background: #B0916E;
-  color: #000000;
+  color: #1B1B1C;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -80,9 +80,9 @@
   padding: 0.75rem 1.25rem;
   border: none;
   background: transparent;
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 400;
+  color: #E8E8E8;
+  font-size: 1rem;
+  font-weight: 500;
   font-family: inherit;
   text-align: left;
   cursor: pointer;
@@ -110,6 +110,13 @@
   flex: 1;
 }
 
+/* Hide language item in dropdown on desktop (shown in nav bar instead) */
+@media (min-width: 1025px) {
+  .nav-dropdown-item--language {
+    display: none;
+  }
+}
+
 /* Organization parent item with sub-menu (click to toggle) */
 .nav-dropdown-item-parent-wrapper {
   position: relative;
@@ -123,9 +130,9 @@
   padding: 0.75rem 1.25rem;
   border: none;
   background: transparent;
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 400;
+  color: #E8E8E8;
+  font-size: 1rem;
+  font-weight: 500;
   font-family: inherit;
   text-align: left;
   cursor: pointer;
@@ -181,9 +188,9 @@
   padding: 0.6rem 1rem 0.6rem 1.5rem;
   border: none;
   background: transparent;
-  color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 400;
+  color: #E8E8E8;
+  font-size: 0.9375rem;
+  font-weight: 500;
   font-family: inherit;
   text-align: left;
   cursor: pointer;

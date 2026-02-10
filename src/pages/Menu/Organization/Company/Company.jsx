@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../../../assets/videos/hero-update.mp4'
-import companyImage from '../../../../assets/images/cahaya-abadi.png'
+import fotoUtama from '../../../../assets/images/Organization/Company/foto-utama.webp'
+import companyImage from '../../../../assets/images/Organization/Company/cahaya-abadi-update.png'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import '../../../../components/PageHeroDark/PageHeroDark.css'
@@ -13,7 +13,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 function Company() {
   const sectionRef = useRef(null)
-  const videoRef = useRef(null)
   const contentRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
@@ -75,10 +74,12 @@ function Company() {
         <div className="hero-video-grid">
           {[1, 2, 3].map((i) => (
             <div key={i} className="hero-video-card">
-              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
-                <source src={heroVideo} type="video/mp4" />
-                {c.videoUnsupported}
-              </video>
+              <img
+                src={fotoUtama}
+                alt=""
+                className="hero-video-card-video"
+                loading="eager"
+              />
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-height: auto;
-  background: #000;
+  background: #1B1B1C;
   color: white;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 4rem;
+  padding: 4rem 4rem 1.5rem;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -30,7 +30,7 @@
 
 .contact-heading {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -47,11 +47,11 @@
 .contact-link {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.3125rem;
   transition: opacity 0.3s ease;
   display: block;
   opacity: 1;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .contact-link:hover {
@@ -59,11 +59,11 @@
 }
 
 .contact-email {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
 }
 
 .contact-phone {
-  font-size: 1rem;
+  font-size: 1.3125rem;
 }
 
 .social-icons {
@@ -107,7 +107,7 @@
 /* Running Text Section */
 .running-text-container {
   width: 100%;
-  background: #2A423E;
+  background: #1B1B1C;
   padding: 0;
   overflow: hidden;
   position: relative;
@@ -124,8 +124,8 @@
 
 .running-text {
   white-space: nowrap;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.3125rem;
+  font-weight: 500;
   letter-spacing: 0.02em;
   color: white;
   padding: 0;
@@ -137,7 +137,7 @@
 
 @media (max-width: 1024px) {
   .contact-main-content {
-    padding: 1.25rem 3rem;
+    padding: 3rem 3rem 1.25rem;
   }
   
   .contact-heading {
@@ -157,7 +157,7 @@
 @media (max-width: 768px) {
   .contact-main-content {
     flex-direction: column;
-    padding: 1rem 2rem;
+    padding: 2.5rem 2rem 1rem;
     gap: 2rem;
   }
   
@@ -167,16 +167,16 @@
   }
   
   .contact-heading {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     margin-bottom: 0.75rem;
   }
   
   .contact-email {
-    font-size: 1rem;
+    font-size: 1.3125rem;
   }
   
   .contact-phone {
-    font-size: 0.9rem;
+    font-size: 1.1875rem;
   }
   
   .contact-logo {
@@ -189,32 +189,32 @@
   }
   
   .running-text {
-    font-size: 0.875rem;
+    font-size: 1.1875rem;
     padding: 0;
   }
 }
 
 @media (max-width: 480px) {
   .contact-main-content {
-    padding: 0.75rem 1.5rem;
+    padding: 2rem 1.5rem 0.75rem;
     gap: 1.5rem;
   }
   
   .contact-heading {
-    font-size: 1rem;
+    font-size: 1.0625rem;
     margin-bottom: 0.75rem;
   }
   
   .contact-link {
-    font-size: 0.875rem;
+    font-size: 1.1875rem;
   }
   
   .contact-email {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
   }
   
   .contact-phone {
-    font-size: 0.875rem;
+    font-size: 1.1875rem;
   }
   
   .social-icon {
@@ -231,7 +231,7 @@
   }
   
   .running-text {
-    font-size: 0.75rem;
+    font-size: 1.125rem;
     padding: 0;
   }
 }

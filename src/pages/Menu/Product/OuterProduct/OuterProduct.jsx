@@ -1,14 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useMemo } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
-import lShapeImg from '../../../../assets/images/Product/OuterProduct/L Shape.webp'
-import boxA1Img from '../../../../assets/images/Product/OuterProduct/Box A1.webp'
-import boxMiringImg from '../../../../assets/images/Product/OuterProduct/Box Miring.webp'
-import dieCutImg from '../../../../assets/images/Product/OuterProduct/Die Cut.webp'
-import emptyBoxImg from '../../../../assets/images/Product/OuterProduct/Empty Box.webp'
-import bottomImg from '../../../../assets/images/Product/OuterProduct/Bottom.webp'
-import topBottomImg from '../../../../assets/images/Product/OuterProduct/Top Bottom.webp'
+import ProductCarousel from '../../../../components/ProductCarousel/ProductCarousel'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import '../../../../components/PageHeroDark/PageHeroDark.css'
@@ -17,7 +11,19 @@ import './OuterProduct.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const PRODUCT_IDS = ['l-shape', 'box-a1', 'box-miring', 'die-cut', 'empty-box', 'bottom', 'top-bottom']
-const PRODUCT_IMAGES = [lShapeImg, boxA1Img, boxMiringImg, dieCutImg, emptyBoxImg, bottomImg, topBottomImg]
+
+const outerProductImageModules = import.meta.glob(
+  '/src/assets/images/Product/OuterProduct/*/*.webp',
+  { eager: true }
+)
+
+function getImagesByProductId(productId) {
+  const prefix = `/src/assets/images/Product/OuterProduct/${productId}/`
+  return Object.entries(outerProductImageModules)
+    .filter(([path]) => path.startsWith(prefix))
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([, mod]) => mod.default)
+}
 
 function OuterProduct() {
   const sectionRef = useRef(null)
@@ -26,12 +32,16 @@ function OuterProduct() {
   const contentSectionRef = useRef(null)
   const { t } = useLanguage()
   const p = t.pages?.outerProduct || {}
-  const products = (p.products || []).map((item, i) => ({
-    id: PRODUCT_IDS[i],
-    name: item.name,
-    description: item.description,
-    image: PRODUCT_IMAGES[i]
-  }))
+  const products = useMemo(
+    () =>
+      (p.products || []).map((item, i) => ({
+        id: PRODUCT_IDS[i],
+        name: item.name,
+        description: item.description,
+        images: getImagesByProductId(PRODUCT_IDS[i])
+      })),
+    [p.products]
+  )
 
   const scrollToContent = () => {
     contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -110,11 +120,7 @@ function OuterProduct() {
                 <div className="outer-product-card-right">
                   <p className="outer-product-card-description">{product.description}</p>
                   <div className="outer-product-card-visual">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="outer-product-card-image"
-                    />
+                    <ProductCarousel images={product.images} alt={product.name} />
                   </div>
                 </div>
               </article>

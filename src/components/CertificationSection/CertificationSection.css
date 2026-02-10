@@ -1,6 +1,6 @@
 .certification-section {
-  --bg-color: #000000;
-  --text-color: #ffffff;
+  --bg-color: #1B1B1C;
+  --text-color: #E8E8E8;
   width: 100%;
   background: var(--bg-color);
   color: var(--text-color);
@@ -15,7 +15,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #ffffff;
+  color: #E8E8E8;
   margin: 0;
   letter-spacing: -0.02em;
 }
@@ -30,8 +30,8 @@
 
 .certification-tab {
   font-family: inherit;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.3125rem;
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.6);
   background: none;
   border: none;
@@ -46,7 +46,7 @@
 }
 
 .certification-tab.active {
-  color: #ffffff;
+  color: #E8E8E8;
 }
 
 .certification-tab.active::after {
@@ -56,7 +56,7 @@
   right: 0;
   bottom: -0.625rem;
   height: 1px;
-  background: #ffffff;
+  background: #E8E8E8;
 }
 
 .certification-content {
@@ -75,8 +75,8 @@
 }
 
 .certification-label {
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 1.125rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
@@ -86,16 +86,16 @@
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #ffffff;
+  color: #E8E8E8;
   margin: 0;
   letter-spacing: -0.02em;
 }
 
 .certification-description {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.3125rem;
+  font-weight: 600;
   line-height: 1.6;
-  color: #ffffff;
+  color: #E8E8E8;
   margin: 0;
 }
 
@@ -190,7 +190,7 @@
   }
 
   .certification-tab {
-    font-size: 0.9rem;
+    font-size: 1.1875rem;
   }
 
   .certification-content {
@@ -202,7 +202,7 @@
   }
 
   .certification-description {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
   }
 
   .certification-image {

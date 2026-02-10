@@ -5,7 +5,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: #E8E8E8;
   padding-top: 7.5rem;
 }
 
@@ -20,7 +20,7 @@
   align-items: flex-start;
   gap: 4rem;
   z-index: 3;
-  background: #ffffff;
+  background: #E8E8E8;
 }
 
 .hero-content-left {
@@ -32,7 +32,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #000000;
+  color: #1B1B1C;
   margin: 0;
   letter-spacing: -0.02em;
 }
@@ -48,10 +48,10 @@
 }
 
 .hero-description {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.3125rem;
+  font-weight: 600;
   line-height: 1.6;
-  color: #000000;
+  color: #1B1B1C;
   margin: 0;
   max-width: 100%;
 }
@@ -127,7 +127,7 @@
   }
 
   .hero-description {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
   }
 
   .hero-video-container {
@@ -150,7 +150,7 @@
   }
 
   .hero-description {
-    font-size: 0.9rem;
+    font-size: 1.1875rem;
   }
 
   .hero-video-container {

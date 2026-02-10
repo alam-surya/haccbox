@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../../../assets/videos/hero-update.mp4'
 import qualityImage from '../../../../assets/gallery/galeri-02.webp'
+import QualitySpecsTables from '../../../../components/QualitySpecsTables/QualitySpecsTables'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import '../../../../components/PageHeroDark/PageHeroDark.css'
@@ -105,24 +106,9 @@ function ProductQuality() {
         </div>
 
         <section className="product-quality-specs-section">
-          <div className="product-quality-specs-grid">
-            <div className="product-quality-spec-card">
-              <h3 className="product-quality-spec-title">{p.cartonQuality}</h3>
-              <p className="product-quality-spec-text">{p.cartonQualityText}</p>
-            </div>
-            <div className="product-quality-spec-card">
-              <h3 className="product-quality-spec-title">{p.foamQuality}</h3>
-              <p className="product-quality-spec-text">{p.foamQualityText}</p>
-            </div>
-            <div className="product-quality-spec-card">
-              <h3 className="product-quality-spec-title">{p.edgeProtector}</h3>
-              <p className="product-quality-spec-text">{p.edgeProtectorText}</p>
-            </div>
-            <div className="product-quality-spec-card">
-              <h3 className="product-quality-spec-title">{p.honeycombThickness}</h3>
-              <p className="product-quality-spec-text">{p.honeycombThicknessText}</p>
-            </div>
-          </div>
+          <QualitySpecsTables
+            specTitles={[p.cartonQuality, p.foamQuality, p.edgeProtector, p.honeycombThickness]}
+          />
         </section>
       </section>
     </div>

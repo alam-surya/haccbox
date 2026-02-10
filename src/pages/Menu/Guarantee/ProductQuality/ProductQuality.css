@@ -1,8 +1,8 @@
 .guarantee-product-quality-page {
   width: 100%;
   min-height: 100vh;
-  background: #ffffff;
-  color: #000000;
+  background: #E8E8E8;
+  color: #1B1B1C;
   overflow-x: hidden;
 }
 
@@ -12,7 +12,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  color: #000000;
+  color: #1B1B1C;
   cursor: pointer;
   border: none;
   background: none;
@@ -33,7 +33,7 @@
 .guarantee-product-quality-section {
   width: 100%;
   padding: 8rem 4rem;
-  background: #ffffff;
+  background: #E8E8E8;
 }
 
 .guarantee-product-quality-container {
@@ -46,11 +46,11 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   margin-bottom: 1.5rem;
-  color: #000000;
+  color: #1B1B1C;
 }
 
 .guarantee-product-quality-text {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.9);
 }

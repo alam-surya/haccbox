@@ -1,0 +1,136 @@
+.quality-specs-tables {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.quality-specs-nav {
+  position: sticky;
+  top: 6rem;
+}
+
+.quality-specs-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quality-specs-nav-item {
+  margin: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.quality-specs-nav-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.quality-specs-nav-link {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 0;
+  background: none;
+  border: none;
+  color: #1B1B1C;
+  font: inherit;
+  font-size: 1.25rem;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+.quality-specs-nav-link:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.quality-specs-nav-link--active {
+  font-weight: 700;
+  color: #1B1B1C;
+}
+
+.quality-specs-main {
+  max-height: calc(100vh - 12rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.quality-specs-loading,
+.quality-specs-error {
+  padding: 2rem;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.25rem;
+}
+
+.quality-specs-error {
+  color: #c00;
+}
+
+.quality-specs-block {
+  margin-bottom: 3rem;
+}
+
+.quality-specs-block:last-child {
+  margin-bottom: 0;
+}
+
+.quality-specs-block-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #1B1B1C;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+}
+
+.quality-specs-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.quality-specs-table {
+  width: 100%;
+  min-width: 400px;
+  border-collapse: collapse;
+  font-size: 1.1875rem;
+}
+
+.quality-specs-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #1B1B1C;
+  vertical-align: top;
+}
+
+.quality-specs-table tbody tr:first-child td {
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 768px) {
+  .quality-specs-tables {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .quality-specs-nav {
+    position: static;
+  }
+
+  .quality-specs-main {
+    max-height: calc(100vh - 10rem);
+  }
+
+  .quality-specs-table {
+    font-size: 1.125rem;
+  }
+
+  .quality-specs-table td {
+    padding: 0.4rem 0.5rem;
+  }
+}

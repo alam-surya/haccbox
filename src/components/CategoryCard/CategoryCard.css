@@ -68,13 +68,13 @@
   right: 0;
   padding: 2rem;
   background: transparent;
-  color: #000000;
+  color: #1B1B1C;
   z-index: 5;
 }
 
 .category-name {
   font-size: 2.5rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin: 0;
@@ -85,10 +85,10 @@
   text-align: center;
   opacity: 0.4;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #000000;
+  color: #1B1B1C;
   margin-bottom: 1.5rem;
   white-space: nowrap;
   pointer-events: none;
@@ -98,21 +98,21 @@
 
 @media (max-width: 1024px) {
   .category-name-duplicate {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-bottom: 1.25rem;
   }
 }
 
 @media (max-width: 768px) {
   .category-name-duplicate {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .category-name-duplicate {
-    font-size: 1rem;
+    font-size: 1.3125rem;
     margin-bottom: 0.75rem;
   }
 }

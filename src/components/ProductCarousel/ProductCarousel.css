@@ -1,0 +1,58 @@
+.product-carousel {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+  user-select: none;
+  scrollbar-width: none;
+}
+
+.product-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.product-carousel:active {
+  cursor: grabbing;
+}
+
+.product-carousel-track {
+  display: flex;
+  gap: 1rem;
+  padding: 0.25rem 0;
+}
+
+.product-carousel-slide {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.product-carousel-image {
+  max-width: 100%;
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .product-carousel-image {
+    max-height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-carousel-image {
+    max-height: 200px;
+  }
+
+  .product-carousel-track {
+    gap: 0.75rem;
+  }
+}

@@ -1,8 +1,8 @@
 .organization-culture-page {
   width: 100%;
   min-height: 100vh;
-  background: #ffffff;
-  color: #000000;
+  background: #E8E8E8;
+  color: #1B1B1C;
   overflow-x: hidden;
 }
 
@@ -12,7 +12,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  color: #000000;
+  color: #1B1B1C;
   cursor: pointer;
   transition: opacity 0.3s ease;
   border: none;
@@ -51,7 +51,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: #ffffff;
+  background: #E8E8E8;
 }
 
 .organization-culture-header {
@@ -78,12 +78,12 @@
   text-transform: none;
   margin-bottom: 1rem;
   line-height: 1.25;
-  color: #000000;
+  color: #1B1B1C;
 }
 
 .organization-culture-header .organization-culture-intro {
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.3125rem;
+  font-weight: 500;
   line-height: 1.7;
   color: rgba(0, 0, 0, 0.8);
   margin: 0;
@@ -139,7 +139,7 @@
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(0, 0, 0, 0.15);
   padding: 3.5rem 2rem 1.5rem;
-  color: #000000;
+  color: #1B1B1C;
 }
 
 .organization-culture-value-title {
@@ -149,14 +149,14 @@
   margin: 0 0 0.5rem;
   padding-top: 1rem;
   line-height: 1.25;
-  color: #000000;
+  color: #1B1B1C;
 }
 
 .organization-culture-value-description {
-  font-size: 1.125rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 500;
   line-height: 1.6;
-  color: #000000;
+  color: #1B1B1C;
   margin: 0;
   flex: 1;
 }
@@ -176,7 +176,7 @@
   }
 
   .organization-culture-header .organization-culture-intro {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
   }
 
   .organization-culture-value-card {
@@ -199,7 +199,7 @@
   }
 
   .organization-culture-value-description {
-    font-size: 1.0625rem;
+    font-size: 1.375rem;
   }
 
   .organization-culture-values-list {
@@ -251,7 +251,7 @@
   }
 
   .organization-culture-value-description {
-    font-size: 1rem;
+    font-size: 1.3125rem;
   }
 
   .organization-culture-header .organization-culture-title {
@@ -279,7 +279,7 @@
   }
 
   .organization-culture-header .organization-culture-intro {
-    font-size: 0.9rem;
+    font-size: 1.1875rem;
   }
 
   .organization-culture-values-list {
@@ -296,6 +296,6 @@
   }
 
   .organization-culture-value-description {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
   }
 }
