@@ -1,9 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navigation from './components/Navigation/Navigation'
 import ContactSection from './components/ContactSection/ContactSection'
 import RunningText from './components/RunningText/RunningText'
+import LoadingScreen from './components/LoadingScreen/LoadingScreen'
 import LandingPage from './pages/LandingPage/LandingPage'
 import ContactPerson from './pages/Menu/ContactPerson/ContactPerson'
 import Company from './pages/Menu/Organization/Company/Company'
@@ -22,15 +23,32 @@ import Gallery from './pages/Menu/Gallery/Gallery'
 import Articles from './pages/Menu/Articles/Articles'
 import './App.css'
 
+const LOADING_DURATION_MS = 1200
+
 function AppRoutes() {
   const location = useLocation()
+  const [showPageLoader, setShowPageLoader] = useState(false)
+  const prevPathRef = useRef(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])
 
+  useEffect(() => {
+    const path = location.pathname
+    const isInitial = prevPathRef.current === null
+    prevPathRef.current = path
+
+    if (isInitial) return
+
+    setShowPageLoader(true)
+    const timer = setTimeout(() => setShowPageLoader(false), LOADING_DURATION_MS)
+    return () => clearTimeout(timer)
+  }, [location.pathname])
+
   return (
     <div style={{ position: 'relative', width: '100%', minHeight: '100vh', overflow: 'hidden' }}>
+      {showPageLoader && <LoadingScreen />}
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={location.pathname}
