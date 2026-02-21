@@ -23,12 +23,14 @@ import Gallery from './pages/Menu/Gallery/Gallery'
 import Articles from './pages/Menu/Articles/Articles'
 import './App.css'
 
-const LOADING_DURATION_MS = 1200
+const MIN_LOADING_MS = 500
+const MAX_LOADING_MS = 3500
 
 function AppRoutes() {
   const location = useLocation()
   const [showPageLoader, setShowPageLoader] = useState(false)
   const prevPathRef = useRef(null)
+  const currentPathRef = useRef(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -38,12 +40,61 @@ function AppRoutes() {
     const path = location.pathname
     const isInitial = prevPathRef.current === null
     prevPathRef.current = path
+    currentPathRef.current = path
 
     if (isInitial) return
 
     setShowPageLoader(true)
-    const timer = setTimeout(() => setShowPageLoader(false), LOADING_DURATION_MS)
-    return () => clearTimeout(timer)
+    const startTime = Date.now()
+    const maxTimer = setTimeout(() => {
+      if (currentPathRef.current === path) setShowPageLoader(false)
+    }, MAX_LOADING_MS)
+
+    const rafId = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const container = document.querySelector('.app-routes-content')
+        if (!container) {
+          const elapsed = Date.now() - startTime
+          const remaining = Math.max(0, MIN_LOADING_MS - elapsed)
+          setTimeout(() => {
+            if (currentPathRef.current === path) setShowPageLoader(false)
+          }, remaining)
+          return
+        }
+        const imgs = Array.from(container.querySelectorAll('img'))
+        if (imgs.length === 0) {
+          const elapsed = Date.now() - startTime
+          const remaining = Math.max(0, MIN_LOADING_MS - elapsed)
+          setTimeout(() => {
+            if (currentPathRef.current === path) setShowPageLoader(false)
+          }, remaining)
+          return
+        }
+        let loaded = 0
+        const tryHide = () => {
+          loaded += 1
+          if (loaded >= imgs.length) {
+            const elapsed = Date.now() - startTime
+            const remaining = Math.max(0, MIN_LOADING_MS - elapsed)
+            setTimeout(() => {
+              if (currentPathRef.current === path) setShowPageLoader(false)
+            }, remaining)
+          }
+        }
+        imgs.forEach((img) => {
+          if (img.complete) tryHide()
+          else {
+            img.addEventListener('load', tryHide)
+            img.addEventListener('error', tryHide)
+          }
+        })
+      })
+    })
+
+    return () => {
+      clearTimeout(maxTimer)
+      cancelAnimationFrame(rafId)
+    }
   }, [location.pathname])
 
   return (
@@ -51,6 +102,7 @@ function AppRoutes() {
       {showPageLoader && <LoadingScreen />}
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
+          className="app-routes-content"
           key={location.pathname}
           initial={{ y: '-100vh', opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
