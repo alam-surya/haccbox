@@ -1,42 +1,26 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../../assets/videos/hero-update.mp4'
 import { useLanguage } from '../../../context/LanguageContext'
-import '../../../components/HeroContent/HeroContent.css'
-import '../../../components/PageHeroDark/PageHeroDark.css'
 import './ContactPerson.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function ContactPerson() {
-  const sectionRef = useRef(null)
   const { t } = useLanguage()
   const p = t.pages?.contactPerson || {}
-  const videoRef = useRef(null)
-  const contentRef = useRef(null)
+  const contactIntroRef = useRef(null)
   const marketingOfficeRef = useRef(null)
   const warehouseRef = useRef(null)
   const socialMediaSectionRef = useRef(null)
   const socialCardsRef = useRef([])
 
   useEffect(() => {
-    const section = sectionRef.current
-    const content = contentRef.current
-
-    if (!section || !content) return
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-    }
-  }, [])
-
-  useEffect(() => {
-    // Animate sections on scroll
     const sections = [
-      { ref: marketingOfficeRef, delay: 0 },
-      { ref: warehouseRef, delay: 0.1 },
-      { ref: socialMediaSectionRef, delay: 0.2 }
+      { ref: contactIntroRef, delay: 0 },
+      { ref: marketingOfficeRef, delay: 0.1 },
+      { ref: warehouseRef, delay: 0.2 },
+      { ref: socialMediaSectionRef, delay: 0.3 }
     ]
 
     sections.forEach(({ ref, delay }) => {
@@ -126,40 +110,12 @@ function ContactPerson() {
     }
   ]
 
-  const handleScrollToLocations = () => {
-    const firstLocation = marketingOfficeRef.current
-    if (firstLocation) {
-      firstLocation.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
-    <div className="contact-person-page page-hero-dark">
-      <section ref={sectionRef} className="hero-content-section">
-        <div ref={contentRef} className="hero-content">
-          <div className="hero-content-left">
-            <h1 className="hero-heading">{p.heading}</h1>
-          </div>
-          <div className="hero-content-right">
-            <p className="hero-description">{p.description}</p>
-            <button
-              onClick={handleScrollToLocations}
-              className="contact-hero-cta page-hero-dark-cta"
-            >
-              <span className="material-symbols-outlined">chevron_right</span>
-              {p.viewLocations}
-            </button>
-          </div>
-        </div>
-        <div className="hero-video-grid">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="hero-video-card">
-              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
-                <source src={heroVideo} type="video/mp4" />
-                {p.videoUnsupported}
-              </video>
-            </div>
-          ))}
+    <div className="contact-person-page">
+      <section ref={contactIntroRef} className="contact-intro-section">
+        <div className="contact-intro-container">
+          <h1 className="contact-intro-heading">{p.heading}</h1>
+          <p className="contact-intro-description">{p.description}</p>
         </div>
       </section>
 

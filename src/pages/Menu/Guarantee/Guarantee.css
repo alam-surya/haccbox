@@ -49,10 +49,10 @@
 }
 
 .guarantee-title {
-  font-size: 3rem;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
   line-height: 1.2;
   color: #1B1B1C;
 }

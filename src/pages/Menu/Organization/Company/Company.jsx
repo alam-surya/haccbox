@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import fotoUtama from '../../../../assets/images/Organization/Company/foto-utama.webp'
+import img0112 from '../../../../assets/images/Organization/Company/IMG_0112 2.webp'
 import companyImage from '../../../../assets/images/Organization/Company/cahaya-abadi-update.png'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
@@ -72,16 +73,22 @@ function Company() {
           </div>
         </div>
         <div className="hero-video-grid">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="hero-video-card">
-              <img
-                src={fotoUtama}
-                alt=""
-                className="hero-video-card-video"
-                loading="eager"
-              />
-            </div>
-          ))}
+          <div className="hero-video-card">
+            <img
+              src={fotoUtama}
+              alt=""
+              className="hero-video-card-video"
+              loading="eager"
+            />
+          </div>
+          <div className="hero-video-card">
+            <img
+              src={img0112}
+              alt=""
+              className="hero-video-card-video"
+              loading="eager"
+            />
+          </div>
         </div>
         <div
           ref={scrollIndicatorRef}

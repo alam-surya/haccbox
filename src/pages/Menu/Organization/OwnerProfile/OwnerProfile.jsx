@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../../../assets/videos/hero-update.mp4'
-import ownerProfileImage from '../../../../assets/images/OwnerProfile.webp'
+import ownerProfileImage from '../../../../assets/images/Organization/OwnerProfile/IMG_7624 4.webp'
+import heroImageR1000590 from '../../../../assets/images/Organization/OwnerProfile/R1000590.webp'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import '../../../../components/PageHeroDark/PageHeroDark.css'
@@ -13,7 +13,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 function OwnerProfile() {
   const sectionRef = useRef(null)
-  const videoRef = useRef(null)
   const contentRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
@@ -69,14 +68,14 @@ function OwnerProfile() {
           </div>
         </div>
         <div className="hero-video-grid">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="hero-video-card">
-              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
-                <source src={heroVideo} type="video/mp4" />
-                {p.videoUnsupported}
-              </video>
-            </div>
-          ))}
+          <div className="hero-video-card">
+            <img
+              src={heroImageR1000590}
+              alt=""
+              className="hero-video-card-video"
+              loading="eager"
+            />
+          </div>
         </div>
         <div
           ref={scrollIndicatorRef}

@@ -1,63 +1,15 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../../assets/videos/hero-update.mp4'
 import { useLanguage } from '../../../context/LanguageContext'
-import '../../../components/HeroContent/HeroContent.css'
-import '../../../components/PageHeroDark/PageHeroDark.css'
 import './Guarantee.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function Guarantee() {
-  const sectionRef = useRef(null)
-  const contentRef = useRef(null)
-  const videoRef = useRef(null)
-  const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
   const { t } = useLanguage()
   const p = t.pages?.guarantee || {}
-
-  const scrollToContent = () => {
-    contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  useEffect(() => {
-    const scrollIndicator = scrollIndicatorRef.current
-
-    if (scrollIndicator) {
-      gsap.set(scrollIndicator, { opacity: 0, y: -10 })
-      
-      const indicatorTl = gsap.timeline({ delay: 1 })
-      indicatorTl.to(scrollIndicator, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power2.out'
-      })
-      .to(scrollIndicator, {
-        y: 10,
-        duration: 1.5,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power1.inOut'
-      })
-
-      const handleScrollClick = () => {
-        const contentSection = contentSectionRef.current
-        if (contentSection) {
-          contentSection.scrollIntoView({ behavior: 'smooth' })
-        }
-      }
-
-      scrollIndicator.addEventListener('click', handleScrollClick)
-
-      return () => {
-        indicatorTl.kill()
-        scrollIndicator.removeEventListener('click', handleScrollClick)
-      }
-    }
-  }, [])
 
   useEffect(() => {
     const contentSection = contentSectionRef.current
@@ -65,10 +17,7 @@ function Guarantee() {
 
     gsap.fromTo(
       contentSection,
-      {
-        opacity: 0,
-        y: 50
-      },
+      { opacity: 0, y: 50 },
       {
         opacity: 1,
         y: 0,
@@ -83,47 +32,15 @@ function Guarantee() {
       }
     )
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-    }
+    return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill())
   }, [])
 
   return (
-    <div className="guarantee-page page-hero-dark">
-      <section ref={sectionRef} className="hero-content-section">
-        <div ref={contentRef} className="hero-content">
-          <div className="hero-content-left">
-            <h1 className="hero-heading">{p.heading}</h1>
-          </div>
-          <div className="hero-content-right">
-            <p className="hero-description">{p.description}</p>
-          </div>
-        </div>
-        <div className="hero-video-grid">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="hero-video-card">
-              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
-                <source src={heroVideo} type="video/mp4" />
-                {p.videoUnsupported}
-              </video>
-            </div>
-          ))}
-        </div>
-        <div
-          ref={scrollIndicatorRef}
-          className="scroll-indicator"
-          aria-label="Scroll down"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M6 9l6 6 6-6" />
-          </svg>
-        </div>
-      </section>
-
+    <div className="guarantee-page">
       <section ref={contentSectionRef} className="guarantee-section">
         <div className="guarantee-container">
-          <h2 className="guarantee-title">{p.title}</h2>
-          <p className="guarantee-intro">{p.intro}</p>
+          <h1 className="guarantee-title">{p.heading}</h1>
+          <p className="guarantee-intro">{p.description}</p>
           <div className="guarantee-points">
             <article className="guarantee-point">
               <span className="guarantee-point-number">01</span>

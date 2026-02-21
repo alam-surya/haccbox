@@ -1,7 +1,9 @@
 import { useEffect, useRef, useMemo } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../../../assets/videos/hero-update.mp4'
+import heroImage1 from '../../../../assets/images/Product/OuterProduct/bottom/R1009581-2.webp'
+import heroImage2 from '../../../../assets/images/Product/OuterProduct/die-cut/R1009468.webp'
+import heroImage3 from '../../../../assets/images/Product/OuterProduct/box-a1/R1009605-2.webp'
 import ProductCarousel from '../../../../components/ProductCarousel/ProductCarousel'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
@@ -27,7 +29,6 @@ function getImagesByProductId(productId) {
 
 function OuterProduct() {
   const sectionRef = useRef(null)
-  const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
   const { t } = useLanguage()
@@ -91,14 +92,15 @@ function OuterProduct() {
           </div>
         </div>
         <div className="hero-video-grid">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="hero-video-card">
-              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
-                <source src={heroVideo} type="video/mp4" />
-                {p.videoUnsupported}
-              </video>
-            </div>
-          ))}
+          <div className="hero-video-card">
+            <img src={heroImage1} alt="" className="hero-video-card-video" loading="eager" />
+          </div>
+          <div className="hero-video-card">
+            <img src={heroImage2} alt="" className="hero-video-card-video" loading="eager" />
+          </div>
+          <div className="hero-video-card">
+            <img src={heroImage3} alt="" className="hero-video-card-video" loading="eager" />
+          </div>
         </div>
         <div ref={scrollIndicatorRef} className="scroll-indicator" aria-label="Scroll down">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -120,7 +122,7 @@ function OuterProduct() {
                 <div className="outer-product-card-right">
                   <p className="outer-product-card-description">{product.description}</p>
                   <div className="outer-product-card-visual">
-                    <ProductCarousel images={product.images} alt={product.name} />
+                    <ProductCarousel images={product.images} alt={product.name} draggable={false} />
                   </div>
                 </div>
               </article>

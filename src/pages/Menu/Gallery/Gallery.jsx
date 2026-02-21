@@ -1,27 +1,16 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../../assets/videos/hero-update.mp4'
 import { useLanguage } from '../../../context/LanguageContext'
-import '../../../components/HeroContent/HeroContent.css'
-import '../../../components/PageHeroDark/PageHeroDark.css'
 import './Gallery.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function Gallery() {
-  const sectionRef = useRef(null)
-  const videoRef = useRef(null)
-  const contentRef = useRef(null)
-  const scrollIndicatorRef = useRef(null)
   const gallerySectionRef = useRef(null)
   const galleryItemsRef = useRef([])
   const { t } = useLanguage()
   const p = t.pages?.gallery || {}
-
-  const scrollToContent = () => {
-    gallerySectionRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
 
   const galleryImageModules = import.meta.glob('/src/assets/images/Gallery/*.webp', { eager: true })
   const galleryImages = Object.entries(galleryImageModules)
@@ -33,52 +22,12 @@ function Gallery() {
     }))
 
   useEffect(() => {
-    const scrollIndicator = scrollIndicatorRef.current
-
-    if (scrollIndicator) {
-      gsap.set(scrollIndicator, { opacity: 0, y: -10 })
-      
-      const indicatorTl = gsap.timeline({ delay: 1 })
-      indicatorTl.to(scrollIndicator, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power2.out'
-      })
-      .to(scrollIndicator, {
-        y: 10,
-        duration: 1.5,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power1.inOut'
-      })
-
-      const handleScrollClick = () => {
-        const gallerySection = gallerySectionRef.current
-        if (gallerySection) {
-          gallerySection.scrollIntoView({ behavior: 'smooth' })
-        }
-      }
-
-      scrollIndicator.addEventListener('click', handleScrollClick)
-
-      return () => {
-        indicatorTl.kill()
-        scrollIndicator.removeEventListener('click', handleScrollClick)
-      }
-    }
-  }, [])
-
-  useEffect(() => {
     const gallerySection = gallerySectionRef.current
     if (!gallerySection) return
 
     gsap.fromTo(
       gallerySection,
-      {
-        opacity: 0,
-        y: 50
-      },
+      { opacity: 0, y: 50 },
       {
         opacity: 1,
         y: 0,
@@ -93,15 +42,11 @@ function Gallery() {
       }
     )
 
-    // Animate gallery items with stagger
     galleryItemsRef.current.forEach((item, index) => {
       if (item) {
         gsap.fromTo(
           item,
-          {
-            opacity: 0,
-            y: 30
-          },
+          { opacity: 0, y: 30 },
           {
             opacity: 1,
             y: 0,
@@ -118,45 +63,15 @@ function Gallery() {
       }
     })
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-    }
+    return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill())
   }, [])
 
   return (
-    <div className="gallery-page page-hero-dark">
-      <section ref={sectionRef} className="hero-content-section">
-        <div ref={contentRef} className="hero-content">
-          <div className="hero-content-left">
-            <h1 className="hero-heading">{p.heading}</h1>
-          </div>
-          <div className="hero-content-right">
-            <p className="hero-description">{p.description}</p>
-          </div>
-        </div>
-        <div className="hero-video-grid">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="hero-video-card">
-              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
-                <source src={heroVideo} type="video/mp4" />
-                {p.videoUnsupported}
-              </video>
-            </div>
-          ))}
-        </div>
-        <div
-          ref={scrollIndicatorRef}
-          className="scroll-indicator"
-          aria-label="Scroll down"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M6 9l6 6 6-6" />
-          </svg>
-        </div>
-      </section>
-
+    <div className="gallery-page">
       <section ref={gallerySectionRef} className="gallery-section">
         <div className="gallery-container">
+          <h1 className="gallery-heading">{p.heading}</h1>
+          <p className="gallery-intro">{p.description}</p>
           <div className="gallery-grid">
             {galleryImages.map((image, index) => (
               <div

@@ -2,8 +2,10 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../../../assets/videos/hero-update.mp4'
-import qualityImage from '../../../../assets/gallery/galeri-02.webp'
+import heroImage1 from '../../../../assets/images/Product/ProductQuality/R1009513.webp'
+import heroImage2 from '../../../../assets/images/Product/ProductQuality/R1009516.webp'
+import heroImage3 from '../../../../assets/images/Product/ProductQuality/R1009519.webp'
+import qualityImage from '../../../../assets/images/Product/ProductQuality/R1009502.webp'
 import QualitySpecsTables from '../../../../components/QualitySpecsTables/QualitySpecsTables'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
@@ -14,7 +16,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 function ProductQuality() {
   const sectionRef = useRef(null)
-  const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
   const { t } = useLanguage()
@@ -68,14 +69,15 @@ function ProductQuality() {
           </div>
         </div>
         <div className="hero-video-grid">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="hero-video-card">
-              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
-                <source src={heroVideo} type="video/mp4" />
-                {p.videoUnsupported}
-              </video>
-            </div>
-          ))}
+          <div className="hero-video-card">
+            <img src={heroImage1} alt="" className="hero-video-card-video" loading="eager" />
+          </div>
+          <div className="hero-video-card">
+            <img src={heroImage2} alt="" className="hero-video-card-video" loading="eager" />
+          </div>
+          <div className="hero-video-card">
+            <img src={heroImage3} alt="" className="hero-video-card-video" loading="eager" />
+          </div>
         </div>
         <div ref={scrollIndicatorRef} className="scroll-indicator" aria-label="Scroll down">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

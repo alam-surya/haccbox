@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../../../assets/videos/hero-update.mp4'
-import finishingOptionImage from '../../../../assets/gallery/galeri-03.webp'
+import heroImage1 from '../../../../assets/images/Service/FinishingOption/IMG_0379 4.webp'
+import heroImage2 from '../../../../assets/images/Service/FinishingOption/IMG_8460 3.webp'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import '../../../../components/PageHeroDark/PageHeroDark.css'
@@ -13,7 +13,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 function FinishingOption() {
   const sectionRef = useRef(null)
-  const videoRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
   const { t } = useLanguage()
@@ -67,14 +66,12 @@ function FinishingOption() {
           </div>
         </div>
         <div className="hero-video-grid">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="hero-video-card">
-              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
-                <source src={heroVideo} type="video/mp4" />
-                {p.videoUnsupported}
-              </video>
-            </div>
-          ))}
+          <div className="hero-video-card">
+            <img src={heroImage1} alt="" className="hero-video-card-video" loading="eager" />
+          </div>
+          <div className="hero-video-card">
+            <img src={heroImage2} alt="" className="hero-video-card-video" loading="eager" />
+          </div>
         </div>
         <div ref={scrollIndicatorRef} className="scroll-indicator" aria-label="Scroll down">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -94,25 +91,27 @@ function FinishingOption() {
               {p.aboutCta}
             </Link>
           </div>
-          <div className="finishing-option-about-image-wrap">
-            <img
-              src={finishingOptionImage}
-              alt=""
-              className="finishing-option-about-image"
-              loading="lazy"
-            />
-          </div>
         </div>
 
         <section className="finishing-option-specs-section">
           <div className="finishing-option-specs-grid">
             <div className="finishing-option-spec-card">
-              <h3 className="finishing-option-spec-title">{p.glue}</h3>
-              <p className="finishing-option-spec-text">{p.glueText}</p>
+              <div className="finishing-option-spec-image-wrap">
+                <img src={heroImage2} alt="" className="finishing-option-spec-image" loading="lazy" />
+              </div>
+              <div className="finishing-option-spec-content">
+                <h3 className="finishing-option-spec-title">{p.glue}</h3>
+                <p className="finishing-option-spec-text">{p.glueText}</p>
+              </div>
             </div>
             <div className="finishing-option-spec-card">
-              <h3 className="finishing-option-spec-title">{p.staples}</h3>
-              <p className="finishing-option-spec-text">{p.staplesText}</p>
+              <div className="finishing-option-spec-image-wrap">
+                <img src={heroImage1} alt="" className="finishing-option-spec-image" loading="lazy" />
+              </div>
+              <div className="finishing-option-spec-content">
+                <h3 className="finishing-option-spec-title">{p.staples}</h3>
+                <p className="finishing-option-spec-text">{p.staplesText}</p>
+              </div>
             </div>
           </div>
         </section>

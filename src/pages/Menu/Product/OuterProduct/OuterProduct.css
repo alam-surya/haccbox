@@ -154,6 +154,20 @@
   width: 100%;
 }
 
+/* Zoom in effect on image hover (L Shape to Top Bottom) */
+.outer-product-card-visual .product-carousel-slide {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.outer-product-card-visual .product-carousel-image {
+  transition: transform 0.35s ease;
+}
+
+.outer-product-card-visual .product-carousel-slide:hover .product-carousel-image {
+  transform: scale(1.08);
+}
+
 @media (max-width: 992px) {
   .outer-product-card {
     flex-direction: column;

@@ -36,6 +36,16 @@
   font: inherit;
 }
 
+/* Hero: seperti Organization Culture, 1 image saja di bawah judul & deskripsi */
+.owner-profile-page .hero-video-grid {
+  grid-template-columns: 1fr;
+  max-width: 400px;
+}
+
+.owner-profile-page .hero-video-card {
+  aspect-ratio: 4 / 3;
+}
+
 .owner-profile-section {
   position: relative;
   width: 100%;
@@ -56,7 +66,7 @@
   max-width: 1200px;
   margin: 0;
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 3fr 2fr;
   gap: 4rem;
   align-items: center;
 }
@@ -65,7 +75,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .owner-profile-about-prefix {
@@ -126,13 +136,16 @@
 
 .owner-profile-about-image-wrap {
   width: 100%;
+  max-width: 380px;
   overflow: hidden;
   border-radius: 12px;
+  justify-self: end;
 }
 
 .owner-profile-about-image {
   width: 100%;
   height: auto;
+  max-height: 420px;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -156,6 +169,10 @@
 @media (max-width: 768px) {
   .owner-profile-page .scroll-indicator {
     bottom: 1.5rem;
+  }
+
+  .owner-profile-page .hero-video-grid {
+    max-width: 320px;
   }
 
   .owner-profile-section {

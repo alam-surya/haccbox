@@ -11,12 +11,21 @@
   scrollbar-width: none;
 }
 
+.product-carousel[data-draggable="false"] {
+  cursor: default;
+  user-select: auto;
+}
+
 .product-carousel::-webkit-scrollbar {
   display: none;
 }
 
 .product-carousel:active {
   cursor: grabbing;
+}
+
+.product-carousel[data-draggable="false"]:active {
+  cursor: default;
 }
 
 .product-carousel-track {

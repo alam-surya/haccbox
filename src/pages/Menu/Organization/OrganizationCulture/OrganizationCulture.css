@@ -36,6 +36,16 @@
   font: inherit;
 }
 
+/* Hero: 1 image saja (seperti Owner Profile), ukuran disesuaikan */
+.organization-culture-page .hero-video-grid {
+  grid-template-columns: 1fr;
+  max-width: 400px;
+}
+
+.organization-culture-page .hero-video-card {
+  aspect-ratio: 4 / 3;
+}
+
 .organization-culture-section {
   position: relative;
   width: 100%;
@@ -210,6 +220,10 @@
 @media (max-width: 768px) {
   .organization-culture-page .scroll-indicator {
     bottom: 1.5rem;
+  }
+
+  .organization-culture-page .hero-video-grid {
+    max-width: 320px;
   }
 
   .organization-culture-section {

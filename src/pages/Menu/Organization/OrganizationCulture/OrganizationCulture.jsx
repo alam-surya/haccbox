@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroVideo from '../../../../assets/videos/hero-update.mp4'
+import heroImage from '../../../../assets/images/Organization/OrganizationCulture/organizational-culture.webp'
 import sampleVideo from '../../../../assets/videos/sample.mp4'
 import sample2Video from '../../../../assets/videos/sample2.mp4'
 import sample3Video from '../../../../assets/videos/sample3.mp4'
@@ -14,7 +14,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 function OrganizationCulture() {
   const sectionRef = useRef(null)
-  const videoRef = useRef(null)
   const contentRef = useRef(null)
   const scrollIndicatorRef = useRef(null)
   const contentSectionRef = useRef(null)
@@ -75,14 +74,14 @@ function OrganizationCulture() {
           </div>
         </div>
         <div className="hero-video-grid">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="hero-video-card">
-              <video className="hero-video-card-video" autoPlay loop muted playsInline preload="auto">
-                <source src={heroVideo} type="video/mp4" />
-                {p.videoUnsupported}
-              </video>
-            </div>
-          ))}
+          <div className="hero-video-card">
+            <img
+              src={heroImage}
+              alt=""
+              className="hero-video-card-video"
+              loading="eager"
+            />
+          </div>
         </div>
         <div
           ref={scrollIndicatorRef}

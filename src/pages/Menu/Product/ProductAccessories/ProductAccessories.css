@@ -154,6 +154,20 @@
   width: 100%;
 }
 
+/* Zoom in effect on image hover (same as Outer Product) */
+.product-accessories-card-visual .product-carousel-slide {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.product-accessories-card-visual .product-carousel-image {
+  transition: transform 0.35s ease;
+}
+
+.product-accessories-card-visual .product-carousel-slide:hover .product-carousel-image {
+  transform: scale(1.08);
+}
+
 @media (max-width: 992px) {
   .product-accessories-card {
     flex-direction: column;
