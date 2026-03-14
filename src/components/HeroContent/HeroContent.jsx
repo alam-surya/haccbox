@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVideo from '../../assets/videos/hero-update.mp4'
+import companyImage from '../../assets/images/company.webp'
 import { useLanguage } from '../../context/LanguageContext'
 import './HeroContent.css'
 
@@ -44,7 +45,7 @@ function HeroContent() {
       {/* Image Section */}
       <div className="hero-video-container">
         <img
-          src="/src/assets/images/company.webp"
+          src={companyImage}
           alt="Company"
           className="hero-video"
           style={{ objectFit: 'cover', width: '100%', height: '100%' }}
