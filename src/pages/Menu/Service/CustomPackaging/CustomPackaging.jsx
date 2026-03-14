@@ -2,8 +2,9 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroImage1 from '../../../../assets/images/Service/CustomPackaging/Custome Packaging.webp'
+import heroImage1 from '../../../../assets/images/Service/CustomPackaging/Royal Botania.webp'
 import heroImage2 from '../../../../assets/images/Service/CustomPackaging/IMG_1609 3.webp'
+import heroImage3 from '../../../../assets/images/Service/CustomPackaging/Tribù.webp'
 import customPackagingImage from '../../../../assets/images/Service/CustomPackaging/IMG_8449 3.webp'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
@@ -78,6 +79,14 @@ function CustomPackaging() {
           <div className="hero-video-card">
             <img
               src={heroImage2}
+              alt=""
+              className="hero-video-card-video"
+              loading="eager"
+            />
+          </div>
+          <div className="hero-video-card">
+            <img
+              src={heroImage3}
               alt=""
               className="hero-video-card-video"
               loading="eager"

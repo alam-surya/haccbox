@@ -12,7 +12,10 @@ function Gallery() {
   const { t } = useLanguage()
   const p = t.pages?.gallery || {}
 
-  const galleryImageModules = import.meta.glob('/src/assets/images/Gallery/*.webp', { eager: true })
+  const galleryImageModules = import.meta.glob(
+    ['/src/assets/images/Gallery/*.webp', '/src/assets/images/Gallery/*.jpg', '/src/assets/images/Gallery/*.jpeg'],
+    { eager: true }
+  )
   const galleryImages = Object.entries(galleryImageModules)
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([, mod], index) => ({

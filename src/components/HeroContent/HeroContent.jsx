@@ -18,7 +18,7 @@ function HeroContent() {
     const content = contentRef.current
 
     if (!section || !content) return
- 
+
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
@@ -41,25 +41,18 @@ function HeroContent() {
         </div>
       </div>
 
-      {/* Video Section */}
+      {/* Image Section */}
       <div className="hero-video-container">
-        <video
-          ref={videoRef}
+        <img
+          src="/src/assets/images/company.webp"
+          alt="Company"
           className="hero-video"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-        >
-          <source 
-            src={heroVideo} 
-            type="video/mp4" 
-          />
-          {t.hero.videoUnsupported}
-        </video>
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+        />
         <div className="hero-overlay"></div>
       </div>
+
+
     </section>
   )
 }

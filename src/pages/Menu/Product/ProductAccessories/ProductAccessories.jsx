@@ -12,13 +12,18 @@ import './ProductAccessories.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const PRODUCT_IDS = ['hexa-wrap', 'honeycomb-board', 'honeycomb-core', 'paper-core']
+const PRODUCT_IDS = ['hexa-wrap', 'honeycomb-board', 'honeycomb-core', 'paper-core', 'styrofoam']
 
 const FOLDER_BY_PRODUCT_ID = {
   'hexa-wrap': 'Hexa Wrap',
   'honeycomb-board': 'Honeycomb board',
   'honeycomb-core': 'Honeycomb Core',
-  'paper-core': 'Paper Core'
+  'paper-core': 'Paper Core',
+  'styrofoam': 'Styrofoam'
+}
+
+const EXCLUDED_IMAGE_NAMES_BY_PRODUCT_ID = {
+  'hexa-wrap': ['R1009558.webp']
 }
 
 const productAccessoriesImageModules = import.meta.glob(
@@ -30,8 +35,10 @@ function getImagesByProductId(productId) {
   const folderName = FOLDER_BY_PRODUCT_ID[productId]
   if (!folderName) return []
   const prefix = `/src/assets/images/Product/ProductAccessories/${folderName}/`
+  const excludedNames = EXCLUDED_IMAGE_NAMES_BY_PRODUCT_ID[productId] || []
   return Object.entries(productAccessoriesImageModules)
     .filter(([path]) => path.startsWith(prefix))
+    .filter(([path]) => !excludedNames.some((name) => path.endsWith(`/${name}`)))
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([, mod]) => mod.default)
 }

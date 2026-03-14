@@ -158,7 +158,8 @@ export const translations = {
           { name: 'Hexa Wrap', description: 'Wrap heksagonal untuk bantalan dan perlindungan di sekitar produk. Ideal sebagai pelengkap luar kotak untuk barang rapuh atau tidak beraturan.' },
           { name: 'Honeycomb Board', description: 'Papan sarang lebah ringan untuk penguatan internal dan pengisi rongga. Melengkapi struktur kotak dengan kekuatan tanpa bobot ekstra.' },
           { name: 'Honeycomb Core', description: 'Material inti sarang lebah untuk panel dan insert. Digunakan bersama kotak untuk menambah kekakuan dan perlindungan dalam pengiriman dan display.' },
-          { name: 'Paper Core', description: 'Inti kertas untuk tabung, gulungan, dan penyangga struktural. Aksesori serbaguna di luar kotak untuk aplikasi wrapping dan inti.' }
+          { name: 'Paper Core', description: 'Inti kertas untuk tabung, gulungan, dan penyangga struktural. Aksesori serbaguna di luar kotak untuk aplikasi wrapping dan inti.' },
+          { name: 'Styrofoam', description: 'Styrofoam pelindung untuk menyerap benturan dan menjaga produk tetap stabil di dalam kemasan. Cocok untuk barang sensitif dan mudah pecah saat pengiriman.' }
         ]
       },
       productQuality: {
@@ -556,7 +557,8 @@ export const translations = {
           { name: 'Hexa Wrap', description: 'Hexagonal wrap for cushioning and protection around products. Ideal as an outer complement to boxes for fragile or irregular items.' },
           { name: 'Honeycomb Board', description: 'Lightweight honeycomb board for internal reinforcement and void fill. Complements box structure with strength without extra weight.' },
           { name: 'Honeycomb Core', description: 'Honeycomb core material for panels and inserts. Used alongside boxes to add rigidity and protection in shipping and display.' },
-          { name: 'Paper Core', description: 'Paper core for tubes, rolls, and structural support. A versatile accessory outside the box for wrapping and core applications.' }
+          { name: 'Paper Core', description: 'Paper core for tubes, rolls, and structural support. A versatile accessory outside the box for wrapping and core applications.' },
+          { name: 'Styrofoam', description: 'Protective styrofoam that absorbs impact and keeps products stable inside the package. Suitable for sensitive and breakable items during shipping.' }
         ]
       },
       productQuality: {

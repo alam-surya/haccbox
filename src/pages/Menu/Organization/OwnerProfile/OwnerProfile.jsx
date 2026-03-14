@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import ownerProfileImage from '../../../../assets/images/Organization/OwnerProfile/IMG_7624 4.webp'
-import heroImageR1000590 from '../../../../assets/images/Organization/OwnerProfile/R1000590.webp'
+import ownerProfileImage from '../../../../assets/images/Organization/OwnerProfile/owner-update.png'
+import ownerbannerupdate from '../../../../assets/images/Organization/OwnerProfile/owner-banner-update.webp'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import '../../../../components/PageHeroDark/PageHeroDark.css'
@@ -67,17 +67,16 @@ function OwnerProfile() {
             <p className="hero-description">{p.description}</p>
           </div>
         </div>
-        <div className="hero-video-grid">
+        <div className="hero-video-container">
           <div className="hero-video-card">
             <img
-              src={heroImageR1000590}
-              alt=""
+              src={ownerbannerupdate}
+              alt="Owner Banner"
               className="hero-video-card-video"
-              loading="eager"
             />
+
           </div>
-        </div>
-        <div
+        </div> <div
           ref={scrollIndicatorRef}
           className="scroll-indicator"
           aria-label="Scroll down"

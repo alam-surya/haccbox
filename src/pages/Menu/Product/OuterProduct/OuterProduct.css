@@ -156,11 +156,25 @@
 
 /* Zoom in effect on image hover (L Shape to Top Bottom) */
 .outer-product-card-visual .product-carousel-slide {
+  width: clamp(170px, 22vw, 220px);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .outer-product-card-visual .product-carousel-image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.35s ease;
 }
 
