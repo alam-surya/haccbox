@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import heroImage from '../../../../assets/images/Organization/OrganizationCulture/organizational-culture.webp'
+import heroImage from '../../../../assets/images/Organization/OrganizationCulture/IMG_7686.webp'
 import sampleVideo from '../../../../assets/videos/sample.mp4'
 import sample2Video from '../../../../assets/videos/sample2.mp4'
 import sample3Video from '../../../../assets/videos/sample3.mp4'
@@ -65,22 +65,20 @@ function OrganizationCulture() {
   return (
     <div className="organization-culture-page page-hero-dark">
       <section ref={sectionRef} className="hero-content-section">
-        <div ref={contentRef} className="hero-content">
+        <div ref={contentRef} className="hero-content organization-culture-hero-combined">
+          <div className="hero-video-grid">
+            <div className="hero-video-card">
+              <img
+                src={heroImage}
+                alt=""
+                className="hero-video-card-video"
+                loading="eager"
+              />
+            </div>
+          </div>
           <div className="hero-content-left">
             <h1 className="hero-heading">{p.heading}</h1>
-          </div>
-          <div className="hero-content-right">
             <p className="hero-description">{p.description}</p>
-          </div>
-        </div>
-        <div className="hero-video-grid">
-          <div className="hero-video-card">
-            <img
-              src={heroImage}
-              alt=""
-              className="hero-video-card-video"
-              loading="eager"
-            />
           </div>
         </div>
         <div

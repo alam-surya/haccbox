@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ownerProfileImage from '../../../../assets/images/Organization/OwnerProfile/owner-update.png'
-import ownerbannerupdate from '../../../../assets/images/Organization/OwnerProfile/owner-banner-update.webp'
+import heroImage from '../../../../assets/images/Organization/OwnerProfile/R1000590.webp'
 import { useLanguage } from '../../../../context/LanguageContext'
 import '../../../../components/HeroContent/HeroContent.css'
 import '../../../../components/PageHeroDark/PageHeroDark.css'
@@ -59,24 +59,23 @@ function OwnerProfile() {
   return (
     <div className="owner-profile-page page-hero-dark">
       <section ref={sectionRef} className="hero-content-section">
-        <div ref={contentRef} className="hero-content">
+        <div ref={contentRef} className="hero-content owner-profile-hero-combined">
+          <div className="hero-video-grid">
+            <div className="hero-video-card">
+              <img
+                src={heroImage}
+                alt=""
+                className="hero-video-card-video"
+                loading="eager"
+              />
+            </div>
+          </div>
           <div className="hero-content-left">
             <h1 className="hero-heading">{p.heading}</h1>
-          </div>
-          <div className="hero-content-right">
             <p className="hero-description">{p.description}</p>
           </div>
         </div>
-        <div className="hero-video-container">
-          <div className="hero-video-card">
-            <img
-              src={ownerbannerupdate}
-              alt="Owner Banner"
-              className="hero-video-card-video"
-            />
-
-          </div>
-        </div> <div
+        <div
           ref={scrollIndicatorRef}
           className="scroll-indicator"
           aria-label="Scroll down"

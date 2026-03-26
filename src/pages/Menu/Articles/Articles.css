@@ -196,6 +196,42 @@
   margin-bottom: 0;
 }
 
+.articles-article-subheading {
+  margin: 2rem 0 0.75rem;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  line-height: 1.3;
+  font-weight: 700;
+  color: #1b1b1c;
+}
+
+.articles-article-list {
+  margin: 0 0 1.5rem 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.articles-article-list li {
+  font-size: 1.3125rem;
+  line-height: 1.65;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.articles-article-image-block {
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.articles-article-inline-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 /* ——— Single CTA ——— */
 .articles-cta-wrap {
   margin-top: 1rem;

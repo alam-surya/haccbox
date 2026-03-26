@@ -117,7 +117,7 @@ export const translations = {
         videoUnsupported: 'Browser Anda tidak mendukung pemutaran video.'
       },
       organizationCulture: {
-        heading: 'Budaya Kami: Nilai, Keyakinan, dan Cara Kami Bekerja',
+        heading: 'Nilai, Keyakinan, dan Cara Kami Bekerja',
         description: 'Prinsip yang memandu tim kami setiap hari. Kami percaya pada kualitas, transparansi, dan kemitraan jangka panjang. Inilah cara kami mewujudkan nilai-nilai itu: dalam kolaborasi, melayani pelanggan, dan tumbuh bersama.',
         seeMore: 'Lihat selengkapnya',
         title: 'Budaya Organisasi',
@@ -295,74 +295,45 @@ export const translations = {
         readTimeLabel: 'menit baca',
         featured: [
           {
-            title: 'Memilih Karton Box yang Tepat untuk Furnitur Ekspor',
-            body: 'Ekspor furnitur ke pasar internasional membawa peluang besar, tetapi juga tantangan tersendiri. Salah satu faktor penentu kesuksesan pengiriman adalah kemasan. Barang harus tiba di tujuan dalam kondisi sempurna setelah perjalanan ribuan kilometer melalui pelabuhan, gudang, dan transportasi multimodal. Tanpa kemasan yang tepat, risiko kerusakan, penolakan, dan kerugian finansial akan sangat tinggi.\n\nMasalah utama yang sering muncul: furnitur memiliki bentuk, berat, dan kerapuhan yang sangat beragam—dari kursi kayu solid, meja dengan kaca, lemari berukuran besar, hingga komponen kecil yang rentan tergores. Karton yang terlalu tipis akan robek atau melesak; yang terlalu besar memboroskan space dan biaya; yang salah konstruksi tidak menahan barang dengan baik. Belum lagi persyaratan negara tujuan yang bisa menolak barang di pelabuhan jika kemasan tidak memenuhi standar.\n\nSolusinya: pilih karton berdasarkan jenis produk dan jarak pengiriman. Karton double wall direkomendasikan untuk barang berat dan ekspor; single wall cukup untuk item ringan atau pengiriman lokal. Pertimbangkan konstruksi—L-shape untuk display, box A1 untuk ritel, die-cut untuk visibilitas. Konsultasikan dengan supplier kemasan berpengalaman yang memahami standar ekspor dan dapat merekomendasikan kombinasi material serta desain yang sesuai budget Anda.\n\nKesimpulannya, investasi waktu dan dana untuk memilih karton box yang tepat sejak awal akan menghemat biaya perbaikan, klaim kerusakan, dan repackaging di kemudian hari. Kemasan yang dirancang dengan benar bukan biaya, melainkan proteksi bagi reputasi dan margin bisnis Anda.',
-            image: 'galeri-02',
-            date: '15 Januari 2025',
-            readMinutes: 8
-          },
-          {
-            title: 'Pentingnya Kemasan Ramah Lingkungan dalam Industri',
-            body: 'Perubahan iklim dan kesadaran konsumen telah mengubah cara industri memandang kemasan. Dulu, kemasan sering dilihat hanya sebagai pembungkus—fungsinya selesai saat produk sampai. Kini, kemasan menjadi bagian dari tanggung jawab bisnis terhadap lingkungan dan masyarakat. Banyak merek besar telah berkomitmen menggunakan 100% kemasan daur ulang atau bersertifikasi dalam beberapa tahun ke depan.\n\nMasalahnya: transisi ke kemasan ramah lingkungan tidak selalu mudah. Biaya material berkelanjutan sering lebih tinggi; ketersediaan terbatas; dan ada risiko persepsi bahwa kemasan ramah lingkungan kurang protektif. Beberapa pelaku bisnis menunda karena menganggap ini hanya tren yang akan berlalu, atau merasa pasar mereka belum menuntut perubahan tersebut.\n\nSolusinya: mulai dengan langkah-langkah konkret. Pilih karton daur ulang atau bersertifikasi FSC untuk memastikan bahan baku dari hutan yang dikelola berkelanjutan. Desain kemasan yang meminimalkan material tanpa mengorbankan perlindungan—right-sizing—mengurangi waste dan biaya sekaligus. Bermitra dengan supplier yang transparan tentang sumber bahan dan proses produksi akan memudahkan pelaporan keberlanjutan kepada stakeholder.\n\nKesimpulannya, kemasan ramah lingkungan bukan lagi opsional. Regulasi akan semakin ketat, konsumen semakin kritis, dan merek yang proaktif akan menikmati keunggulan reputasi. Investasi pada kemasan berkelanjutan adalah investasi jangka panjang bagi bisnis yang ingin tetap relevan dan bertanggung jawab.',
-            image: 'galeri-02',
-            date: '8 Januari 2025',
-            readMinutes: 7
-          },
-          {
-            title: 'Kemasan Kustom: Solusi untuk Produk Unik',
-            body: 'Tidak semua produk cocok dengan kotak standar. Furnitur dengan bentuk irregular, produk kombinasi, atau item dengan bagian yang menonjol membutuhkan kemasan yang dirancang khusus agar terlindungi dengan baik selama pengiriman. Menggunakan kemasan generik untuk produk unik sering berujung pada kerusakan, waste material, atau biaya pengiriman yang membengkak karena ukuran tidak efisien.\n\nMasalah yang kerap dialami: kemasan standar terlalu besar sehingga membutuhkan banyak filler dan biaya shipping naik; atau terlalu kecil sehingga barang tertekan dan rusak. Beberapa produsen memaksakan produk mereka ke dalam kotak yang tidak cocok, lalu mengandalkan bubble wrap dan styrofoam berlebihan—solusi yang tidak ideal baik dari segi proteksi, biaya, maupun lingkungan.\n\nSolusinya: kemasan kustom yang disesuaikan dengan dimensi dan bentuk produk. Desain bentuk, ukuran, ketebalan material, jendela display, partisi internal, dan insert pelindung—semua dapat disesuaikan. Produsen kemasan yang menawarkan layanan custom packaging dapat membuat solusi yang tepat ukuran sehingga mengurangi waste dan biaya, sambil memastikan proteksi optimal.\n\nKesimpulannya, investasi pada kemasan kustom sejak awal menghemat biaya jangka panjang melalui pengurangan kerusakan, klaim garansi, dan efisiensi pengiriman. Bekerja sama dengan produsen yang berpengalaman memastikan Anda mendapatkan solusi yang seimbang antara proteksi, biaya, dan keberlanjutan.',
-            image: 'galeri-02',
-            date: '2 Januari 2025',
-            readMinutes: 7
-          },
-          {
-            title: 'Honeycomb dan Perlindungan saat Pengiriman',
-            body: 'Selama pengiriman, produk mengalami tekanan stacking di gudang, guncangan saat handling, dan getaran di truk atau kapal. Material pengisi dan penguat yang tepat menentukan apakah barang tiba dengan selamat atau rusak. Honeycomb—material dengan struktur sarang lebah—telah lama menjadi pilihan andalan industri kemasan karena kekuatannya yang tinggi dengan bobot sangat ringan.\n\nMasalah yang sering muncul: penggunaan material pengisi konvensional seperti styrofoam atau kertas digelembung menghasilkan volume besar dan berat tambahan, yang menaikkan biaya pengiriman. Di sisi lain, pengisi yang terlalu tipis tidak cukup melindungi dari tekanan dan benturan. Perlu keseimbangan antara proteksi, berat, dan biaya.\n\nSolusinya: honeycomb board dan honeycomb core. Struktur hexagonal memberikan daya tahan terhadap kompresi dan getaran yang jauh lebih baik dibanding material padat dengan berat sama. Honeycomb bisa digunakan sebagai penguat internal kotak, pengisi rongga, insert pelindung sudut, atau panel pemisah. Keunggulannya: berat minimal sehingga tidak membebani biaya shipping, dan material berbasis kertas relatif mudah didaur ulang.\n\nKesimpulannya, untuk furnitur dan barang rapuh, kombinasi karton box dengan honeycomb insert sering menjadi pilihan ideal—proteksi optimal tanpa berat berlebih. Material ini menawarkan keseimbangan antara daya tahan, keberlanjutan, dan efisiensi biaya yang sulit ditandingi oleh alternatif lain.',
-            image: 'galeri-02',
-            date: '28 Desember 2024',
-            readMinutes: 7
-          },
-          {
-            title: 'Standar Ekspor untuk Kemasan Karton',
-            body: 'Ekspor ke pasar internasional membuka peluang besar, tetapi setiap negara tujuan memiliki persyaratan sendiri untuk kemasan. Tidak memenuhi standar tersebut bisa berakibat barang ditolak di pelabuhan, dimusnahkan, atau dikembalikan—dengan biaya dan kerugian reputasi yang besar. Memahami dan memenuhi standar ekspor sejak tahap desain kemasan adalah langkah krusial.\n\nMasalahnya: persyaratan sangat beragam. Ada standar teknis (ketebalan karton, burst strength, drop test), standar material (FSC, bebas bahan berbahaya), dan prosedur administratif (labelling, fumigasi, dokumen keaslian). Pasar Eropa dan Amerika sering meminta sertifikasi double wall dan FSC; beberapa negara Asia mewajibkan perlakuan fumigasi untuk kayu. Tanpa pemahaman yang jelas, eksportir bisa terjebak biaya repackaging di pelabuhan atau kehilangan kesepakatan bisnis.\n\nSolusinya: lakukan riset standar negara tujuan sejak awal. Sertifikasi double wall menjamin kekuatan karton melalui pengujian burst strength; FSC memastikan bahan baku dari sumber berkelanjutan. Pengujian laboratorium—drop test, climate test—memberikan bukti kepatuhan. Selain itu, pastikan labelling benar, dokumen material lengkap, dan prosedur fumigasi dipenuhi bila wajib. Bermitra dengan supplier kemasan yang berpengalaman dalam ekspor akan mempermudah seluruh proses ini.\n\nKesimpulannya, investasi pada kemasan yang memenuhi standar ekspor sejak awal jauh lebih murah daripada menanggung penolakan atau repackaging. Supplier yang memahami regulasi internasional adalah mitra strategis bagi bisnis ekspor Anda.',
-            image: 'galeri-02',
-            date: '20 Desember 2024',
-            readMinutes: 8
-          },
-          {
-            title: 'Packaging sebagai Bagian dari Branding',
-            body: 'Saat pelanggan menerima paket, kemasan adalah hal pertama yang mereka lihat—sebelum produk itu sendiri. Pengalaman unboxing bisa meninggalkan kesan mendalam, mempengaruhi review, rekomendasi, dan loyalitas. Di era e-commerce, kemasan tidak lagi sekadar pembungkus; ia menjadi perpanjangan identitas merek Anda.\n\nMasalah yang sering terjadi: banyak bisnis mengabaikan kemasan dan memakai kotak polos atau kemasan generik. Produk berkualitas tinggi tiba dalam kotak kumal, logo tercetak samar, atau tanpa pesan apa pun—mengurangi persepsi nilai. Di sisi lain, beberapa pelaku bisnis menganggap kemasan bermerek mahal dan hanya terjangkau untuk order besar.\n\nSolusinya: custom printing pada karton—logo, warna merek, tagline, atau pesan khusus—mengubah kemasan menjadi alat branding. Dengan produsen yang fleksibel, Anda bisa mencapai tampilan profesional tanpa minimal order yang memberatkan. Pilih finishing yang sesuai: cetak 1-2 warna lebih ekonomis, full colour untuk kemasan premium. Konsistensi desain dengan identitas merek memperkuat pengenalan dan kepercayaan.\n\nKesimpulannya, kemasan bermerek adalah investasi pada persepsi kualitas. Pelanggan menghargai perhatian pada detail—kotak yang rapi dan bermerek mengomunikasikan bahwa Anda serius dengan produk dan layanan. Dalam jangka panjang, ini membangun loyalitas dan diferensiasi di pasar yang kompetitif.',
-            image: 'galeri-02',
-            date: '12 Desember 2024',
-            readMinutes: 7
-          },
-          {
-            title: 'Tren Kemasan Berkelanjutan di 2025',
-            body: 'Tahun 2025 menjadi tonggak penting bagi industri kemasan. Regulasi global semakin ketat, konsumen semakin kritis, dan circular economy tidak lagi sekadar konsep—ia menjadi kerangka kerja yang memandu keputusan bisnis. Perusahaan yang tidak beradaptasi akan tertinggal dan menghadapi risiko reputasi serta sanksi regulasi.\n\nMasalah yang dihadapi industri: transisi ke kemasan berkelanjutan membutuhkan perubahan di seluruh rantai pasokan. Extended Producer Responsibility (EPR) mewajibkan produsen bertanggung jawab atas kemasan pasca konsumsi—termasuk program take-back dan daur ulang. Single-use plastic terus dibatasi; material yang sulit didaur ulang akan menghadapi pajak atau larangan. Bagi banyak pelaku bisnis, memahami dan memenuhi tuntutan baru ini terasa membingungkan dan mahal.\n\nSolusinya: fokus pada material yang mudah didaur ulang dan terkompos. Karton bersertifikasi FSC, kertas daur ulang pasca-konsumsi, dan desain yang meminimalkan lapisan campuran memudahkan daur ulang. Hindari kombinasi material yang sulit dipisah—misalnya plastik laminasi pada karton—karena mengurangi nilai daur ulang. Bermitra dengan supplier yang transparan tentang siklus hidup material akan memudahkan pelaporan dan kepatuhan regulasi.\n\nKesimpulannya, memulai transisi ke kemasan berkelanjutan sekarang adalah langkah proaktif yang akan menghemat biaya dan stres di masa depan. Regulasi akan semakin ketat; konsumen akan semakin memilih merek yang bertanggung jawab. Kemasan berkelanjutan bukan lagi opsi—ia adalah masa depan industri.',
-            image: 'galeri-02',
-            date: '5 Desember 2024',
-            readMinutes: 8
-          },
-          {
-            title: 'Fleksibilitas Pesanan: Tanpa Minimal Order',
-            body: 'Memulai bisnis atau meluncurkan produk baru sering kali dimulai dengan volume kecil. Anda ingin menguji pasar, memvalidasi desain, atau memenuhi pesanan awal tanpa mengunci modal besar di inventori. Namun banyak supplier kemasan memberlakukan minimal order ratusan bahkan ribuan unit—membuat UMKM dan startup kesulitan mendapatkan kemasan kustom yang sesuai.\n\nMasalahnya: dengan minimal order tinggi, Anda terpaksa membeli lebih dari yang dibutuhkan. Modal kerja terikat di stok kemasan yang mungkin tidak terpakai jika produk gagal di pasar atau desain berubah. Alternatifnya, menggunakan kemasan generik yang kurang cocok—mengorbankan proteksi dan branding. Dilema antara efisiensi skala dan fleksibilitas menjadi penghalang bagi banyak pelaku bisnis kecil.\n\nSolusinya: cari supplier yang menawarkan kebijakan tanpa minimal order atau MO rendah. Ini memungkinkan Anda memesan sesuai kebutuhan aktual, menguji desain kemasan sebelum produksi skala penuh, dan mengelola cash flow dengan lebih baik. Pastikan supplier tetap menjaga kualitas produksi untuk order kecil—standar material dan finishing harus sama dengan order besar.\n\nKesimpulannya, fleksibilitas pesanan adalah enabler bagi pertumbuhan bisnis. Memulai dengan order kecil, memvalidasi kemasan, lalu scaling up ketika pasar terbukti—alur yang sehat dan berkelanjutan. Supplier yang memahami kebutuhan UMKM dan startup adalah mitra yang berharga bagi ekosistem bisnis.',
-            image: 'galeri-02',
-            date: '28 November 2024',
-            readMinutes: 7
-          },
-          {
-            title: 'Kualitas Material dan Daya Tahan Kemasan',
-            body: 'Kemasan yang terlihat sama di luar bisa sangat berbeda di dalam. Grammage, jenis pulp, jumlah lapisan, dan proses produksi menentukan kekuatan karton. Menghemat pada kualitas material sering berujung pada kerusakan produk di perjalanan—dan biaya klaim, penggantian, serta reputasi yang jauh lebih besar daripada penghematan awal.\n\nMasalah yang sering terjadi: banyak pembeli fokus pada harga per kotak tanpa memahami spesifikasi material. Karton murah mungkin tipis, mudah melesak saat stacking, atau tidak tahan kelembapan—menyebabkan kerusakan yang baru terlihat saat barang sampai di tangan pelanggan. Untuk pengiriman ekspor atau barang berat, kemasan yang tidak memadai adalah resep bencana.\n\nSolusinya: pahami spesifikasi material. Karton double wall dengan sertifikasi telah diuji burst strength-nya—memberikan jaminan kinerja. Grammage (gram per meter persegi) dan lapisan memengaruhi ketahanan tekanan. Untuk kebutuhan khusus, minta sertifikat uji lab dari supplier. Bekerja dengan supplier yang transparan tentang gradasi kualitas memungkinkan Anda memilih opsi terbaik sesuai budget dan kebutuhan proteksi.\n\nKesimpulannya, investasi pada material berkualitas adalah proteksi bagi margin dan reputasi. Biaya kemasan premium umumnya terbayar melalui pengurangan kerusakan, klaim garansi, dan kepuasan pelanggan. Jangan biarkan penghematan jangka pendek mengorbankan bisnis jangka panjang.',
-            image: 'galeri-02',
-            date: '20 November 2024',
-            readMinutes: 7
-          },
-          {
-            title: 'Kemasan untuk E-commerce dan Pengiriman Aman',
-            body: 'Produk e-commerce menjalani perjalanan yang jauh lebih panjang dan berliku dibanding penjualan offline. Dari gudang ke kurir, sorting center, truk, mungkin pesawat atau kapal, lalu kurir lagi—setiap tahap membawa risiko benturan, tekanan, dan paparan elemen. Kemasan yang tidak dirancang untuk survive dalam kondisi tersebut akan gagal melindungi produk, dan akibatnya: barang rusak, pelanggan kecewa, review buruk, serta biaya penggantian dan retur.\n\nMasalah yang sering muncul: tekanan stacking di gudang dan truk bisa menghancurkan kotak lemah; handling yang kasar menyebabkan guncangan; perubahan suhu dan kelembapan selama transit bisa merusak barang sensitif. Di sisi lain, over-packaging—terlalu banyak bubble wrap dan kotak besar—membuang biaya, membebani lingkungan, dan membuat pelanggan kesal saat membuka paket.\n\nSolusinya: kombinasi karton berkualitas dengan ketebalan sesuai berat produk, filler seperti honeycomb atau hexa wrap untuk mengisi rongga dan menyerap guncangan, serta pelapis anti lembap bila produk sensitif. Desain kemasan tepat ukuran (right-sizing) mengurangi waste dan biaya. Pertimbangkan kemudahan dibuka oleh konsumen—kemasan yang ramah pengguna meninggalkan kesan positif. Pilih material yang dapat didaur ulang untuk menunjukkan komitmen lingkungan.\n\nKesimpulannya, kemasan e-commerce harus dirancang untuk perjalanan, bukan sekadar tampilan. Investasi pada proteksi yang memadai melindungi margin dan reputasi; kemasan yang tepat ukuran dan ramah lingkungan memperkuat citra merek di mata konsumen yang semakin kritis.',
-            image: 'galeri-02',
-            date: '10 November 2024',
-            readMinutes: 8
+            title: 'Dari Gudang ke Tangan Pelanggan: Mengapa Corrugated Box Adalah Investasi Strategis, Bukan Sekadar Biaya',
+            date: 'Maret 2026',
+            readMinutes: 4,
+            bodyBlocks: [
+              { type: 'image', image: 'artikel-1', alt: 'Visual artikel corrugated box 1' },
+              { type: 'paragraph', text: 'Bayangkan pelanggan Anda telah menunggu berhari-hari untuk produk yang mereka pesan. Saat paket tiba, hal pertama yang mereka sentuh dan nilai bukan produknya, melainkan kemasannya. Sebelum pelanggan melihat kualitas isi di dalamnya, mereka lebih dulu menaruh harapan pada outer packaging. Di sinilah corrugated box membuktikan perannya, bukan kardus biasa, melainkan garda terdepan dalam menjaga reputasi bisnis Anda.' },
+              { type: 'heading', text: 'Mengapa Corrugated Box Menjadi Pilihan Terbaik?' },
+              { type: 'paragraph', text: 'Dalam dunia bisnis yang kompetitif, pemilihan kemasan luar adalah keputusan strategis. Berikut adalah alasannya:' },
+              {
+                type: 'list',
+                items: [
+                  'Perlindungan Maksimal (Zero Damage Policy): Strukturnya tahan terhadap tekanan tumpukan (stacking) dan mampu meredam benturan keras.',
+                  'Efisiensi Logistik & Operasional: Corrugated box sangat ringan dan bisa disimpan dalam kondisi flat (datar), sehingga menghemat ongkos kirim dan ruang gudang.',
+                  'Kustomisasi Tanpa Batas: Ukuran bisa disesuaikan presisi agar tidak ada ruang kosong mubazir, sekaligus mendukung branding lewat desain dan logo.',
+                  'Keberlanjutan (Eco-Friendly): Mudah didaur ulang dan terurai, memberi nilai tambah pada citra brand yang bertanggung jawab.'
+                ]
+              },
+              { type: 'heading', text: 'Lebih Dari Sekedar Kardus: Sains di Balik Kekuatan' },
+              { type: 'paragraph', text: 'Corrugated box dirancang secara teknis dengan lapisan bergelombang (fluting) di tengahnya yang berfungsi sebagai peredam tekanan dan benturan. Struktur ini memberikan rasio kekuatan terhadap berat yang luar biasa.' },
+              { type: 'paragraph', text: 'Dalam ekosistem e-commerce dan distribusi modern, momen kebenaran terjadi saat paket sampai di depan pintu pelanggan. Sebelum mereka melihat produk Anda, mereka menilai profesionalisme bisnis Anda dari satu hal: kondisi kemasan luar.' },
+              { type: 'heading', text: '1. Anatomi Kekuatan: Sains di Balik Struktur Fluting' },
+              { type: 'paragraph', text: 'Mengapa corrugated box jauh lebih unggul dibandingkan karton biasa? Kekuatan utamanya terletak pada rekayasa struktur di dalamnya.' },
+              {
+                type: 'list',
+                items: [
+                  'Sistem Peredam Benturan (The Fluting Effect): Lapisan bergelombang menyerap energi mekanik dan mendistribusikan tekanan.',
+                  'Ketahanan Tekan Vertikal (Stacking Strength): Struktur gelombang bertindak seperti pilar penyangga untuk penumpukan tinggi.',
+                  'Rasio Kekuatan-terhadap-Berat: Proteksi maksimal dengan bobot minimal untuk efisiensi logistik.'
+                ]
+              },
+              { type: 'heading', text: '2. Mengapa Bisnis Anda Membutuhkannya? (Analisis Keuntungan)' },
+              { type: 'paragraph', text: 'Menggunakan corrugated box yang tepat bukan sekedar pengeluaran, melainkan langkah preventif untuk menjaga profitabilitas:' },
+              { type: 'image', image: 'artikel-2', alt: 'Visual artikel corrugated box 2' },
+              { type: 'paragraph', text: 'Selain aspek teknis dan operasional, penggunaan corrugated box yang tepat merupakan manifestasi komitmen perusahaan terhadap keberlanjutan lingkungan dan efisiensi biaya jangka panjang. Dengan material yang dapat didaur ulang, bisnis tidak hanya memenuhi tuntutan pasar modern yang semakin peduli ekologi, tetapi juga membantu meminimalkan jejak karbon rantai pasok. Material organik ini memberi fleksibilitas struktural yang kuat, memastikan setiap unit barang terlindungi kokoh tanpa menambah beban berat signifikan pada biaya kirim.' },
+              { type: 'paragraph', text: 'Lebih jauh lagi, integrasi kemasan presisi berfungsi sebagai instrumen pengendalian risiko di tengah fluktuasi biaya logistik global. Dengan meminimalkan ruang kosong di dalam kotak, perusahaan dapat mengurangi kebutuhan material pengisi tambahan seperti bubble wrap atau styrofoam. Transformasi dari sekadar wadah pembungkus menjadi aset strategis pada akhirnya menciptakan alur distribusi yang lebih ramping, memperkuat kepercayaan pelanggan, dan menjaga margin keuntungan tetap sehat.' },
+              { type: 'heading', text: '3. Keberlanjutan: Nilai Tambah di Mata Konsumen' },
+              { type: 'paragraph', text: 'Di era sekarang, konsumen sangat selektif terhadap limbah plastik. Corrugated box adalah material organik yang dapat didaur ulang dan mudah terurai. Dengan memilih kemasan ini, bisnis Anda sekaligus membangun citra sebagai brand yang bertanggung jawab terhadap lingkungan.' },
+              { type: 'paragraph', text: 'Komitmen keberlanjutan ini tidak berhenti pada citra positif, tetapi juga menciptakan efisiensi sirkular yang nyata bagi ekosistem bisnis. Dengan beralih ke corrugated box, perusahaan dapat menurunkan ketergantungan pada material berbasis minyak bumi seperti styrofoam atau plastik sekali pakai yang harganya fluktuatif. Setiap kemasan yang sampai ke tangan konsumen tidak berakhir sebagai beban lingkungan jangka panjang, melainkan dapat diproses kembali menjadi bahan baku produktif.' }
+            ]
           }
         ]
       },
@@ -516,7 +487,7 @@ export const translations = {
         videoUnsupported: 'Your browser does not support the video tag.'
       },
       organizationCulture: {
-        heading: 'Our Culture: Values, Beliefs, and How We Work',
+        heading: 'Values, Beliefs, and How We Work',
         description: 'The principles that guide our team every day. We believe in quality, transparency, and long-term partnerships. Here is how we turn those values into action: in the way we collaborate, serve customers, and grow together.',
         seeMore: 'See more',
         title: 'Organization Culture',
@@ -694,74 +665,45 @@ export const translations = {
         readTimeLabel: 'min read',
         featured: [
           {
-            title: 'Choosing the Right Carton Box for Export Furniture',
-            body: 'Exporting furniture to international markets brings great opportunities, but also unique challenges. One of the key success factors is packaging. Goods must arrive at their destination in perfect condition after travelling thousands of kilometres through ports, warehouses, and multimodal transport. Without the right packaging, the risk of damage, rejection, and financial loss is very high.\n\nThe main problems that often arise: furniture comes in vastly different shapes, weights, and fragility—from solid wood chairs, tables with glass, large cabinets, to small components prone to scratches. Cartons that are too thin will tear or buckle; those that are too large waste space and cost; incorrect construction fails to hold items properly. Add to that destination country requirements that can reject goods at the port if packaging does not meet standards.\n\nThe solution: choose cartons based on product type and shipping distance. Double-wall cartons are recommended for heavy goods and export; single-wall suffices for lighter items or local delivery. Consider construction—L-shape for display, A1 box for retail, die-cut for visibility. Consult with an experienced packaging supplier who understands export standards and can recommend material and design combinations that fit your budget.\n\nIn conclusion, investing time and money in choosing the right carton box from the start will save on repair costs, damage claims, and repackaging later. Well-designed packaging is not an expense—it is protection for your reputation and business margins.',
-            image: 'galeri-02',
-            date: '15 January 2025',
-            readMinutes: 8
-          },
-          {
-            title: 'The Importance of Eco-Friendly Packaging in Industry',
-            body: 'Climate change and consumer awareness have changed how industry views packaging. Once, packaging was often seen merely as a wrapper—its job done when the product arrived. Today, packaging is part of a business\'s responsibility to the environment and society. Many major brands have committed to using 100% recycled or certified packaging within the next few years.\n\nThe problem: transitioning to eco-friendly packaging is not always easy. Sustainable materials often cost more; availability is limited; and there is a risk that eco-friendly packaging is perceived as less protective. Some businesses delay because they see it as a passing trend, or feel their market does not yet demand change.\n\nThe solution: start with concrete steps. Choose recycled cardboard or FSC-certified materials to ensure raw materials come from sustainably managed forests. Right-sizing—designing packaging to minimise material without compromising protection—reduces waste and cost. Partnering with suppliers transparent about material sources and production processes will simplify sustainability reporting to stakeholders.\n\nIn conclusion, eco-friendly packaging is no longer optional. Regulations will tighten, consumers will become more critical, and proactive brands will enjoy a reputation advantage. Investing in sustainable packaging is a long-term investment for businesses that want to remain relevant and responsible.',
-            image: 'galeri-02',
-            date: '8 January 2025',
-            readMinutes: 7
-          },
-          {
-            title: 'Custom Packaging: Solutions for Unique Products',
-            body: 'Not all products fit standard boxes. Furniture with irregular shapes, combination products, or items with protruding parts need packaging designed specifically to protect them during shipping. Using generic packaging for unique products often leads to damage, material waste, or inflated shipping costs due to inefficient sizing.\n\nThe problems often encountered: standard packaging is too large, requiring excessive filler and higher shipping costs; or too small, so items get compressed and damaged. Some manufacturers force their products into unsuitable boxes, then rely on excessive bubble wrap and styrofoam—a solution that is suboptimal for protection, cost, and the environment.\n\nThe solution: custom packaging tailored to product dimensions and shape. Design, size, material thickness, display windows, internal partitions, and protective inserts—all can be adjusted. Packaging manufacturers offering custom services can create right-sized solutions that reduce waste and cost while ensuring optimal protection.\n\nIn conclusion, investing in custom packaging from the start saves long-term costs through reduced damage, warranty claims, and shipping efficiency. Working with an experienced manufacturer ensures you get a solution balanced between protection, cost, and sustainability.',
-            image: 'galeri-02',
-            date: '2 January 2025',
-            readMinutes: 7
-          },
-          {
-            title: 'Honeycomb and Protection During Shipping',
-            body: 'During shipping, products face stacking pressure in warehouses, shock during handling, and vibration in trucks or ships. The right filler and reinforcement materials determine whether goods arrive safely or damaged. Honeycomb—a material with a hexagonal structure—has long been an industry staple for packaging due to its high strength at very low weight.\n\nThe problem often encountered: conventional fillers like styrofoam or bubble wrap create large volume and added weight, increasing shipping costs. On the other hand, fillers that are too thin do not adequately protect from pressure and impact. A balance is needed between protection, weight, and cost.\n\nThe solution: honeycomb board and honeycomb core. The hexagonal structure provides far better resistance to compression and vibration than solid materials of the same weight. Honeycomb can be used as internal box reinforcement, void filler, corner protectors, or divider panels. The advantage: minimal weight, so it does not burden shipping costs, and paper-based material is relatively easy to recycle.\n\nIn conclusion, for furniture and fragile items, a combination of carton box with honeycomb insert is often the ideal choice—optimal protection without excess weight. This material offers a balance of durability, sustainability, and cost efficiency that is hard to match.',
-            image: 'galeri-02',
-            date: '28 December 2024',
-            readMinutes: 7
-          },
-          {
-            title: 'Export Standards for Carton Packaging',
-            body: 'Exporting to international markets opens great opportunities, but each destination country has its own packaging requirements. Failing to meet these standards can result in goods being rejected at the port, destroyed, or returned—with significant cost and reputation damage. Understanding and meeting export standards at the packaging design stage is a crucial step.\n\nThe problem: requirements vary widely. There are technical standards (carton thickness, burst strength, drop test), material standards (FSC, free of hazardous substances), and administrative procedures (labelling, fumigation, material authenticity documentation). European and American markets often require double-wall and FSC certification; some Asian countries mandate fumigation treatment for wood. Without clear understanding, exporters can get stuck with port repackaging costs or lose business deals.\n\nThe solution: research destination country standards from the start. Double-wall certification guarantees carton strength through burst strength testing; FSC ensures raw materials from sustainable sources. Laboratory testing—drop test, climate test—provides compliance evidence. Also ensure correct labelling, complete material documentation, and fumigation procedures where required. Partnering with a packaging supplier experienced in export will simplify this entire process.\n\nIn conclusion, investing in packaging that meets export standards from the start is far cheaper than bearing rejection or repackaging costs. Suppliers who understand international regulations are strategic partners for your export business.',
-            image: 'galeri-02',
-            date: '20 December 2024',
-            readMinutes: 8
-          },
-          {
-            title: 'Packaging as Part of Branding',
-            body: 'When a customer receives a package, packaging is the first thing they see—before the product itself. The unboxing experience can leave a lasting impression, influencing reviews, recommendations, and loyalty. In the e-commerce era, packaging is no longer just a wrapper; it becomes an extension of your brand identity.\n\nThe problem often seen: many businesses neglect packaging and use plain boxes or generic packaging. High-quality products arrive in shabby boxes, faint logos, or no message at all—reducing perceived value. On the other hand, some businesses assume branded packaging is expensive and only affordable for large orders.\n\nThe solution: custom printing on cartons—logo, brand colours, tagline, or special messages—turns packaging into a branding tool. With flexible manufacturers, you can achieve a professional look without burdensome minimum orders. Choose appropriate finishing: 1–2 colour printing is more economical, full colour for premium packaging. Design consistency with brand identity strengthens recognition and trust.\n\nIn conclusion, branded packaging is an investment in quality perception. Customers appreciate attention to detail—neat, branded boxes communicate that you take your product and service seriously. In the long run, this builds loyalty and differentiation in a competitive market.',
-            image: 'galeri-02',
-            date: '12 December 2024',
-            readMinutes: 7
-          },
-          {
-            title: 'Sustainable Packaging Trends in 2025',
-            body: '2025 marks a major milestone for the packaging industry. Global regulations are tightening, consumers are becoming more critical, and circular economy is no longer just a concept—it is a framework guiding business decisions. Companies that do not adapt will fall behind and face reputation risks and regulatory sanctions.\n\nThe problem facing industry: transitioning to sustainable packaging requires changes across the entire supply chain. Extended Producer Responsibility (EPR) requires producers to take responsibility for post-consumer packaging—including take-back and recycling programmes. Single-use plastic continues to be restricted; materials difficult to recycle will face taxes or bans. For many businesses, understanding and meeting these new demands feels confusing and expensive.\n\nThe solution: focus on easily recyclable and compostable materials. FSC-certified cardboard, post-consumer recycled paper, and designs that minimise mixed layers facilitate recycling. Avoid material combinations that are hard to separate—such as plastic laminate on cardboard—as they reduce recycling value. Partnering with suppliers transparent about material life cycle will simplify reporting and regulatory compliance.\n\nIn conclusion, starting the transition to sustainable packaging now is a proactive step that will save cost and stress in the future. Regulations will tighten; consumers will increasingly choose responsible brands. Sustainable packaging is no longer optional—it is the future of the industry.',
-            image: 'galeri-02',
-            date: '5 December 2024',
-            readMinutes: 8
-          },
-          {
-            title: 'Order Flexibility: No Minimum Order',
-            body: 'Starting a business or launching a new product often begins with small volumes. You want to test the market, validate the design, or fulfil initial orders without locking large capital in inventory. Yet many packaging suppliers impose minimum orders of hundreds or even thousands of units—making it difficult for SMEs and startups to get custom packaging that fits their needs.\n\nThe problem: with high minimum orders, you are forced to buy more than needed. Working capital is tied up in packaging stock that may go unused if the product fails in the market or the design changes. The alternative is using generic packaging that fits poorly—sacrificing protection and branding. The dilemma between scale efficiency and flexibility becomes a barrier for many small businesses.\n\nThe solution: find suppliers offering no-minimum-order policies or low MOs. This allows you to order according to actual needs, test packaging designs before full-scale production, and manage cash flow better. Ensure the supplier maintains production quality for small orders—material and finishing standards must match large orders.\n\nIn conclusion, order flexibility is an enabler for business growth. Starting with small orders, validating packaging, then scaling up when the market is proven—a healthy and sustainable flow. Suppliers who understand SME and startup needs are valuable partners for the business ecosystem.',
-            image: 'galeri-02',
-            date: '28 November 2024',
-            readMinutes: 7
-          },
-          {
-            title: 'Material Quality and Packaging Durability',
-            body: 'Packaging that looks the same on the outside can be very different on the inside. Grammage, pulp type, number of layers, and production process determine carton strength. Saving on material quality often leads to product damage in transit—and claim costs, replacement, and reputation damage far exceed initial savings.\n\nThe problem often encountered: many buyers focus on price per box without understanding material specifications. Cheap cartons may be thin, buckle easily when stacked, or fail to resist moisture—causing damage that only becomes apparent when goods reach the customer. For export shipping or heavy goods, inadequate packaging is a recipe for disaster.\n\nThe solution: understand material specifications. Double-wall certified cartons have been burst-tested—providing performance assurance. Grammage (grams per square metre) and layers affect pressure resistance. For special needs, request lab test certificates from suppliers. Working with suppliers transparent about quality grades lets you choose the best option for your budget and protection needs.\n\nIn conclusion, investing in quality materials is protection for margins and reputation. Premium packaging costs generally pay off through reduced damage, warranty claims, and customer satisfaction. Do not let short-term savings sacrifice long-term business.',
-            image: 'galeri-02',
-            date: '20 November 2024',
-            readMinutes: 7
-          },
-          {
-            title: 'Packaging for E-commerce and Safe Delivery',
-            body: 'E-commerce products undergo far longer and more complex journeys than offline sales. From warehouse to courier, sorting centre, truck, possibly plane or ship, then courier again—each stage carries risk of impact, pressure, and exposure to the elements. Packaging not designed to survive these conditions will fail to protect the product, resulting in: damaged goods, disappointed customers, bad reviews, plus replacement and return costs.\n\nThe problems often encountered: stacking pressure in warehouses and trucks can crush weak boxes; rough handling causes shock; temperature and humidity changes during transit can damage sensitive items. On the other hand, over-packaging—excessive bubble wrap and oversized boxes—wastes cost, burdens the environment, and frustrates customers when opening packages.\n\nThe solution: a combination of quality carton with thickness appropriate to product weight, fillers like honeycomb or hexa wrap to fill voids and absorb shock, and moisture barriers when products are sensitive. Right-sized packaging design reduces waste and cost. Consider ease of opening for consumers—user-friendly packaging leaves a positive impression. Choose recyclable materials to demonstrate environmental commitment.\n\nIn conclusion, e-commerce packaging must be designed for the journey, not just appearance. Investing in adequate protection safeguards margins and reputation; right-sized, eco-friendly packaging strengthens brand image in the eyes of increasingly critical consumers.',
-            image: 'galeri-02',
-            date: '10 November 2024',
-            readMinutes: 8
+            title: 'From Warehouse to Doorstep: Why Corrugated Boxes Are a Strategic Investment, Not Just a Cost',
+            date: 'March 2026',
+            readMinutes: 4,
+            bodyBlocks: [
+              { type: 'image', image: 'artikel-1', alt: 'Corrugated box article visual 1' },
+              { type: 'paragraph', text: 'Imagine your customer has been waiting for days for their order. When the package arrives, the first thing they touch and judge is not the product, but the packaging. Before they see what is inside, they place their expectation on the outer packaging. This is where corrugated boxes prove their role: not ordinary cartons, but the front line that protects your business reputation.' },
+              { type: 'heading', text: 'Why Corrugated Boxes Are the Best Choice' },
+              { type: 'paragraph', text: 'In a competitive business landscape, selecting outer packaging is a strategic decision. Here is why:' },
+              {
+                type: 'list',
+                items: [
+                  'Maximum Protection (Zero Damage Policy): The structure resists stacking pressure and absorbs impact.',
+                  'Logistics & Operational Efficiency: Lightweight and flat-pack storage help cut freight and warehouse costs.',
+                  'Unlimited Customization: Precise sizing avoids wasted void space and strengthens branding through print design.',
+                  'Sustainability (Eco-Friendly): Easy to recycle and decompose, adding value to a responsible brand image.'
+                ]
+              },
+              { type: 'heading', text: 'More Than a Box: The Science Behind the Strength' },
+              { type: 'paragraph', text: 'Corrugated boxes are engineered with a fluted middle layer that acts as a shock and pressure absorber. This structure provides an exceptional strength-to-weight ratio.' },
+              { type: 'paragraph', text: 'In modern e-commerce and distribution, the moment of truth happens at the doorstep. Before customers evaluate your product, they evaluate your professionalism through the condition of your outer packaging.' },
+              { type: 'heading', text: '1. Strength Anatomy: The Fluting Structure' },
+              { type: 'paragraph', text: 'Why are corrugated boxes stronger than regular cartons? The key lies in their internal structural engineering.' },
+              {
+                type: 'list',
+                items: [
+                  'Shock Absorption (The Fluting Effect): The fluted layer absorbs mechanical energy and distributes pressure.',
+                  'Vertical Stacking Strength: The flute structure acts like support columns for safer high stacking.',
+                  'Strength-to-Weight Ratio: Maximum protection with minimal weight for logistics efficiency.'
+                ]
+              },
+              { type: 'heading', text: '2. Why Your Business Needs It (Benefit Analysis)' },
+              { type: 'paragraph', text: 'Using the right corrugated box is not merely a cost, but a preventive step to protect profitability:' },
+              { type: 'image', image: 'artikel-2', alt: 'Corrugated box article visual 2' },
+              { type: 'paragraph', text: 'Beyond technical and operational benefits, proper corrugated box usage reflects a company commitment to environmental sustainability and long-term cost efficiency. With recyclable materials, businesses do not only respond to modern market expectations, but also help reduce supply chain carbon footprint. This organic material offers strong structural flexibility, ensuring each shipped unit stays protected without significantly increasing shipping weight.' },
+              { type: 'paragraph', text: 'Furthermore, precise packaging integration acts as smart risk control amid volatile global logistics costs. By minimizing empty space in the box, companies reduce dependency on additional fillers such as bubble wrap or styrofoam. This shift from simple packaging container to strategic asset creates a leaner distribution flow, strengthens customer trust, and keeps margins healthier in a competitive market.' },
+              { type: 'heading', text: '3. Sustainability: Added Value in Consumer Eyes' },
+              { type: 'paragraph', text: 'Today, consumers are highly selective about plastic waste. Corrugated boxes are organic materials that can be recycled and naturally decomposed. Choosing this packaging supports your image as an environmentally responsible brand.' },
+              { type: 'paragraph', text: 'This sustainability commitment does not stop at positive image. It also creates real circular efficiency for the business ecosystem. By switching to corrugated boxes, companies can reduce reliance on petroleum-based materials such as styrofoam or single-use plastics with highly fluctuating prices. Each package delivered to customers is not a permanent waste burden, but can return to productive material cycles.' }
+            ]
           }
         ]
       },

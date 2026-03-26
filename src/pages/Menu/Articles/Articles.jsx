@@ -2,19 +2,38 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLanguage } from '../../../context/LanguageContext'
-import galeri01 from '../../../assets/gallery/galeri-01.webp'
-import galeri02 from '../../../assets/gallery/galeri-02.webp'
-import galeri03 from '../../../assets/gallery/galeri-03.webp'
+import artikel1 from '../../../assets/images/Articles/artikel-1.webp'
+import artikel2 from '../../../assets/images/Articles/artikel-2.webp'
 import './Articles.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const MEDIUM_URL = 'https://akhimbayu.medium.com/'
+const MEDIUM_URL = 'https://medium.com/@haccbox'
 
 const IMAGE_MAP = {
-  'galeri-01': galeri01,
-  'galeri-02': galeri02,
-  'galeri-03': galeri03
+  'artikel-1': artikel1,
+  'artikel-2': artikel2
+}
+
+function toBodyBlocks(article) {
+  if (!article) return []
+
+  if (Array.isArray(article.bodyBlocks)) return article.bodyBlocks
+
+  if (typeof article.body === 'string') {
+    return article.body
+      .split(/\n\n+/)
+      .filter(Boolean)
+      .map((text) => ({ type: 'paragraph', text }))
+  }
+
+  if (Array.isArray(article.body)) {
+    return article.body
+      .filter(Boolean)
+      .map((item) => (typeof item === 'string' ? { type: 'paragraph', text: item } : item))
+  }
+
+  return []
 }
 
 function Articles() {
@@ -27,6 +46,7 @@ function Articles() {
 
   const article = featured[selectedIndex]
   const readTimeLabel = p.readTimeLabel || 'min read'
+  const bodyBlocks = toBodyBlocks(article)
 
   useEffect(() => {
     const main = articlesMainRef.current
@@ -68,26 +88,48 @@ function Articles() {
                     </>
                   )}
                 </p>
-                {IMAGE_MAP[article.image] && (
-                  <div className="articles-article-hero">
-                    <img
-                      src={IMAGE_MAP[article.image]}
-                      alt={article.title}
-                      className="articles-article-image"
-                    />
-                  </div>
-                )}
                 <div className="articles-article-body">
-                  {(typeof article.body === 'string'
-                    ? article.body.split(/\n\n+/).filter(Boolean)
-                    : Array.isArray(article.body)
-                      ? article.body
-                      : [article.body].filter(Boolean)
-                  ).map((para, i) => (
-                    <p key={i} className="articles-article-para">
-                      {para}
-                    </p>
-                  ))}
+                  {bodyBlocks.map((block, i) => {
+                    if (block?.type === 'image' && IMAGE_MAP[block.image]) {
+                      return (
+                        <figure key={`image-${i}`} className="articles-article-image-block">
+                          <img
+                            src={IMAGE_MAP[block.image]}
+                            alt={block.alt || article.title}
+                            className="articles-article-inline-image"
+                            loading="lazy"
+                          />
+                        </figure>
+                      )
+                    }
+
+                    if (block?.type === 'heading' && block.text) {
+                      return (
+                        <h3 key={`heading-${i}`} className="articles-article-subheading">
+                          {block.text}
+                        </h3>
+                      )
+                    }
+
+                    if (block?.type === 'list' && Array.isArray(block.items) && block.items.length) {
+                      return (
+                        <ul key={`list-${i}`} className="articles-article-list">
+                          {block.items.map((item, itemIndex) => (
+                            <li key={`list-${i}-item-${itemIndex}`}>{item}</li>
+                          ))}
+                        </ul>
+                      )
+                    }
+
+                    const text = typeof block === 'string' ? block : block?.text
+                    if (!text) return null
+
+                    return (
+                      <p key={`para-${i}`} className="articles-article-para">
+                        {text}
+                      </p>
+                    )
+                  })}
                 </div>
               </article>
             )}
