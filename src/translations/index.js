@@ -334,6 +334,52 @@ export const translations = {
               { type: 'paragraph', text: 'Di era sekarang, konsumen sangat selektif terhadap limbah plastik. Corrugated box adalah material organik yang dapat didaur ulang dan mudah terurai. Dengan memilih kemasan ini, bisnis Anda sekaligus membangun citra sebagai brand yang bertanggung jawab terhadap lingkungan.' },
               { type: 'paragraph', text: 'Komitmen keberlanjutan ini tidak berhenti pada citra positif, tetapi juga menciptakan efisiensi sirkular yang nyata bagi ekosistem bisnis. Dengan beralih ke corrugated box, perusahaan dapat menurunkan ketergantungan pada material berbasis minyak bumi seperti styrofoam atau plastik sekali pakai yang harganya fluktuatif. Setiap kemasan yang sampai ke tangan konsumen tidak berakhir sebagai beban lingkungan jangka panjang, melainkan dapat diproses kembali menjadi bahan baku produktif.' }
             ]
+          },
+          {
+            title: 'Transparansi Material: Bagaimana Rantai Pasok Kemasan Karton Membantu Brand Anda Lolos Audit Lingkungan',
+            date: 'April 2026',
+            readMinutes: 6,
+            bodyBlocks: [
+              { type: 'paragraph', text: 'Di tengah meningkatnya tuntutan terhadap keberlanjutan, brand tidak lagi hanya dinilai dari produk yang mereka jual, tetapi juga dari bagaimana produk tersebut dikemas. Audit lingkungan kini menjadi salah satu aspek krusial terutama bagi perusahaan yang ingin masuk ke pasar global atau bekerja sama dengan klien besar.' },
+              { type: 'paragraph', text: 'Salah satu faktor yang sering luput dari perhatian adalah transparansi material dalam rantai pasok kemasan, khususnya pada kemasan karton (corrugated box). Bagi pengguna kemasan karton, transparansi bukan lagi sekadar tren, melainkan kebutuhan mendesak. Di era ekonomi sirkular, asal-usul sebuah kotak sama pentingnya dengan ke mana kotak itu akan pergi setelah digunakan.' },
+              { type: 'heading', text: 'Kenapa Transparansi Material Itu Penting?' },
+              { type: 'paragraph', text: 'Audit lingkungan tidak hanya melihat hasil akhir, tetapi juga proses di baliknya. Brand dituntut untuk bisa menjawab pertanyaan berikut:' },
+              {
+                type: 'list',
+                items: [
+                  'Dari mana bahan baku berasal?',
+                  'Apakah bahan yang digunakan aman dan sesuai regulasi?',
+                  'Apakah proses produksinya ramah lingkungan?'
+                ]
+              },
+              { type: 'paragraph', text: 'Tanpa transparansi, semua pertanyaan ini akan sulit dijawab dan berpotensi menjadi hambatan saat audit.' },
+              { type: 'heading', text: '1. Traceability: Material dari Sumber yang Jelas' },
+              { type: 'paragraph', text: 'Kemasan karton yang baik berasal dari sumber yang legal dan terverifikasi, seperti hutan yang dikelola secara bertanggung jawab. Dengan traceability, brand bisa menelusuri asal-usul bahan baku, memastikan tidak ada praktik illegal logging, serta mendukung sertifikasi seperti FSC atau PEFC.' },
+              { type: 'paragraph', text: 'Hal ini menjadi nilai tambah besar saat audit karena menunjukkan komitmen nyata terhadap keberlanjutan.' },
+              { type: 'heading', text: '2. Kepatuhan Zat Kimia: Aman untuk Lingkungan dan Konsumen' },
+              { type: 'paragraph', text: 'Selain bahan baku utama, audit juga menyoroti bahan pendukung seperti lem perekat, tinta printing, dan coating. Penggunaan bahan kimia yang aman dan sesuai standar, misalnya low-VOC atau water-based ink, membantu brand mengurangi dampak lingkungan, memenuhi regulasi internasional, dan menghindari potensi risiko kesehatan.' },
+              { type: 'paragraph', text: 'Transparansi di area ini sangat penting karena sering menjadi titik kritis dalam audit.' },
+              { type: 'heading', text: '3. Efisiensi Material (Zero Waste Mindset): Lebih Sedikit Limbah, Lebih Baik Nilainya' },
+              { type: 'paragraph', text: 'Audit lingkungan juga melihat seberapa efisien penggunaan material dalam produksi. Pendekatan zero waste dalam kemasan karton berarti tidak ada material yang terbuang percuma, ukuran dan struktur dioptimalkan sesuai produk, serta sisa produksi dimanfaatkan kembali melalui recycle atau reuse.' },
+              { type: 'paragraph', text: 'Efisiensi ini menjadi win-win solution. Secara ekologis mengurangi jejak karbon, secara ekonomis mengoptimalkan biaya logistik dan pergudangan. Brand yang mengintegrasikan mindset ini akan memiliki keunggulan kompetitif saat proses audit.' },
+              { type: 'heading', text: '4. Bursting Strength Test: Kekuatan yang Terukur, Bukan Sekadar Klaim' },
+              { type: 'paragraph', text: 'Keberlanjutan tanpa kekuatan adalah pemborosan. Dalam pengembangan kemasan karton, Bursting Strength Test adalah parameter kunci untuk mengukur ketahanan material terhadap tekanan. Uji ini penting untuk menjamin keamanan produk selama pengiriman dan penyimpanan.' },
+              {
+                type: 'list',
+                items: [
+                  'Menentukan apakah bahan memenuhi standar kekuatan industri (evaluasi kualitas bahan).',
+                  'Membantu menjaga konsistensi produk (kontrol kualitas produksi).',
+                  'Menghindari penggunaan bahan berlebih tanpa mengorbankan kualitas (optimalisasi biaya).'
+                ]
+              },
+              { type: 'paragraph', text: 'Artinya, kualitas teknis juga merupakan bagian dari sustainability.' },
+              { type: 'heading', text: '5. Dari Data Lab ke Green Branding' },
+              { type: 'paragraph', text: 'Banyak brand berhenti di tahap punya data, padahal nilai sebenarnya ada pada cara data tersebut dikomunikasikan. Hasil uji kekuatan dapat dikemas menjadi klaim durability, data material menjadi storytelling tentang responsible sourcing, dan efisiensi produksi menjadi bagian dari sustainability report.' },
+              { type: 'paragraph', text: 'Dengan pendekatan yang tepat, hasil lab bukan hanya untuk kebutuhan internal, tetapi juga bisa menjadi aset branding.' },
+              { type: 'heading', text: 'Transparansi Bukan Lagi Pilihan' },
+              { type: 'paragraph', text: 'Di era ekonomi sirkular, transparansi material bukan lagi sekadar nilai tambah, melainkan kebutuhan fundamental bagi kelangsungan bisnis. Brand yang mampu menunjukkan kejelasan rantai pasok kemasannya akan lebih siap menghadapi audit regulasi dan membangun kepercayaan konsumen secara autentik.' },
+              { type: 'paragraph', text: 'Pada akhirnya, kemasan bukan sekadar pelindung fisik produk, melainkan representasi nyata dari integritas dan komitmen jangka panjang sebuah brand terhadap kelestarian lingkungan.' }
+            ]
           }
         ]
       },
@@ -703,6 +749,52 @@ export const translations = {
               { type: 'heading', text: '3. Sustainability: Added Value in Consumer Eyes' },
               { type: 'paragraph', text: 'Today, consumers are highly selective about plastic waste. Corrugated boxes are organic materials that can be recycled and naturally decomposed. Choosing this packaging supports your image as an environmentally responsible brand.' },
               { type: 'paragraph', text: 'This sustainability commitment does not stop at positive image. It also creates real circular efficiency for the business ecosystem. By switching to corrugated boxes, companies can reduce reliance on petroleum-based materials such as styrofoam or single-use plastics with highly fluctuating prices. Each package delivered to customers is not a permanent waste burden, but can return to productive material cycles.' }
+            ]
+          },
+          {
+            title: 'Material Transparency: How Corrugated Packaging Supply Chains Help Your Brand Pass Environmental Audits',
+            date: 'April 2026',
+            readMinutes: 6,
+            bodyBlocks: [
+              { type: 'paragraph', text: 'As sustainability expectations continue to rise, brands are judged not only by what they sell, but also by how their products are packaged. Environmental audits are now a critical requirement, especially for companies targeting global markets or large enterprise clients.' },
+              { type: 'paragraph', text: 'One factor that is often overlooked is material transparency in packaging supply chains, especially for corrugated boxes. For corrugated packaging users, transparency is no longer a trend. It is an urgent business need. In the circular economy era, the origin of a box matters as much as where it goes after use.' },
+              { type: 'heading', text: 'Why Does Material Transparency Matter?' },
+              { type: 'paragraph', text: 'Environmental audits do not only evaluate final outcomes. They also assess the process behind them. Brands are expected to answer questions such as:' },
+              {
+                type: 'list',
+                items: [
+                  'Where do the raw materials come from?',
+                  'Are the materials safe and compliant with regulations?',
+                  'Is the production process environmentally responsible?'
+                ]
+              },
+              { type: 'paragraph', text: 'Without transparency, these questions are difficult to answer and can become major audit barriers.' },
+              { type: 'heading', text: '1. Traceability: Materials from Verified Sources' },
+              { type: 'paragraph', text: 'High-quality corrugated packaging comes from legal and verified sources, such as responsibly managed forests. With traceability, brands can track raw material origin, ensure there is no illegal logging, and support certifications such as FSC or PEFC.' },
+              { type: 'paragraph', text: 'This becomes a major advantage during audits because it demonstrates real sustainability commitment.' },
+              { type: 'heading', text: '2. Chemical Compliance: Safe for Environment and Consumers' },
+              { type: 'paragraph', text: 'Beyond primary materials, audits also focus on supporting substances such as adhesives, printing inks, and coatings. Using safer materials that meet standards, such as low-VOC or water-based ink, helps brands reduce environmental impact, meet international regulations, and avoid potential health risks.' },
+              { type: 'paragraph', text: 'Transparency in this area is essential because it is often a critical checkpoint in audits.' },
+              { type: 'heading', text: '3. Material Efficiency (Zero Waste Mindset): Less Waste, Better Value' },
+              { type: 'paragraph', text: 'Environmental audits also assess how efficiently materials are used in production. A zero-waste approach in corrugated packaging means minimizing unused material, optimizing structure and size based on product needs, and reusing or recycling production leftovers.' },
+              { type: 'paragraph', text: 'This creates a win-win outcome. Ecologically, it lowers carbon footprint. Economically, it improves logistics and warehousing costs. Brands that adopt this mindset gain a competitive edge in audit processes.' },
+              { type: 'heading', text: '4. Bursting Strength Test: Measured Performance, Not Claims' },
+              { type: 'paragraph', text: 'Sustainability without durability leads to waste. In corrugated packaging development, the Bursting Strength Test is a key benchmark to measure material resistance under pressure. This test is crucial to protect product integrity during shipping and storage.' },
+              {
+                type: 'list',
+                items: [
+                  'Confirms whether materials meet industry strength standards (quality evaluation).',
+                  'Helps maintain product consistency (production quality control).',
+                  'Prevents overuse of material without reducing quality (cost optimization).'
+                ]
+              },
+              { type: 'paragraph', text: 'In short, technical quality is also part of sustainability.' },
+              { type: 'heading', text: '5. From Lab Data to Green Branding' },
+              { type: 'paragraph', text: 'Many brands stop at having the data, while the real value lies in how that data is communicated. Strength test outcomes can become durability claims, material data can support responsible sourcing storytelling, and production efficiency can strengthen sustainability reporting.' },
+              { type: 'paragraph', text: 'With the right approach, lab results are not just internal documents. They can become strategic branding assets.' },
+              { type: 'heading', text: 'Transparency Is No Longer Optional' },
+              { type: 'paragraph', text: 'In the circular economy era, material transparency is no longer an optional value-add. It is a core business requirement. Brands that can demonstrate clear packaging supply chain transparency are better positioned for stricter audits and stronger consumer trust.' },
+              { type: 'paragraph', text: 'Ultimately, packaging is not only physical protection. It is a visible representation of a brand integrity and long-term commitment to environmental stewardship.' }
             ]
           }
         ]
